@@ -64,6 +64,38 @@ Her Cuma 15:00 Istanbul (12:00 UTC):
 
 ---
 
+## 🔜 Yapılacaklar (Sonraki Versiyon)
+
+### Risk & Actions — Dinamik Eşik Değerleri
+Şu an Risk & Actions sayfası statik kurallara göre çalışıyor.
+Planlar müşteriye özel yapılandırılabilir eşik değerleri:
+
+| Risk Kuralı | Varsayılan Eşik | Örnek |
+|---|---|---|
+| Offline host süresi | 7 gün | 14+ gün → HIGH |
+| Policy atanmamış grup | Herhangi biri | → HIGH |
+| Prevention DISABLED kritik ayar | Herhangi biri | → HIGH |
+| Exclusion sayısı | 100+ | → MEDIUM |
+| Sensor version geride kalma | N-2+ | → MEDIUM |
+| Son login user yok | 30+ gün | → LOW |
+
+Bu değerler müşteri bazında `config.json` dosyasında tutulacak:
+```json
+{
+  "customer": "TeknoSA",
+  "thresholds": {
+    "offline_days_high": 14,
+    "offline_days_medium": 7,
+    "max_exclusions_warning": 100,
+    "sensor_version_lag_high": 2
+  }
+}
+```
+
+**Sonuç:** Gerçek anlamda akıllı, müşteriye özel bir health check aracı.
+
+---
+
 ## Rapor Adı Formatı
 
 ```
