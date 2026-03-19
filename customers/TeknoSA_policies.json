@@ -1,0 +1,3065 @@
+{
+  "Cymulate": {
+    "Prevention": [
+      {
+        "name": "Teknosa Phase 3 - optimal protection_Cymulate",
+        "enabled": true,
+        "platform": "Windows",
+        "settings": {
+          "User-Mode Capabilities": [
+            {
+              "name": "Notify End Users",
+              "status": "ON"
+            },
+            {
+              "name": "Sensor Tampering Protection",
+              "status": "ON"
+            }
+          ],
+          "Enhanced Visibility": [
+            {
+              "name": "Additional User Mode Data",
+              "status": "ON"
+            },
+            {
+              "name": "Interpreter-Only",
+              "status": "ON"
+            },
+            {
+              "name": "Engine (Full Visibility)",
+              "status": "ON"
+            },
+            {
+              "name": "Script-Based Execution Monitoring",
+              "status": "ON"
+            },
+            {
+              "name": "HTTP Detections",
+              "status": "ON"
+            },
+            {
+              "name": "Redact HTTP Detection Details",
+              "status": "ON"
+            },
+            {
+              "name": "Hardware-Enhanced Exploit Detection",
+              "status": "ON"
+            },
+            {
+              "name": "Enhanced Exploitation Visibility",
+              "status": "ON"
+            },
+            {
+              "name": "Extended User Mode Data",
+              "status": "{'detection': 'MODERATE', 'prevention': 'DISABLED'}"
+            },
+            {
+              "name": "Enhanced DLL Load Visibility",
+              "status": "ON"
+            },
+            {
+              "name": "WSL2 Visibility",
+              "status": "OFF"
+            }
+          ],
+          "Hardware-Enhanced Visibility": [
+            {
+              "name": "Memory Scanning",
+              "status": "ON"
+            },
+            {
+              "name": "Scan with CPU",
+              "status": "ON"
+            }
+          ],
+          "Firmware": [
+            {
+              "name": "BIOS Deep Visibility",
+              "status": "ON"
+            }
+          ],
+          "Cloud Machine Learning": [
+            {
+              "name": "Cloud Anti-malware",
+              "status": "{'detection': 'AGGRESSIVE', 'prevention': 'AGGRESSIVE'}"
+            },
+            {
+              "name": "Adware & PUP",
+              "status": "{'detection': 'AGGRESSIVE', 'prevention': 'AGGRESSIVE'}"
+            }
+          ],
+          "Sensor Machine Learning": [
+            {
+              "name": "Sensor Anti-malware",
+              "status": "{'detection': 'AGGRESSIVE', 'prevention': 'AGGRESSIVE'}"
+            },
+            {
+              "name": "Enhanced ML for larger files",
+              "status": "ON"
+            }
+          ],
+          "On-Demand Scans Machine Learning": [
+            {
+              "name": "Sensor Anti-malware for End-User Initiated Scans",
+              "status": "{'detection': 'AGGRESSIVE', 'prevention': 'AGGRESSIVE'}"
+            },
+            {
+              "name": "Cloud Anti-malware for End-User Initiated Scans",
+              "status": "{'detection': 'AGGRESSIVE', 'prevention': 'AGGRESSIVE'}"
+            },
+            {
+              "name": "Cloud PUP/Adware for End-User Initiated Scans",
+              "status": "{'detection': 'AGGRESSIVE', 'prevention': 'AGGRESSIVE'}"
+            }
+          ],
+          "On-Demand Scans": [
+            {
+              "name": "USB Insertion Triggered Scan",
+              "status": "ON"
+            }
+          ],
+          "On Write": [
+            {
+              "name": "Detect on Write",
+              "status": "ON"
+            },
+            {
+              "name": "Quarantine on Write",
+              "status": "ON"
+            },
+            {
+              "name": "On Write Script File Visibility",
+              "status": "OFF"
+            }
+          ],
+          "Quarantine": [
+            {
+              "name": "Quarantine & Security Center Registration",
+              "status": "ON"
+            },
+            {
+              "name": "Quarantine on Removable Media",
+              "status": "ON"
+            }
+          ],
+          "Microsoft Office File Macro Machine Learning": [
+            {
+              "name": "Cloud Anti-malware For Microsoft Office Files",
+              "status": "{'detection': 'AGGRESSIVE', 'prevention': 'AGGRESSIVE'}"
+            }
+          ],
+          "Clean Infected Microsoft Office Files": [
+            {
+              "name": "Microsoft Office File Malicious Macro Removal",
+              "status": "OFF"
+            }
+          ],
+          "Execution Blocking": [
+            {
+              "name": "Custom Blocking",
+              "status": "ON"
+            },
+            {
+              "name": "Suspicious Processes",
+              "status": "ON"
+            },
+            {
+              "name": "Suspicious Registry Operations",
+              "status": "ON"
+            },
+            {
+              "name": "Boot Configuration Database Protection",
+              "status": "ON"
+            },
+            {
+              "name": "File System Containment",
+              "status": "ON"
+            },
+            {
+              "name": "Suspicious Scripts and Commands",
+              "status": "ON"
+            },
+            {
+              "name": "Intelligence-Sourced Threats",
+              "status": "ON"
+            },
+            {
+              "name": "Driver Load Prevention",
+              "status": "ON"
+            },
+            {
+              "name": "Vulnerable Driver Protection",
+              "status": "ON"
+            }
+          ],
+          "Exploit Mitigation": [
+            {
+              "name": "Force ASLR",
+              "status": "ON"
+            },
+            {
+              "name": "Force DEP",
+              "status": "OFF"
+            },
+            {
+              "name": "Heap Spray Preallocation",
+              "status": "ON"
+            },
+            {
+              "name": "NULL Page Allocation",
+              "status": "ON"
+            },
+            {
+              "name": "SEH Overwrite Protection",
+              "status": "ON"
+            }
+          ],
+          "Ransomware": [
+            {
+              "name": "Backup Deletion",
+              "status": "ON"
+            },
+            {
+              "name": "Cryptowall",
+              "status": "ON"
+            },
+            {
+              "name": "File Encryption",
+              "status": "ON"
+            },
+            {
+              "name": "Locky",
+              "status": "ON"
+            },
+            {
+              "name": "File System Access",
+              "status": "ON"
+            },
+            {
+              "name": "Volume Shadow Copy - Audit",
+              "status": "ON"
+            },
+            {
+              "name": "Volume Shadow Copy - Protect",
+              "status": "ON"
+            }
+          ],
+          "Exploitation Behavior": [
+            {
+              "name": "Application Exploitation Activity",
+              "status": "ON"
+            },
+            {
+              "name": "Chopper Webshell",
+              "status": "ON"
+            },
+            {
+              "name": "Drive-by Download",
+              "status": "ON"
+            },
+            {
+              "name": "Code Injection",
+              "status": "ON"
+            },
+            {
+              "name": "JavaScript Execution Via Rundll32",
+              "status": "ON"
+            }
+          ],
+          "Lateral Movement and Credential Access": [
+            {
+              "name": "Windows Logon Bypass (\"Sticky Keys\")",
+              "status": "ON"
+            },
+            {
+              "name": "Credential Dumping",
+              "status": "ON"
+            }
+          ],
+          "Remediation": [
+            {
+              "name": "Advanced Remediation",
+              "status": "ON"
+            }
+          ],
+          "Behavioral Detections": [
+            {
+              "name": "Cloud-based Anomalous Process Execution",
+              "status": "{'detection': 'MODERATE'}"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "P7_Test": {
+    "Prevention": [
+      {
+        "name": "Copy TSA_Win_WKS_Office_Phase 2",
+        "enabled": true,
+        "platform": "Windows",
+        "settings": {
+          "User-Mode Capabilities": [
+            {
+              "name": "Notify End Users",
+              "status": "ON"
+            },
+            {
+              "name": "Sensor Tampering Protection",
+              "status": "ON"
+            }
+          ],
+          "Enhanced Visibility": [
+            {
+              "name": "Additional User Mode Data",
+              "status": "ON"
+            },
+            {
+              "name": "Interpreter-Only",
+              "status": "ON"
+            },
+            {
+              "name": "Engine (Full Visibility)",
+              "status": "ON"
+            },
+            {
+              "name": "Script-Based Execution Monitoring",
+              "status": "ON"
+            },
+            {
+              "name": "HTTP Detections",
+              "status": "ON"
+            },
+            {
+              "name": "Redact HTTP Detection Details",
+              "status": "ON"
+            },
+            {
+              "name": "Hardware-Enhanced Exploit Detection",
+              "status": "ON"
+            },
+            {
+              "name": "Enhanced Exploitation Visibility",
+              "status": "ON"
+            },
+            {
+              "name": "Extended User Mode Data",
+              "status": "{'detection': 'CAUTIOUS', 'prevention': 'DISABLED'}"
+            },
+            {
+              "name": "Enhanced DLL Load Visibility",
+              "status": "ON"
+            },
+            {
+              "name": "WSL2 Visibility",
+              "status": "OFF"
+            }
+          ],
+          "Hardware-Enhanced Visibility": [
+            {
+              "name": "Memory Scanning",
+              "status": "ON"
+            },
+            {
+              "name": "Scan with CPU",
+              "status": "ON"
+            }
+          ],
+          "Firmware": [
+            {
+              "name": "BIOS Deep Visibility",
+              "status": "OFF"
+            }
+          ],
+          "Cloud Machine Learning": [
+            {
+              "name": "Cloud Anti-malware",
+              "status": "{'detection': 'AGGRESSIVE', 'prevention': 'MODERATE'}"
+            },
+            {
+              "name": "Adware & PUP",
+              "status": "{'detection': 'AGGRESSIVE', 'prevention': 'MODERATE'}"
+            }
+          ],
+          "Sensor Machine Learning": [
+            {
+              "name": "Sensor Anti-malware",
+              "status": "{'detection': 'AGGRESSIVE', 'prevention': 'MODERATE'}"
+            },
+            {
+              "name": "Enhanced ML for larger files",
+              "status": "ON"
+            }
+          ],
+          "On-Demand Scans Machine Learning": [
+            {
+              "name": "Sensor Anti-malware for End-User Initiated Scans",
+              "status": "{'detection': 'AGGRESSIVE', 'prevention': 'MODERATE'}"
+            },
+            {
+              "name": "Cloud Anti-malware for End-User Initiated Scans",
+              "status": "{'detection': 'AGGRESSIVE', 'prevention': 'MODERATE'}"
+            },
+            {
+              "name": "Cloud PUP/Adware for End-User Initiated Scans",
+              "status": "{'detection': 'AGGRESSIVE', 'prevention': 'MODERATE'}"
+            }
+          ],
+          "On-Demand Scans": [
+            {
+              "name": "USB Insertion Triggered Scan",
+              "status": "ON"
+            }
+          ],
+          "On Write": [
+            {
+              "name": "Detect on Write",
+              "status": "ON"
+            },
+            {
+              "name": "Quarantine on Write",
+              "status": "ON"
+            },
+            {
+              "name": "On Write Script File Visibility",
+              "status": "OFF"
+            }
+          ],
+          "Quarantine": [
+            {
+              "name": "Quarantine & Security Center Registration",
+              "status": "ON"
+            },
+            {
+              "name": "Quarantine on Removable Media",
+              "status": "ON"
+            }
+          ],
+          "Microsoft Office File Macro Machine Learning": [
+            {
+              "name": "Cloud Anti-malware For Microsoft Office Files",
+              "status": "{'detection': 'AGGRESSIVE', 'prevention': 'MODERATE'}"
+            }
+          ],
+          "Clean Infected Microsoft Office Files": [
+            {
+              "name": "Microsoft Office File Malicious Macro Removal",
+              "status": "OFF"
+            }
+          ],
+          "Execution Blocking": [
+            {
+              "name": "Custom Blocking",
+              "status": "ON"
+            },
+            {
+              "name": "Suspicious Processes",
+              "status": "ON"
+            },
+            {
+              "name": "Suspicious Registry Operations",
+              "status": "ON"
+            },
+            {
+              "name": "Boot Configuration Database Protection",
+              "status": "ON"
+            },
+            {
+              "name": "File System Containment",
+              "status": "ON"
+            },
+            {
+              "name": "Suspicious Scripts and Commands",
+              "status": "ON"
+            },
+            {
+              "name": "Intelligence-Sourced Threats",
+              "status": "ON"
+            },
+            {
+              "name": "Driver Load Prevention",
+              "status": "ON"
+            },
+            {
+              "name": "Vulnerable Driver Protection",
+              "status": "ON"
+            }
+          ],
+          "Exploit Mitigation": [
+            {
+              "name": "Force ASLR",
+              "status": "OFF"
+            },
+            {
+              "name": "Force DEP",
+              "status": "OFF"
+            },
+            {
+              "name": "Heap Spray Preallocation",
+              "status": "ON"
+            },
+            {
+              "name": "NULL Page Allocation",
+              "status": "ON"
+            },
+            {
+              "name": "SEH Overwrite Protection",
+              "status": "ON"
+            }
+          ],
+          "Ransomware": [
+            {
+              "name": "Backup Deletion",
+              "status": "ON"
+            },
+            {
+              "name": "Cryptowall",
+              "status": "ON"
+            },
+            {
+              "name": "File Encryption",
+              "status": "ON"
+            },
+            {
+              "name": "Locky",
+              "status": "ON"
+            },
+            {
+              "name": "File System Access",
+              "status": "ON"
+            },
+            {
+              "name": "Volume Shadow Copy - Audit",
+              "status": "ON"
+            },
+            {
+              "name": "Volume Shadow Copy - Protect",
+              "status": "ON"
+            }
+          ],
+          "Exploitation Behavior": [
+            {
+              "name": "Application Exploitation Activity",
+              "status": "ON"
+            },
+            {
+              "name": "Chopper Webshell",
+              "status": "ON"
+            },
+            {
+              "name": "Drive-by Download",
+              "status": "ON"
+            },
+            {
+              "name": "Code Injection",
+              "status": "ON"
+            },
+            {
+              "name": "JavaScript Execution Via Rundll32",
+              "status": "ON"
+            }
+          ],
+          "Lateral Movement and Credential Access": [
+            {
+              "name": "Windows Logon Bypass (\"Sticky Keys\")",
+              "status": "ON"
+            },
+            {
+              "name": "Credential Dumping",
+              "status": "ON"
+            }
+          ],
+          "Remediation": [
+            {
+              "name": "Advanced Remediation",
+              "status": "ON"
+            }
+          ],
+          "Behavioral Detections": [
+            {
+              "name": "Cloud-based Anomalous Process Execution",
+              "status": "{'detection': 'MODERATE'}"
+            }
+          ]
+        }
+      }
+    ],
+    "Sensor Update": [
+      {
+        "name": "TSA_Windows_System_Sensor_Update",
+        "enabled": true,
+        "platform": "Windows",
+        "settings": {
+          "Config": [
+            {
+              "name": "build",
+              "status": "20505|n-1|tagged|1"
+            },
+            {
+              "name": "is_lts_build",
+              "status": "False"
+            },
+            {
+              "name": "uninstall_protection",
+              "status": "ENABLED"
+            },
+            {
+              "name": "show_early_adopter_builds",
+              "status": "True"
+            },
+            {
+              "name": "sensor_version",
+              "status": "7.33.20505"
+            },
+            {
+              "name": "stage",
+              "status": "prod"
+            },
+            {
+              "name": "variants",
+              "status": "None"
+            },
+            {
+              "name": "scheduler",
+              "status": "{'enabled': True, 'timezone': 'Europe/Istanbul', 'schedules': [{'start': '11:52', 'end': '12:52', 'days': [1]}]}"
+            }
+          ]
+        }
+      }
+    ],
+    "Device Control": [
+      {
+        "name": "Teknos_ Device_Policy_Windows",
+        "enabled": true,
+        "platform": "Windows",
+        "settings": {
+          "Config": [
+            {
+              "name": "enforcement_mode",
+              "status": "MONITOR_ONLY"
+            },
+            {
+              "name": "end_user_notification",
+              "status": "SILENT"
+            },
+            {
+              "name": "custom_notifications",
+              "status": "{'blocked_notification': {'use_custom': False, 'custom_message': \"Your removable device is blocked by your organization's policy\"}, 'restricted_notification': {'use_custom': False, 'custom_message': \"Functions of your removable device are restricted by your organization's policy\"}}"
+            },
+            {
+              "name": "classes",
+              "status": "[{'id': 'ANY', 'action': 'FULL_ACCESS', 'exceptions': []}, {'id': 'AUDIO_VIDEO', 'action': 'FULL_ACCESS', 'exceptions': []}, {'id': 'IMAGING', 'action': 'FULL_ACCESS', 'exceptions': []}, {'id': 'MASS_STORAGE', 'action': 'FULL_ACCESS', 'exceptions': []}, {'id': 'MOBILE', 'action': 'FULL_ACCESS', 'exceptions': []}, {'id': 'PRINTER', 'action': 'FULL_ACCESS', 'exceptions': []}, {'id': 'WIRELESS', 'action': 'FULL_ACCESS', 'exceptions': []}]"
+            },
+            {
+              "name": "enhanced_file_metadata",
+              "status": "False"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "TSA_Linux_EXT_Group": {
+    "Prevention": [
+      {
+        "name": "TSA_Linux_Server_Standard_Phase 3",
+        "enabled": true,
+        "platform": "Linux",
+        "settings": {
+          "User-Mode Capabilities": [
+            {
+              "name": "Sensor Tampering Protection",
+              "status": "ON"
+            }
+          ],
+          "Enhanced Visibility": [
+            {
+              "name": "Enhance Environment Variable Visibility",
+              "status": "OFF"
+            },
+            {
+              "name": "Script-Based Execution Monitoring",
+              "status": "ON"
+            },
+            {
+              "name": "Filesystem Visibility",
+              "status": "ON"
+            },
+            {
+              "name": "Network Visibility",
+              "status": "ON"
+            },
+            {
+              "name": "Http Visibility",
+              "status": "ON"
+            },
+            {
+              "name": "FTP Visibility ",
+              "status": "ON"
+            },
+            {
+              "name": "TLS Visibility",
+              "status": "ON"
+            },
+            {
+              "name": "Extended Command Line Visibility",
+              "status": "ON"
+            },
+            {
+              "name": "Email Protocol Visibility",
+              "status": "ON"
+            },
+            {
+              "name": "Memory Visibility",
+              "status": "ON"
+            },
+            {
+              "name": "D-Bus Visibility",
+              "status": "OFF"
+            },
+            {
+              "name": "Enhance PHP Visibility",
+              "status": "ON"
+            },
+            {
+              "name": "PHP Script Optimization",
+              "status": "OFF"
+            },
+            {
+              "name": "SSH Visibility",
+              "status": "ON"
+            },
+            {
+              "name": "Enhance Systemd Visibility",
+              "status": "OFF"
+            }
+          ],
+          "Cloud Machine Learning": [
+            {
+              "name": "Cloud Anti-malware",
+              "status": "{'detection': 'AGGRESSIVE', 'prevention': 'AGGRESSIVE'}"
+            }
+          ],
+          "Sensor Machine Learning": [
+            {
+              "name": "Sensor Anti-malware",
+              "status": "{'detection': 'AGGRESSIVE', 'prevention': 'AGGRESSIVE'}"
+            }
+          ],
+          "Quarantine": [
+            {
+              "name": "Quarantine",
+              "status": "ON"
+            }
+          ],
+          "On Write Script File Visibility": [
+            {
+              "name": "On Write Script File Visibility",
+              "status": "ON"
+            }
+          ],
+          "Execution Blocking": [
+            {
+              "name": "Custom Blocking",
+              "status": "ON"
+            },
+            {
+              "name": "Suspicious Processes",
+              "status": "ON"
+            }
+          ]
+        }
+      }
+    ],
+    "Sensor Update": [
+      {
+        "name": "TSA_Linux_System_Sensor_Update",
+        "enabled": true,
+        "platform": "Linux",
+        "settings": {
+          "Config": [
+            {
+              "name": "build",
+              "status": "18708|n-1|tagged|5"
+            },
+            {
+              "name": "is_lts_build",
+              "status": "False"
+            },
+            {
+              "name": "uninstall_protection",
+              "status": "ENABLED"
+            },
+            {
+              "name": "show_early_adopter_builds",
+              "status": "True"
+            },
+            {
+              "name": "sensor_version",
+              "status": "7.34.18708"
+            },
+            {
+              "name": "stage",
+              "status": "prod"
+            },
+            {
+              "name": "variants",
+              "status": "[{'build': '18708|n-1|tagged|7', 'sensor_version': '7.34.18708', 'platform': 'LinuxArm64', 'stage': 'prod', 'is_lts_build': False}, {'build': '18708|n-1|tagged|18', 'sensor_version': '7.34.18708', 'platform': 'ZLinux', 'stage': 'prod', 'is_lts_build': False}]"
+            },
+            {
+              "name": "scheduler",
+              "status": "{'enabled': False, 'timezone': '', 'schedules': []}"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "TSA_Phase3_Server": {
+    "Prevention": [
+      {
+        "name": "TSA Phase 3 Server Prevention Policy",
+        "enabled": true,
+        "platform": "Windows",
+        "settings": {
+          "User-Mode Capabilities": [
+            {
+              "name": "Notify End Users",
+              "status": "ON"
+            },
+            {
+              "name": "Sensor Tampering Protection",
+              "status": "ON"
+            }
+          ],
+          "Enhanced Visibility": [
+            {
+              "name": "Additional User Mode Data",
+              "status": "ON"
+            },
+            {
+              "name": "Interpreter-Only",
+              "status": "ON"
+            },
+            {
+              "name": "Engine (Full Visibility)",
+              "status": "ON"
+            },
+            {
+              "name": "Script-Based Execution Monitoring",
+              "status": "ON"
+            },
+            {
+              "name": "HTTP Detections",
+              "status": "ON"
+            },
+            {
+              "name": "Redact HTTP Detection Details",
+              "status": "ON"
+            },
+            {
+              "name": "Hardware-Enhanced Exploit Detection",
+              "status": "ON"
+            },
+            {
+              "name": "Enhanced Exploitation Visibility",
+              "status": "ON"
+            },
+            {
+              "name": "Extended User Mode Data",
+              "status": "{'detection': 'MODERATE', 'prevention': 'DISABLED'}"
+            },
+            {
+              "name": "Enhanced DLL Load Visibility",
+              "status": "ON"
+            },
+            {
+              "name": "WSL2 Visibility",
+              "status": "OFF"
+            }
+          ],
+          "Hardware-Enhanced Visibility": [
+            {
+              "name": "Memory Scanning",
+              "status": "ON"
+            },
+            {
+              "name": "Scan with CPU",
+              "status": "ON"
+            }
+          ],
+          "Firmware": [
+            {
+              "name": "BIOS Deep Visibility",
+              "status": "ON"
+            }
+          ],
+          "Cloud Machine Learning": [
+            {
+              "name": "Cloud Anti-malware",
+              "status": "{'detection': 'AGGRESSIVE', 'prevention': 'AGGRESSIVE'}"
+            },
+            {
+              "name": "Adware & PUP",
+              "status": "{'detection': 'AGGRESSIVE', 'prevention': 'AGGRESSIVE'}"
+            }
+          ],
+          "Sensor Machine Learning": [
+            {
+              "name": "Sensor Anti-malware",
+              "status": "{'detection': 'AGGRESSIVE', 'prevention': 'AGGRESSIVE'}"
+            },
+            {
+              "name": "Enhanced ML for larger files",
+              "status": "ON"
+            }
+          ],
+          "On-Demand Scans Machine Learning": [
+            {
+              "name": "Sensor Anti-malware for End-User Initiated Scans",
+              "status": "{'detection': 'AGGRESSIVE', 'prevention': 'MODERATE'}"
+            },
+            {
+              "name": "Cloud Anti-malware for End-User Initiated Scans",
+              "status": "{'detection': 'AGGRESSIVE', 'prevention': 'MODERATE'}"
+            },
+            {
+              "name": "Cloud PUP/Adware for End-User Initiated Scans",
+              "status": "{'detection': 'AGGRESSIVE', 'prevention': 'AGGRESSIVE'}"
+            }
+          ],
+          "On-Demand Scans": [
+            {
+              "name": "USB Insertion Triggered Scan",
+              "status": "ON"
+            }
+          ],
+          "On Write": [
+            {
+              "name": "Detect on Write",
+              "status": "ON"
+            },
+            {
+              "name": "Quarantine on Write",
+              "status": "ON"
+            },
+            {
+              "name": "On Write Script File Visibility",
+              "status": "OFF"
+            }
+          ],
+          "Quarantine": [
+            {
+              "name": "Quarantine & Security Center Registration",
+              "status": "ON"
+            },
+            {
+              "name": "Quarantine on Removable Media",
+              "status": "ON"
+            }
+          ],
+          "Microsoft Office File Macro Machine Learning": [
+            {
+              "name": "Cloud Anti-malware For Microsoft Office Files",
+              "status": "{'detection': 'AGGRESSIVE', 'prevention': 'MODERATE'}"
+            }
+          ],
+          "Clean Infected Microsoft Office Files": [
+            {
+              "name": "Microsoft Office File Malicious Macro Removal",
+              "status": "OFF"
+            }
+          ],
+          "Execution Blocking": [
+            {
+              "name": "Custom Blocking",
+              "status": "ON"
+            },
+            {
+              "name": "Suspicious Processes",
+              "status": "ON"
+            },
+            {
+              "name": "Suspicious Registry Operations",
+              "status": "ON"
+            },
+            {
+              "name": "Boot Configuration Database Protection",
+              "status": "ON"
+            },
+            {
+              "name": "File System Containment",
+              "status": "ON"
+            },
+            {
+              "name": "Suspicious Scripts and Commands",
+              "status": "ON"
+            },
+            {
+              "name": "Intelligence-Sourced Threats",
+              "status": "ON"
+            },
+            {
+              "name": "Driver Load Prevention",
+              "status": "ON"
+            },
+            {
+              "name": "Vulnerable Driver Protection",
+              "status": "ON"
+            }
+          ],
+          "Exploit Mitigation": [
+            {
+              "name": "Force ASLR",
+              "status": "ON"
+            },
+            {
+              "name": "Force DEP",
+              "status": "OFF"
+            },
+            {
+              "name": "Heap Spray Preallocation",
+              "status": "ON"
+            },
+            {
+              "name": "NULL Page Allocation",
+              "status": "ON"
+            },
+            {
+              "name": "SEH Overwrite Protection",
+              "status": "ON"
+            }
+          ],
+          "Ransomware": [
+            {
+              "name": "Backup Deletion",
+              "status": "ON"
+            },
+            {
+              "name": "Cryptowall",
+              "status": "ON"
+            },
+            {
+              "name": "File Encryption",
+              "status": "ON"
+            },
+            {
+              "name": "Locky",
+              "status": "ON"
+            },
+            {
+              "name": "File System Access",
+              "status": "ON"
+            },
+            {
+              "name": "Volume Shadow Copy - Audit",
+              "status": "ON"
+            },
+            {
+              "name": "Volume Shadow Copy - Protect",
+              "status": "ON"
+            }
+          ],
+          "Exploitation Behavior": [
+            {
+              "name": "Application Exploitation Activity",
+              "status": "ON"
+            },
+            {
+              "name": "Chopper Webshell",
+              "status": "ON"
+            },
+            {
+              "name": "Drive-by Download",
+              "status": "ON"
+            },
+            {
+              "name": "Code Injection",
+              "status": "ON"
+            },
+            {
+              "name": "JavaScript Execution Via Rundll32",
+              "status": "ON"
+            }
+          ],
+          "Lateral Movement and Credential Access": [
+            {
+              "name": "Windows Logon Bypass (\"Sticky Keys\")",
+              "status": "ON"
+            },
+            {
+              "name": "Credential Dumping",
+              "status": "ON"
+            }
+          ],
+          "Remediation": [
+            {
+              "name": "Advanced Remediation",
+              "status": "ON"
+            }
+          ],
+          "Behavioral Detections": [
+            {
+              "name": "Cloud-based Anomalous Process Execution",
+              "status": "{'detection': 'MODERATE'}"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "TSA_Phase3_Workstation": {
+    "Prevention": [
+      {
+        "name": "TSA Phase 3 Workstation Prevention Policy",
+        "enabled": true,
+        "platform": "Windows",
+        "settings": {
+          "User-Mode Capabilities": [
+            {
+              "name": "Notify End Users",
+              "status": "ON"
+            },
+            {
+              "name": "Sensor Tampering Protection",
+              "status": "ON"
+            }
+          ],
+          "Enhanced Visibility": [
+            {
+              "name": "Additional User Mode Data",
+              "status": "ON"
+            },
+            {
+              "name": "Interpreter-Only",
+              "status": "ON"
+            },
+            {
+              "name": "Engine (Full Visibility)",
+              "status": "ON"
+            },
+            {
+              "name": "Script-Based Execution Monitoring",
+              "status": "ON"
+            },
+            {
+              "name": "HTTP Detections",
+              "status": "ON"
+            },
+            {
+              "name": "Redact HTTP Detection Details",
+              "status": "ON"
+            },
+            {
+              "name": "Hardware-Enhanced Exploit Detection",
+              "status": "ON"
+            },
+            {
+              "name": "Enhanced Exploitation Visibility",
+              "status": "ON"
+            },
+            {
+              "name": "Extended User Mode Data",
+              "status": "{'detection': 'MODERATE', 'prevention': 'DISABLED'}"
+            },
+            {
+              "name": "Enhanced DLL Load Visibility",
+              "status": "ON"
+            },
+            {
+              "name": "WSL2 Visibility",
+              "status": "OFF"
+            }
+          ],
+          "Hardware-Enhanced Visibility": [
+            {
+              "name": "Memory Scanning",
+              "status": "ON"
+            },
+            {
+              "name": "Scan with CPU",
+              "status": "ON"
+            }
+          ],
+          "Firmware": [
+            {
+              "name": "BIOS Deep Visibility",
+              "status": "ON"
+            }
+          ],
+          "Cloud Machine Learning": [
+            {
+              "name": "Cloud Anti-malware",
+              "status": "{'detection': 'AGGRESSIVE', 'prevention': 'AGGRESSIVE'}"
+            },
+            {
+              "name": "Adware & PUP",
+              "status": "{'detection': 'AGGRESSIVE', 'prevention': 'AGGRESSIVE'}"
+            }
+          ],
+          "Sensor Machine Learning": [
+            {
+              "name": "Sensor Anti-malware",
+              "status": "{'detection': 'AGGRESSIVE', 'prevention': 'AGGRESSIVE'}"
+            },
+            {
+              "name": "Enhanced ML for larger files",
+              "status": "ON"
+            }
+          ],
+          "On-Demand Scans Machine Learning": [
+            {
+              "name": "Sensor Anti-malware for End-User Initiated Scans",
+              "status": "{'detection': 'AGGRESSIVE', 'prevention': 'MODERATE'}"
+            },
+            {
+              "name": "Cloud Anti-malware for End-User Initiated Scans",
+              "status": "{'detection': 'AGGRESSIVE', 'prevention': 'MODERATE'}"
+            },
+            {
+              "name": "Cloud PUP/Adware for End-User Initiated Scans",
+              "status": "{'detection': 'AGGRESSIVE', 'prevention': 'AGGRESSIVE'}"
+            }
+          ],
+          "On-Demand Scans": [
+            {
+              "name": "USB Insertion Triggered Scan",
+              "status": "ON"
+            }
+          ],
+          "On Write": [
+            {
+              "name": "Detect on Write",
+              "status": "ON"
+            },
+            {
+              "name": "Quarantine on Write",
+              "status": "ON"
+            },
+            {
+              "name": "On Write Script File Visibility",
+              "status": "OFF"
+            }
+          ],
+          "Quarantine": [
+            {
+              "name": "Quarantine & Security Center Registration",
+              "status": "ON"
+            },
+            {
+              "name": "Quarantine on Removable Media",
+              "status": "ON"
+            }
+          ],
+          "Microsoft Office File Macro Machine Learning": [
+            {
+              "name": "Cloud Anti-malware For Microsoft Office Files",
+              "status": "{'detection': 'AGGRESSIVE', 'prevention': 'MODERATE'}"
+            }
+          ],
+          "Clean Infected Microsoft Office Files": [
+            {
+              "name": "Microsoft Office File Malicious Macro Removal",
+              "status": "OFF"
+            }
+          ],
+          "Execution Blocking": [
+            {
+              "name": "Custom Blocking",
+              "status": "ON"
+            },
+            {
+              "name": "Suspicious Processes",
+              "status": "ON"
+            },
+            {
+              "name": "Suspicious Registry Operations",
+              "status": "ON"
+            },
+            {
+              "name": "Boot Configuration Database Protection",
+              "status": "ON"
+            },
+            {
+              "name": "File System Containment",
+              "status": "ON"
+            },
+            {
+              "name": "Suspicious Scripts and Commands",
+              "status": "ON"
+            },
+            {
+              "name": "Intelligence-Sourced Threats",
+              "status": "ON"
+            },
+            {
+              "name": "Driver Load Prevention",
+              "status": "ON"
+            },
+            {
+              "name": "Vulnerable Driver Protection",
+              "status": "ON"
+            }
+          ],
+          "Exploit Mitigation": [
+            {
+              "name": "Force ASLR",
+              "status": "ON"
+            },
+            {
+              "name": "Force DEP",
+              "status": "OFF"
+            },
+            {
+              "name": "Heap Spray Preallocation",
+              "status": "ON"
+            },
+            {
+              "name": "NULL Page Allocation",
+              "status": "ON"
+            },
+            {
+              "name": "SEH Overwrite Protection",
+              "status": "ON"
+            }
+          ],
+          "Ransomware": [
+            {
+              "name": "Backup Deletion",
+              "status": "ON"
+            },
+            {
+              "name": "Cryptowall",
+              "status": "ON"
+            },
+            {
+              "name": "File Encryption",
+              "status": "ON"
+            },
+            {
+              "name": "Locky",
+              "status": "ON"
+            },
+            {
+              "name": "File System Access",
+              "status": "ON"
+            },
+            {
+              "name": "Volume Shadow Copy - Audit",
+              "status": "ON"
+            },
+            {
+              "name": "Volume Shadow Copy - Protect",
+              "status": "ON"
+            }
+          ],
+          "Exploitation Behavior": [
+            {
+              "name": "Application Exploitation Activity",
+              "status": "ON"
+            },
+            {
+              "name": "Chopper Webshell",
+              "status": "ON"
+            },
+            {
+              "name": "Drive-by Download",
+              "status": "ON"
+            },
+            {
+              "name": "Code Injection",
+              "status": "ON"
+            },
+            {
+              "name": "JavaScript Execution Via Rundll32",
+              "status": "ON"
+            }
+          ],
+          "Lateral Movement and Credential Access": [
+            {
+              "name": "Windows Logon Bypass (\"Sticky Keys\")",
+              "status": "ON"
+            },
+            {
+              "name": "Credential Dumping",
+              "status": "ON"
+            }
+          ],
+          "Remediation": [
+            {
+              "name": "Advanced Remediation",
+              "status": "ON"
+            }
+          ],
+          "Behavioral Detections": [
+            {
+              "name": "Cloud-based Anomalous Process Execution",
+              "status": "{'detection': 'MODERATE'}"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "TSA_SRV_Linux": {
+    "Prevention": [
+      {
+        "name": "TSA_Linux_Server_Standard_Phase 3",
+        "enabled": true,
+        "platform": "Linux",
+        "settings": {
+          "User-Mode Capabilities": [
+            {
+              "name": "Sensor Tampering Protection",
+              "status": "ON"
+            }
+          ],
+          "Enhanced Visibility": [
+            {
+              "name": "Enhance Environment Variable Visibility",
+              "status": "OFF"
+            },
+            {
+              "name": "Script-Based Execution Monitoring",
+              "status": "ON"
+            },
+            {
+              "name": "Filesystem Visibility",
+              "status": "ON"
+            },
+            {
+              "name": "Network Visibility",
+              "status": "ON"
+            },
+            {
+              "name": "Http Visibility",
+              "status": "ON"
+            },
+            {
+              "name": "FTP Visibility ",
+              "status": "ON"
+            },
+            {
+              "name": "TLS Visibility",
+              "status": "ON"
+            },
+            {
+              "name": "Extended Command Line Visibility",
+              "status": "ON"
+            },
+            {
+              "name": "Email Protocol Visibility",
+              "status": "ON"
+            },
+            {
+              "name": "Memory Visibility",
+              "status": "ON"
+            },
+            {
+              "name": "D-Bus Visibility",
+              "status": "OFF"
+            },
+            {
+              "name": "Enhance PHP Visibility",
+              "status": "ON"
+            },
+            {
+              "name": "PHP Script Optimization",
+              "status": "OFF"
+            },
+            {
+              "name": "SSH Visibility",
+              "status": "ON"
+            },
+            {
+              "name": "Enhance Systemd Visibility",
+              "status": "OFF"
+            }
+          ],
+          "Cloud Machine Learning": [
+            {
+              "name": "Cloud Anti-malware",
+              "status": "{'detection': 'AGGRESSIVE', 'prevention': 'AGGRESSIVE'}"
+            }
+          ],
+          "Sensor Machine Learning": [
+            {
+              "name": "Sensor Anti-malware",
+              "status": "{'detection': 'AGGRESSIVE', 'prevention': 'AGGRESSIVE'}"
+            }
+          ],
+          "Quarantine": [
+            {
+              "name": "Quarantine",
+              "status": "ON"
+            }
+          ],
+          "On Write Script File Visibility": [
+            {
+              "name": "On Write Script File Visibility",
+              "status": "ON"
+            }
+          ],
+          "Execution Blocking": [
+            {
+              "name": "Custom Blocking",
+              "status": "ON"
+            },
+            {
+              "name": "Suspicious Processes",
+              "status": "ON"
+            }
+          ]
+        }
+      }
+    ],
+    "Sensor Update": [
+      {
+        "name": "TSA_Linux_System_Sensor_Update",
+        "enabled": true,
+        "platform": "Linux",
+        "settings": {
+          "Config": [
+            {
+              "name": "build",
+              "status": "18708|n-1|tagged|5"
+            },
+            {
+              "name": "is_lts_build",
+              "status": "False"
+            },
+            {
+              "name": "uninstall_protection",
+              "status": "ENABLED"
+            },
+            {
+              "name": "show_early_adopter_builds",
+              "status": "True"
+            },
+            {
+              "name": "sensor_version",
+              "status": "7.34.18708"
+            },
+            {
+              "name": "stage",
+              "status": "prod"
+            },
+            {
+              "name": "variants",
+              "status": "[{'build': '18708|n-1|tagged|7', 'sensor_version': '7.34.18708', 'platform': 'LinuxArm64', 'stage': 'prod', 'is_lts_build': False}, {'build': '18708|n-1|tagged|18', 'sensor_version': '7.34.18708', 'platform': 'ZLinux', 'stage': 'prod', 'is_lts_build': False}]"
+            },
+            {
+              "name": "scheduler",
+              "status": "{'enabled': False, 'timezone': '', 'schedules': []}"
+            }
+          ]
+        }
+      }
+    ],
+    "Response": [
+      {
+        "name": "TSA_Linux_System_Responce_Police",
+        "enabled": true,
+        "platform": "Linux",
+        "settings": {}
+      }
+    ]
+  },
+  "TSA_SRV_SAP": {
+    "Prevention": [
+      {
+        "name": "Teknosa Phase 1 - initial deployment",
+        "enabled": true,
+        "platform": "Windows",
+        "settings": {
+          "User-Mode Capabilities": [
+            {
+              "name": "Notify End Users",
+              "status": "ON"
+            },
+            {
+              "name": "Sensor Tampering Protection",
+              "status": "ON"
+            }
+          ],
+          "Enhanced Visibility": [
+            {
+              "name": "Additional User Mode Data",
+              "status": "ON"
+            },
+            {
+              "name": "Interpreter-Only",
+              "status": "OFF"
+            },
+            {
+              "name": "Engine (Full Visibility)",
+              "status": "ON"
+            },
+            {
+              "name": "Script-Based Execution Monitoring",
+              "status": "OFF"
+            },
+            {
+              "name": "HTTP Detections",
+              "status": "ON"
+            },
+            {
+              "name": "Redact HTTP Detection Details",
+              "status": "ON"
+            },
+            {
+              "name": "Hardware-Enhanced Exploit Detection",
+              "status": "ON"
+            },
+            {
+              "name": "Enhanced Exploitation Visibility",
+              "status": "ON"
+            },
+            {
+              "name": "Extended User Mode Data",
+              "status": "{'detection': 'DISABLED', 'prevention': 'DISABLED'}"
+            },
+            {
+              "name": "Enhanced DLL Load Visibility",
+              "status": "ON"
+            },
+            {
+              "name": "WSL2 Visibility",
+              "status": "OFF"
+            }
+          ],
+          "Hardware-Enhanced Visibility": [
+            {
+              "name": "Memory Scanning",
+              "status": "ON"
+            },
+            {
+              "name": "Scan with CPU",
+              "status": "OFF"
+            }
+          ],
+          "Firmware": [
+            {
+              "name": "BIOS Deep Visibility",
+              "status": "OFF"
+            }
+          ],
+          "Cloud Machine Learning": [
+            {
+              "name": "Cloud Anti-malware",
+              "status": "{'detection': 'MODERATE', 'prevention': 'DISABLED'}"
+            },
+            {
+              "name": "Adware & PUP",
+              "status": "{'detection': 'MODERATE', 'prevention': 'DISABLED'}"
+            }
+          ],
+          "Sensor Machine Learning": [
+            {
+              "name": "Sensor Anti-malware",
+              "status": "{'detection': 'MODERATE', 'prevention': 'DISABLED'}"
+            },
+            {
+              "name": "Enhanced ML for larger files",
+              "status": "OFF"
+            }
+          ],
+          "On-Demand Scans Machine Learning": [
+            {
+              "name": "Sensor Anti-malware for End-User Initiated Scans",
+              "status": "{'detection': 'MODERATE', 'prevention': 'DISABLED'}"
+            },
+            {
+              "name": "Cloud Anti-malware for End-User Initiated Scans",
+              "status": "{'detection': 'MODERATE', 'prevention': 'DISABLED'}"
+            },
+            {
+              "name": "Cloud PUP/Adware for End-User Initiated Scans",
+              "status": "{'detection': 'MODERATE', 'prevention': 'DISABLED'}"
+            }
+          ],
+          "On-Demand Scans": [
+            {
+              "name": "USB Insertion Triggered Scan",
+              "status": "ON"
+            }
+          ],
+          "On Write": [
+            {
+              "name": "Detect on Write",
+              "status": "ON"
+            },
+            {
+              "name": "Quarantine on Write",
+              "status": "OFF"
+            },
+            {
+              "name": "On Write Script File Visibility",
+              "status": "OFF"
+            }
+          ],
+          "Quarantine": [
+            {
+              "name": "Quarantine & Security Center Registration",
+              "status": "OFF"
+            },
+            {
+              "name": "Quarantine on Removable Media",
+              "status": "OFF"
+            }
+          ],
+          "Microsoft Office File Macro Machine Learning": [
+            {
+              "name": "Cloud Anti-malware For Microsoft Office Files",
+              "status": "{'detection': 'MODERATE', 'prevention': 'DISABLED'}"
+            }
+          ],
+          "Clean Infected Microsoft Office Files": [
+            {
+              "name": "Microsoft Office File Malicious Macro Removal",
+              "status": "OFF"
+            }
+          ],
+          "Execution Blocking": [
+            {
+              "name": "Custom Blocking",
+              "status": "ON"
+            },
+            {
+              "name": "Suspicious Processes",
+              "status": "OFF"
+            },
+            {
+              "name": "Suspicious Registry Operations",
+              "status": "OFF"
+            },
+            {
+              "name": "Boot Configuration Database Protection",
+              "status": "OFF"
+            },
+            {
+              "name": "File System Containment",
+              "status": "OFF"
+            },
+            {
+              "name": "Suspicious Scripts and Commands",
+              "status": "OFF"
+            },
+            {
+              "name": "Intelligence-Sourced Threats",
+              "status": "ON"
+            },
+            {
+              "name": "Driver Load Prevention",
+              "status": "OFF"
+            },
+            {
+              "name": "Vulnerable Driver Protection",
+              "status": "ON"
+            }
+          ],
+          "Exploit Mitigation": [
+            {
+              "name": "Force ASLR",
+              "status": "OFF"
+            },
+            {
+              "name": "Force DEP",
+              "status": "OFF"
+            },
+            {
+              "name": "Heap Spray Preallocation",
+              "status": "OFF"
+            },
+            {
+              "name": "NULL Page Allocation",
+              "status": "OFF"
+            },
+            {
+              "name": "SEH Overwrite Protection",
+              "status": "OFF"
+            }
+          ],
+          "Ransomware": [
+            {
+              "name": "Backup Deletion",
+              "status": "ON"
+            },
+            {
+              "name": "Cryptowall",
+              "status": "ON"
+            },
+            {
+              "name": "File Encryption",
+              "status": "ON"
+            },
+            {
+              "name": "Locky",
+              "status": "ON"
+            },
+            {
+              "name": "File System Access",
+              "status": "ON"
+            },
+            {
+              "name": "Volume Shadow Copy - Audit",
+              "status": "ON"
+            },
+            {
+              "name": "Volume Shadow Copy - Protect",
+              "status": "OFF"
+            }
+          ],
+          "Exploitation Behavior": [
+            {
+              "name": "Application Exploitation Activity",
+              "status": "ON"
+            },
+            {
+              "name": "Chopper Webshell",
+              "status": "ON"
+            },
+            {
+              "name": "Drive-by Download",
+              "status": "ON"
+            },
+            {
+              "name": "Code Injection",
+              "status": "ON"
+            },
+            {
+              "name": "JavaScript Execution Via Rundll32",
+              "status": "ON"
+            }
+          ],
+          "Lateral Movement and Credential Access": [
+            {
+              "name": "Windows Logon Bypass (\"Sticky Keys\")",
+              "status": "ON"
+            },
+            {
+              "name": "Credential Dumping",
+              "status": "ON"
+            }
+          ],
+          "Remediation": [
+            {
+              "name": "Advanced Remediation",
+              "status": "ON"
+            }
+          ],
+          "Behavioral Detections": [
+            {
+              "name": "Cloud-based Anomalous Process Execution",
+              "status": "{'detection': 'CAUTIOUS'}"
+            }
+          ]
+        }
+      }
+    ],
+    "Device Control": [
+      {
+        "name": "Teknos_ Device_Policy_Windows",
+        "enabled": true,
+        "platform": "Windows",
+        "settings": {
+          "Config": [
+            {
+              "name": "enforcement_mode",
+              "status": "MONITOR_ONLY"
+            },
+            {
+              "name": "end_user_notification",
+              "status": "SILENT"
+            },
+            {
+              "name": "custom_notifications",
+              "status": "{'blocked_notification': {'use_custom': False, 'custom_message': \"Your removable device is blocked by your organization's policy\"}, 'restricted_notification': {'use_custom': False, 'custom_message': \"Functions of your removable device are restricted by your organization's policy\"}}"
+            },
+            {
+              "name": "classes",
+              "status": "[{'id': 'ANY', 'action': 'FULL_ACCESS', 'exceptions': []}, {'id': 'AUDIO_VIDEO', 'action': 'FULL_ACCESS', 'exceptions': []}, {'id': 'IMAGING', 'action': 'FULL_ACCESS', 'exceptions': []}, {'id': 'MASS_STORAGE', 'action': 'FULL_ACCESS', 'exceptions': []}, {'id': 'MOBILE', 'action': 'FULL_ACCESS', 'exceptions': []}, {'id': 'PRINTER', 'action': 'FULL_ACCESS', 'exceptions': []}, {'id': 'WIRELESS', 'action': 'FULL_ACCESS', 'exceptions': []}]"
+            },
+            {
+              "name": "enhanced_file_metadata",
+              "status": "False"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "TSA_SRV_Windows": {
+    "Prevention": [
+      {
+        "name": "TSA_Win_Server_Standard_Phase 2",
+        "enabled": true,
+        "platform": "Windows",
+        "settings": {
+          "User-Mode Capabilities": [
+            {
+              "name": "Notify End Users",
+              "status": "ON"
+            },
+            {
+              "name": "Sensor Tampering Protection",
+              "status": "ON"
+            }
+          ],
+          "Enhanced Visibility": [
+            {
+              "name": "Additional User Mode Data",
+              "status": "ON"
+            },
+            {
+              "name": "Interpreter-Only",
+              "status": "ON"
+            },
+            {
+              "name": "Engine (Full Visibility)",
+              "status": "ON"
+            },
+            {
+              "name": "Script-Based Execution Monitoring",
+              "status": "ON"
+            },
+            {
+              "name": "HTTP Detections",
+              "status": "ON"
+            },
+            {
+              "name": "Redact HTTP Detection Details",
+              "status": "ON"
+            },
+            {
+              "name": "Hardware-Enhanced Exploit Detection",
+              "status": "ON"
+            },
+            {
+              "name": "Enhanced Exploitation Visibility",
+              "status": "ON"
+            },
+            {
+              "name": "Extended User Mode Data",
+              "status": "{'detection': 'CAUTIOUS', 'prevention': 'DISABLED'}"
+            },
+            {
+              "name": "Enhanced DLL Load Visibility",
+              "status": "ON"
+            },
+            {
+              "name": "WSL2 Visibility",
+              "status": "OFF"
+            }
+          ],
+          "Hardware-Enhanced Visibility": [
+            {
+              "name": "Memory Scanning",
+              "status": "ON"
+            },
+            {
+              "name": "Scan with CPU",
+              "status": "ON"
+            }
+          ],
+          "Firmware": [
+            {
+              "name": "BIOS Deep Visibility",
+              "status": "OFF"
+            }
+          ],
+          "Cloud Machine Learning": [
+            {
+              "name": "Cloud Anti-malware",
+              "status": "{'detection': 'AGGRESSIVE', 'prevention': 'MODERATE'}"
+            },
+            {
+              "name": "Adware & PUP",
+              "status": "{'detection': 'AGGRESSIVE', 'prevention': 'MODERATE'}"
+            }
+          ],
+          "Sensor Machine Learning": [
+            {
+              "name": "Sensor Anti-malware",
+              "status": "{'detection': 'AGGRESSIVE', 'prevention': 'MODERATE'}"
+            },
+            {
+              "name": "Enhanced ML for larger files",
+              "status": "ON"
+            }
+          ],
+          "On-Demand Scans Machine Learning": [
+            {
+              "name": "Sensor Anti-malware for End-User Initiated Scans",
+              "status": "{'detection': 'AGGRESSIVE', 'prevention': 'MODERATE'}"
+            },
+            {
+              "name": "Cloud Anti-malware for End-User Initiated Scans",
+              "status": "{'detection': 'AGGRESSIVE', 'prevention': 'MODERATE'}"
+            },
+            {
+              "name": "Cloud PUP/Adware for End-User Initiated Scans",
+              "status": "{'detection': 'AGGRESSIVE', 'prevention': 'MODERATE'}"
+            }
+          ],
+          "On-Demand Scans": [
+            {
+              "name": "USB Insertion Triggered Scan",
+              "status": "ON"
+            }
+          ],
+          "On Write": [
+            {
+              "name": "Detect on Write",
+              "status": "ON"
+            },
+            {
+              "name": "Quarantine on Write",
+              "status": "ON"
+            },
+            {
+              "name": "On Write Script File Visibility",
+              "status": "OFF"
+            }
+          ],
+          "Quarantine": [
+            {
+              "name": "Quarantine & Security Center Registration",
+              "status": "ON"
+            },
+            {
+              "name": "Quarantine on Removable Media",
+              "status": "ON"
+            }
+          ],
+          "Microsoft Office File Macro Machine Learning": [
+            {
+              "name": "Cloud Anti-malware For Microsoft Office Files",
+              "status": "{'detection': 'AGGRESSIVE', 'prevention': 'MODERATE'}"
+            }
+          ],
+          "Clean Infected Microsoft Office Files": [
+            {
+              "name": "Microsoft Office File Malicious Macro Removal",
+              "status": "OFF"
+            }
+          ],
+          "Execution Blocking": [
+            {
+              "name": "Custom Blocking",
+              "status": "ON"
+            },
+            {
+              "name": "Suspicious Processes",
+              "status": "ON"
+            },
+            {
+              "name": "Suspicious Registry Operations",
+              "status": "ON"
+            },
+            {
+              "name": "Boot Configuration Database Protection",
+              "status": "ON"
+            },
+            {
+              "name": "File System Containment",
+              "status": "ON"
+            },
+            {
+              "name": "Suspicious Scripts and Commands",
+              "status": "ON"
+            },
+            {
+              "name": "Intelligence-Sourced Threats",
+              "status": "ON"
+            },
+            {
+              "name": "Driver Load Prevention",
+              "status": "ON"
+            },
+            {
+              "name": "Vulnerable Driver Protection",
+              "status": "ON"
+            }
+          ],
+          "Exploit Mitigation": [
+            {
+              "name": "Force ASLR",
+              "status": "OFF"
+            },
+            {
+              "name": "Force DEP",
+              "status": "OFF"
+            },
+            {
+              "name": "Heap Spray Preallocation",
+              "status": "ON"
+            },
+            {
+              "name": "NULL Page Allocation",
+              "status": "ON"
+            },
+            {
+              "name": "SEH Overwrite Protection",
+              "status": "ON"
+            }
+          ],
+          "Ransomware": [
+            {
+              "name": "Backup Deletion",
+              "status": "ON"
+            },
+            {
+              "name": "Cryptowall",
+              "status": "ON"
+            },
+            {
+              "name": "File Encryption",
+              "status": "ON"
+            },
+            {
+              "name": "Locky",
+              "status": "ON"
+            },
+            {
+              "name": "File System Access",
+              "status": "ON"
+            },
+            {
+              "name": "Volume Shadow Copy - Audit",
+              "status": "ON"
+            },
+            {
+              "name": "Volume Shadow Copy - Protect",
+              "status": "ON"
+            }
+          ],
+          "Exploitation Behavior": [
+            {
+              "name": "Application Exploitation Activity",
+              "status": "ON"
+            },
+            {
+              "name": "Chopper Webshell",
+              "status": "ON"
+            },
+            {
+              "name": "Drive-by Download",
+              "status": "ON"
+            },
+            {
+              "name": "Code Injection",
+              "status": "ON"
+            },
+            {
+              "name": "JavaScript Execution Via Rundll32",
+              "status": "ON"
+            }
+          ],
+          "Lateral Movement and Credential Access": [
+            {
+              "name": "Windows Logon Bypass (\"Sticky Keys\")",
+              "status": "ON"
+            },
+            {
+              "name": "Credential Dumping",
+              "status": "ON"
+            }
+          ],
+          "Remediation": [
+            {
+              "name": "Advanced Remediation",
+              "status": "ON"
+            }
+          ],
+          "Behavioral Detections": [
+            {
+              "name": "Cloud-based Anomalous Process Execution",
+              "status": "{'detection': 'MODERATE'}"
+            }
+          ]
+        }
+      }
+    ],
+    "Sensor Update": [
+      {
+        "name": "TSA_Windows_System_Sensor_Update",
+        "enabled": true,
+        "platform": "Windows",
+        "settings": {
+          "Config": [
+            {
+              "name": "build",
+              "status": "20505|n-1|tagged|1"
+            },
+            {
+              "name": "is_lts_build",
+              "status": "False"
+            },
+            {
+              "name": "uninstall_protection",
+              "status": "ENABLED"
+            },
+            {
+              "name": "show_early_adopter_builds",
+              "status": "True"
+            },
+            {
+              "name": "sensor_version",
+              "status": "7.33.20505"
+            },
+            {
+              "name": "stage",
+              "status": "prod"
+            },
+            {
+              "name": "variants",
+              "status": "None"
+            },
+            {
+              "name": "scheduler",
+              "status": "{'enabled': True, 'timezone': 'Europe/Istanbul', 'schedules': [{'start': '11:52', 'end': '12:52', 'days': [1]}]}"
+            }
+          ]
+        }
+      }
+    ],
+    "Response": [
+      {
+        "name": "TSA_Windows_System_Responce_Police",
+        "enabled": true,
+        "platform": "Windows",
+        "settings": {}
+      }
+    ]
+  },
+  "TSA_WKS_MacOS": {
+    "Prevention": [
+      {
+        "name": "TSA_MAC_Standard_Phase 3",
+        "enabled": true,
+        "platform": "Mac",
+        "settings": {
+          "User-Mode Capabilities": [
+            {
+              "name": "Notify End Users",
+              "status": "ON"
+            },
+            {
+              "name": "Sensor Tampering Protection",
+              "status": "ON"
+            }
+          ],
+          "Enhanced Visibility": [
+            {
+              "name": "Script-Based Execution Monitoring",
+              "status": "ON"
+            },
+            {
+              "name": "Enhanced Network Visibility and Detection",
+              "status": "OFF"
+            }
+          ],
+          "Cloud Machine Learning": [
+            {
+              "name": "Cloud Anti-malware",
+              "status": "{'detection': 'AGGRESSIVE', 'prevention': 'AGGRESSIVE'}"
+            },
+            {
+              "name": "Adware & PUP",
+              "status": "{'detection': 'AGGRESSIVE', 'prevention': 'AGGRESSIVE'}"
+            }
+          ],
+          "Sensor Machine Learning": [
+            {
+              "name": "Sensor Anti-malware",
+              "status": "{'detection': 'AGGRESSIVE', 'prevention': 'AGGRESSIVE'}"
+            },
+            {
+              "name": "Adware & PUP",
+              "status": "{'detection': 'AGGRESSIVE', 'prevention': 'AGGRESSIVE'}"
+            }
+          ],
+          "Quarantine": [
+            {
+              "name": "Quarantine",
+              "status": "ON"
+            }
+          ],
+          "On Write": [
+            {
+              "name": "Detect on Write",
+              "status": "ON"
+            },
+            {
+              "name": "Quarantine on Write",
+              "status": "ON"
+            }
+          ],
+          "Execution Blocking": [
+            {
+              "name": "Custom Blocking",
+              "status": "ON"
+            },
+            {
+              "name": "Suspicious Processes",
+              "status": "ON"
+            },
+            {
+              "name": "Intelligence-Sourced Threats",
+              "status": "ON"
+            }
+          ],
+          "Unauthorized Remote Access IOAs": [
+            {
+              "name": "XPCOM Shell",
+              "status": "ON"
+            },
+            {
+              "name": "Chopper Webshell",
+              "status": "ON"
+            },
+            {
+              "name": "Empyre Backdoor",
+              "status": "ON"
+            }
+          ],
+          "Credential Dumping IOAs": [
+            {
+              "name": "KcPassword Decoded",
+              "status": "ON"
+            },
+            {
+              "name": "Hash Collector",
+              "status": "ON"
+            }
+          ]
+        }
+      }
+    ],
+    "Sensor Update": [
+      {
+        "name": "TSA_MacOS_System_Sensor_Update",
+        "enabled": true,
+        "platform": "Mac",
+        "settings": {
+          "Config": [
+            {
+              "name": "build",
+              "status": "20604|n-1|tagged|3"
+            },
+            {
+              "name": "is_lts_build",
+              "status": "False"
+            },
+            {
+              "name": "uninstall_protection",
+              "status": "ENABLED"
+            },
+            {
+              "name": "show_early_adopter_builds",
+              "status": "False"
+            },
+            {
+              "name": "sensor_version",
+              "status": "7.34.20604"
+            },
+            {
+              "name": "stage",
+              "status": "prod"
+            },
+            {
+              "name": "variants",
+              "status": "None"
+            },
+            {
+              "name": "scheduler",
+              "status": "{'enabled': False, 'timezone': '', 'schedules': []}"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "TSA_WKS_Store_POS": {},
+  "TSA_Win_Server_DC": {
+    "Prevention": [
+      {
+        "name": "TSA_Win_Server_DC_Phase 3",
+        "enabled": true,
+        "platform": "Windows",
+        "settings": {
+          "User-Mode Capabilities": [
+            {
+              "name": "Notify End Users",
+              "status": "ON"
+            },
+            {
+              "name": "Sensor Tampering Protection",
+              "status": "ON"
+            }
+          ],
+          "Enhanced Visibility": [
+            {
+              "name": "Additional User Mode Data",
+              "status": "ON"
+            },
+            {
+              "name": "Interpreter-Only",
+              "status": "ON"
+            },
+            {
+              "name": "Engine (Full Visibility)",
+              "status": "ON"
+            },
+            {
+              "name": "Script-Based Execution Monitoring",
+              "status": "ON"
+            },
+            {
+              "name": "HTTP Detections",
+              "status": "ON"
+            },
+            {
+              "name": "Redact HTTP Detection Details",
+              "status": "ON"
+            },
+            {
+              "name": "Hardware-Enhanced Exploit Detection",
+              "status": "ON"
+            },
+            {
+              "name": "Enhanced Exploitation Visibility",
+              "status": "ON"
+            },
+            {
+              "name": "Extended User Mode Data",
+              "status": "{'detection': 'MODERATE', 'prevention': 'DISABLED'}"
+            },
+            {
+              "name": "Enhanced DLL Load Visibility",
+              "status": "ON"
+            },
+            {
+              "name": "WSL2 Visibility",
+              "status": "OFF"
+            }
+          ],
+          "Hardware-Enhanced Visibility": [
+            {
+              "name": "Memory Scanning",
+              "status": "ON"
+            },
+            {
+              "name": "Scan with CPU",
+              "status": "ON"
+            }
+          ],
+          "Firmware": [
+            {
+              "name": "BIOS Deep Visibility",
+              "status": "ON"
+            }
+          ],
+          "Cloud Machine Learning": [
+            {
+              "name": "Cloud Anti-malware",
+              "status": "{'detection': 'AGGRESSIVE', 'prevention': 'AGGRESSIVE'}"
+            },
+            {
+              "name": "Adware & PUP",
+              "status": "{'detection': 'AGGRESSIVE', 'prevention': 'AGGRESSIVE'}"
+            }
+          ],
+          "Sensor Machine Learning": [
+            {
+              "name": "Sensor Anti-malware",
+              "status": "{'detection': 'AGGRESSIVE', 'prevention': 'AGGRESSIVE'}"
+            },
+            {
+              "name": "Enhanced ML for larger files",
+              "status": "ON"
+            }
+          ],
+          "On-Demand Scans Machine Learning": [
+            {
+              "name": "Sensor Anti-malware for End-User Initiated Scans",
+              "status": "{'detection': 'AGGRESSIVE', 'prevention': 'MODERATE'}"
+            },
+            {
+              "name": "Cloud Anti-malware for End-User Initiated Scans",
+              "status": "{'detection': 'AGGRESSIVE', 'prevention': 'MODERATE'}"
+            },
+            {
+              "name": "Cloud PUP/Adware for End-User Initiated Scans",
+              "status": "{'detection': 'AGGRESSIVE', 'prevention': 'AGGRESSIVE'}"
+            }
+          ],
+          "On-Demand Scans": [
+            {
+              "name": "USB Insertion Triggered Scan",
+              "status": "ON"
+            }
+          ],
+          "On Write": [
+            {
+              "name": "Detect on Write",
+              "status": "ON"
+            },
+            {
+              "name": "Quarantine on Write",
+              "status": "ON"
+            },
+            {
+              "name": "On Write Script File Visibility",
+              "status": "OFF"
+            }
+          ],
+          "Quarantine": [
+            {
+              "name": "Quarantine & Security Center Registration",
+              "status": "ON"
+            },
+            {
+              "name": "Quarantine on Removable Media",
+              "status": "ON"
+            }
+          ],
+          "Microsoft Office File Macro Machine Learning": [
+            {
+              "name": "Cloud Anti-malware For Microsoft Office Files",
+              "status": "{'detection': 'AGGRESSIVE', 'prevention': 'MODERATE'}"
+            }
+          ],
+          "Clean Infected Microsoft Office Files": [
+            {
+              "name": "Microsoft Office File Malicious Macro Removal",
+              "status": "OFF"
+            }
+          ],
+          "Execution Blocking": [
+            {
+              "name": "Custom Blocking",
+              "status": "ON"
+            },
+            {
+              "name": "Suspicious Processes",
+              "status": "ON"
+            },
+            {
+              "name": "Suspicious Registry Operations",
+              "status": "ON"
+            },
+            {
+              "name": "Boot Configuration Database Protection",
+              "status": "ON"
+            },
+            {
+              "name": "File System Containment",
+              "status": "ON"
+            },
+            {
+              "name": "Suspicious Scripts and Commands",
+              "status": "ON"
+            },
+            {
+              "name": "Intelligence-Sourced Threats",
+              "status": "ON"
+            },
+            {
+              "name": "Driver Load Prevention",
+              "status": "ON"
+            },
+            {
+              "name": "Vulnerable Driver Protection",
+              "status": "ON"
+            }
+          ],
+          "Exploit Mitigation": [
+            {
+              "name": "Force ASLR",
+              "status": "ON"
+            },
+            {
+              "name": "Force DEP",
+              "status": "OFF"
+            },
+            {
+              "name": "Heap Spray Preallocation",
+              "status": "ON"
+            },
+            {
+              "name": "NULL Page Allocation",
+              "status": "ON"
+            },
+            {
+              "name": "SEH Overwrite Protection",
+              "status": "ON"
+            }
+          ],
+          "Ransomware": [
+            {
+              "name": "Backup Deletion",
+              "status": "ON"
+            },
+            {
+              "name": "Cryptowall",
+              "status": "ON"
+            },
+            {
+              "name": "File Encryption",
+              "status": "ON"
+            },
+            {
+              "name": "Locky",
+              "status": "ON"
+            },
+            {
+              "name": "File System Access",
+              "status": "ON"
+            },
+            {
+              "name": "Volume Shadow Copy - Audit",
+              "status": "ON"
+            },
+            {
+              "name": "Volume Shadow Copy - Protect",
+              "status": "ON"
+            }
+          ],
+          "Exploitation Behavior": [
+            {
+              "name": "Application Exploitation Activity",
+              "status": "ON"
+            },
+            {
+              "name": "Chopper Webshell",
+              "status": "ON"
+            },
+            {
+              "name": "Drive-by Download",
+              "status": "ON"
+            },
+            {
+              "name": "Code Injection",
+              "status": "ON"
+            },
+            {
+              "name": "JavaScript Execution Via Rundll32",
+              "status": "ON"
+            }
+          ],
+          "Lateral Movement and Credential Access": [
+            {
+              "name": "Windows Logon Bypass (\"Sticky Keys\")",
+              "status": "ON"
+            },
+            {
+              "name": "Credential Dumping",
+              "status": "ON"
+            }
+          ],
+          "Remediation": [
+            {
+              "name": "Advanced Remediation",
+              "status": "ON"
+            }
+          ],
+          "Behavioral Detections": [
+            {
+              "name": "Cloud-based Anomalous Process Execution",
+              "status": "{'detection': 'MODERATE'}"
+            }
+          ]
+        }
+      }
+    ],
+    "Sensor Update": [
+      {
+        "name": "TSA_Windows_System_Sensor_Update",
+        "enabled": true,
+        "platform": "Windows",
+        "settings": {
+          "Config": [
+            {
+              "name": "build",
+              "status": "20505|n-1|tagged|1"
+            },
+            {
+              "name": "is_lts_build",
+              "status": "False"
+            },
+            {
+              "name": "uninstall_protection",
+              "status": "ENABLED"
+            },
+            {
+              "name": "show_early_adopter_builds",
+              "status": "True"
+            },
+            {
+              "name": "sensor_version",
+              "status": "7.33.20505"
+            },
+            {
+              "name": "stage",
+              "status": "prod"
+            },
+            {
+              "name": "variants",
+              "status": "None"
+            },
+            {
+              "name": "scheduler",
+              "status": "{'enabled': True, 'timezone': 'Europe/Istanbul', 'schedules': [{'start': '11:52', 'end': '12:52', 'days': [1]}]}"
+            }
+          ]
+        }
+      }
+    ],
+    "Response": [
+      {
+        "name": "TSA_Windows_System_Responce_Police",
+        "enabled": true,
+        "platform": "Windows",
+        "settings": {}
+      }
+    ]
+  },
+  "TSA_Win_WKS_Office": {
+    "Prevention": [
+      {
+        "name": "TSA_Win_WKS_Office_Phase 2",
+        "enabled": true,
+        "platform": "Windows",
+        "settings": {
+          "User-Mode Capabilities": [
+            {
+              "name": "Notify End Users",
+              "status": "ON"
+            },
+            {
+              "name": "Sensor Tampering Protection",
+              "status": "ON"
+            }
+          ],
+          "Enhanced Visibility": [
+            {
+              "name": "Additional User Mode Data",
+              "status": "ON"
+            },
+            {
+              "name": "Interpreter-Only",
+              "status": "ON"
+            },
+            {
+              "name": "Engine (Full Visibility)",
+              "status": "ON"
+            },
+            {
+              "name": "Script-Based Execution Monitoring",
+              "status": "ON"
+            },
+            {
+              "name": "HTTP Detections",
+              "status": "ON"
+            },
+            {
+              "name": "Redact HTTP Detection Details",
+              "status": "ON"
+            },
+            {
+              "name": "Hardware-Enhanced Exploit Detection",
+              "status": "ON"
+            },
+            {
+              "name": "Enhanced Exploitation Visibility",
+              "status": "ON"
+            },
+            {
+              "name": "Extended User Mode Data",
+              "status": "{'detection': 'CAUTIOUS', 'prevention': 'DISABLED'}"
+            },
+            {
+              "name": "Enhanced DLL Load Visibility",
+              "status": "ON"
+            },
+            {
+              "name": "WSL2 Visibility",
+              "status": "OFF"
+            }
+          ],
+          "Hardware-Enhanced Visibility": [
+            {
+              "name": "Memory Scanning",
+              "status": "ON"
+            },
+            {
+              "name": "Scan with CPU",
+              "status": "ON"
+            }
+          ],
+          "Firmware": [
+            {
+              "name": "BIOS Deep Visibility",
+              "status": "OFF"
+            }
+          ],
+          "Cloud Machine Learning": [
+            {
+              "name": "Cloud Anti-malware",
+              "status": "{'detection': 'AGGRESSIVE', 'prevention': 'MODERATE'}"
+            },
+            {
+              "name": "Adware & PUP",
+              "status": "{'detection': 'AGGRESSIVE', 'prevention': 'MODERATE'}"
+            }
+          ],
+          "Sensor Machine Learning": [
+            {
+              "name": "Sensor Anti-malware",
+              "status": "{'detection': 'AGGRESSIVE', 'prevention': 'MODERATE'}"
+            },
+            {
+              "name": "Enhanced ML for larger files",
+              "status": "ON"
+            }
+          ],
+          "On-Demand Scans Machine Learning": [
+            {
+              "name": "Sensor Anti-malware for End-User Initiated Scans",
+              "status": "{'detection': 'AGGRESSIVE', 'prevention': 'MODERATE'}"
+            },
+            {
+              "name": "Cloud Anti-malware for End-User Initiated Scans",
+              "status": "{'detection': 'AGGRESSIVE', 'prevention': 'MODERATE'}"
+            },
+            {
+              "name": "Cloud PUP/Adware for End-User Initiated Scans",
+              "status": "{'detection': 'AGGRESSIVE', 'prevention': 'MODERATE'}"
+            }
+          ],
+          "On-Demand Scans": [
+            {
+              "name": "USB Insertion Triggered Scan",
+              "status": "ON"
+            }
+          ],
+          "On Write": [
+            {
+              "name": "Detect on Write",
+              "status": "ON"
+            },
+            {
+              "name": "Quarantine on Write",
+              "status": "ON"
+            },
+            {
+              "name": "On Write Script File Visibility",
+              "status": "OFF"
+            }
+          ],
+          "Quarantine": [
+            {
+              "name": "Quarantine & Security Center Registration",
+              "status": "ON"
+            },
+            {
+              "name": "Quarantine on Removable Media",
+              "status": "ON"
+            }
+          ],
+          "Microsoft Office File Macro Machine Learning": [
+            {
+              "name": "Cloud Anti-malware For Microsoft Office Files",
+              "status": "{'detection': 'AGGRESSIVE', 'prevention': 'MODERATE'}"
+            }
+          ],
+          "Clean Infected Microsoft Office Files": [
+            {
+              "name": "Microsoft Office File Malicious Macro Removal",
+              "status": "OFF"
+            }
+          ],
+          "Execution Blocking": [
+            {
+              "name": "Custom Blocking",
+              "status": "ON"
+            },
+            {
+              "name": "Suspicious Processes",
+              "status": "ON"
+            },
+            {
+              "name": "Suspicious Registry Operations",
+              "status": "ON"
+            },
+            {
+              "name": "Boot Configuration Database Protection",
+              "status": "ON"
+            },
+            {
+              "name": "File System Containment",
+              "status": "ON"
+            },
+            {
+              "name": "Suspicious Scripts and Commands",
+              "status": "ON"
+            },
+            {
+              "name": "Intelligence-Sourced Threats",
+              "status": "ON"
+            },
+            {
+              "name": "Driver Load Prevention",
+              "status": "ON"
+            },
+            {
+              "name": "Vulnerable Driver Protection",
+              "status": "ON"
+            }
+          ],
+          "Exploit Mitigation": [
+            {
+              "name": "Force ASLR",
+              "status": "OFF"
+            },
+            {
+              "name": "Force DEP",
+              "status": "OFF"
+            },
+            {
+              "name": "Heap Spray Preallocation",
+              "status": "ON"
+            },
+            {
+              "name": "NULL Page Allocation",
+              "status": "ON"
+            },
+            {
+              "name": "SEH Overwrite Protection",
+              "status": "ON"
+            }
+          ],
+          "Ransomware": [
+            {
+              "name": "Backup Deletion",
+              "status": "ON"
+            },
+            {
+              "name": "Cryptowall",
+              "status": "ON"
+            },
+            {
+              "name": "File Encryption",
+              "status": "ON"
+            },
+            {
+              "name": "Locky",
+              "status": "ON"
+            },
+            {
+              "name": "File System Access",
+              "status": "ON"
+            },
+            {
+              "name": "Volume Shadow Copy - Audit",
+              "status": "ON"
+            },
+            {
+              "name": "Volume Shadow Copy - Protect",
+              "status": "ON"
+            }
+          ],
+          "Exploitation Behavior": [
+            {
+              "name": "Application Exploitation Activity",
+              "status": "ON"
+            },
+            {
+              "name": "Chopper Webshell",
+              "status": "ON"
+            },
+            {
+              "name": "Drive-by Download",
+              "status": "ON"
+            },
+            {
+              "name": "Code Injection",
+              "status": "ON"
+            },
+            {
+              "name": "JavaScript Execution Via Rundll32",
+              "status": "ON"
+            }
+          ],
+          "Lateral Movement and Credential Access": [
+            {
+              "name": "Windows Logon Bypass (\"Sticky Keys\")",
+              "status": "ON"
+            },
+            {
+              "name": "Credential Dumping",
+              "status": "ON"
+            }
+          ],
+          "Remediation": [
+            {
+              "name": "Advanced Remediation",
+              "status": "ON"
+            }
+          ],
+          "Behavioral Detections": [
+            {
+              "name": "Cloud-based Anomalous Process Execution",
+              "status": "{'detection': 'MODERATE'}"
+            }
+          ]
+        }
+      }
+    ],
+    "Sensor Update": [
+      {
+        "name": "TSA_Windows_System_Sensor_Update",
+        "enabled": true,
+        "platform": "Windows",
+        "settings": {
+          "Config": [
+            {
+              "name": "build",
+              "status": "20505|n-1|tagged|1"
+            },
+            {
+              "name": "is_lts_build",
+              "status": "False"
+            },
+            {
+              "name": "uninstall_protection",
+              "status": "ENABLED"
+            },
+            {
+              "name": "show_early_adopter_builds",
+              "status": "True"
+            },
+            {
+              "name": "sensor_version",
+              "status": "7.33.20505"
+            },
+            {
+              "name": "stage",
+              "status": "prod"
+            },
+            {
+              "name": "variants",
+              "status": "None"
+            },
+            {
+              "name": "scheduler",
+              "status": "{'enabled': True, 'timezone': 'Europe/Istanbul', 'schedules': [{'start': '11:52', 'end': '12:52', 'days': [1]}]}"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
