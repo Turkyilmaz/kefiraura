@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-TeknoSA CrowdStrike Weekly Health Check Report
+{{CUSTOMER_NAME}} CrowdStrike Weekly Health Check Report
 Her Cuma 15:00 (Istanbul) otomatik çalışır.
 """
 
@@ -370,7 +370,7 @@ def main():
     ws_sum.sheet_properties.tabColor = ORANGE
     ws_sum.sheet_view.showGridLines = False
     ws_sum.merge_cells("A1:L1")
-    ws_sum["A1"] = "TeknoSA – CrowdStrike Security Dashboard"
+    ws_sum["A1"] = "{{CUSTOMER_NAME}} – CrowdStrike Security Dashboard"
     ws_sum["A1"].fill = fill(NAVY); ws_sum["A1"].font = fnt(WHITE, bold=True, size=16)
     ws_sum["A1"].alignment = Alignment(horizontal="center", vertical="center")
     ws_sum.row_dimensions[1].height = 40
@@ -452,7 +452,7 @@ def main():
     ws_risk = wb.create_sheet("Risk & Actions")
     ws_risk.sheet_properties.tabColor = "C00000"
     ws_risk.merge_cells("A1:E1")
-    ws_risk["A1"] = "TeknoSA – Risk & Action Required"
+    ws_risk["A1"] = "{{CUSTOMER_NAME}} – Risk & Action Required"
     ws_risk["A1"].fill = fill(NAVY); ws_risk["A1"].font = fnt(WHITE, bold=True, size=14)
     ws_risk["A1"].alignment = Alignment(horizontal="center", vertical="center")
     ws_risk.row_dimensions[1].height = 35
@@ -529,7 +529,7 @@ def main():
     HEADERS = ["Hostname","Status","Platform","Device Type","OS Version","Local IP",
                "Sensor Version","Last Seen","Host Groups","Prevention Policy","Sensor Update Policy","Last Logged In User"]
     ws_hosts.merge_cells(f"A1:{get_column_letter(len(HEADERS))}1")
-    ws_hosts["A1"] = f"TeknoSA – CrowdStrike Host Inventory  ({len(hosts)} hosts)"
+    ws_hosts["A1"] = f"{{CUSTOMER_NAME}} – CrowdStrike Host Inventory  ({len(hosts)} hosts)"
     ws_hosts["A1"].fill = fill(NAVY); ws_hosts["A1"].font = fnt(WHITE, bold=True, size=14)
     ws_hosts["A1"].alignment = Alignment(horizontal="center", vertical="center")
     ws_hosts.row_dimensions[1].height = 35
@@ -584,7 +584,7 @@ def main():
     ws1 = wb.create_sheet("Host Grupları"); set_outline(ws1)
     ws1.sheet_properties.tabColor = ORANGE
     ws1.merge_cells("A1:E1")
-    ws1["A1"] = "TeknoSA – CrowdStrike Host Grupları"
+    ws1["A1"] = "{{CUSTOMER_NAME}} – CrowdStrike Host Grupları"
     ws1["A1"].fill = fill(NAVY); ws1["A1"].font = fnt(WHITE, bold=True, size=14)
     ws1["A1"].alignment = Alignment(horizontal="center", vertical="center")
     ws1.row_dimensions[1].height = 35
@@ -622,7 +622,7 @@ def main():
     ws2 = wb.create_sheet("Policy Atamaları"); set_outline(ws2)
     ws2.sheet_properties.tabColor = ORANGE
     ws2.merge_cells("A1:D1")
-    ws2["A1"] = "TeknoSA – Host Grubu / Policy Atamaları"
+    ws2["A1"] = "{{CUSTOMER_NAME}} – Host Grubu / Policy Atamaları"
     ws2["A1"].fill = fill(NAVY); ws2["A1"].font = fnt(WHITE, bold=True, size=14)
     ws2["A1"].alignment = Alignment(horizontal="center", vertical="center")
     ws2.row_dimensions[1].height = 35
@@ -680,7 +680,7 @@ def main():
     ws3 = wb.create_sheet("Policy Detayları"); set_outline(ws3)
     ws3.sheet_properties.tabColor = ORANGE
     ws3.merge_cells("A1:D1")
-    ws3["A1"] = "TeknoSA – CrowdStrike Policy Details"
+    ws3["A1"] = "{{CUSTOMER_NAME}} – CrowdStrike Policy Details"
     ws3["A1"].fill = fill(NAVY); ws3["A1"].font = fnt(WHITE, bold=True, size=14)
     ws3["A1"].alignment = Alignment(horizontal="center", vertical="center")
     ws3.row_dimensions[1].height = 35
@@ -775,7 +775,7 @@ def main():
     ws_excl.sheet_properties.tabColor = "808080"
     EXCL_HEADERS = ["Type","Value","Comment","Applied Globally","Groups","Created By","Created On","Modified By","Modified On"]
     ws_excl.merge_cells(f"A1:{get_column_letter(len(EXCL_HEADERS))}1")
-    ws_excl["A1"] = f"TeknoSA – CrowdStrike Exclusions  ({len(ml_details)+len(ioa_details)+len(sv_details)} total)"
+    ws_excl["A1"] = f"{{CUSTOMER_NAME}} – CrowdStrike Exclusions  ({len(ml_details)+len(ioa_details)+len(sv_details)} total)"
     ws_excl["A1"].fill = fill(NAVY); ws_excl["A1"].font = fnt(WHITE, bold=True, size=14)
     ws_excl["A1"].alignment = Alignment(horizontal="center", vertical="center")
     ws_excl.row_dimensions[1].height = 35
@@ -872,7 +872,7 @@ def main():
                   "First Seen", "Last Seen", "Review Status"]
 
     ws_ua.merge_cells(f"A1:{get_column_letter(len(UA_HEADERS))}1")
-    ws_ua["A1"] = f"TeknoSA – Unmanaged Assets  ({len(ua_filtered)} assets)"
+    ws_ua["A1"] = f"{{CUSTOMER_NAME}} – Unmanaged Assets  ({len(ua_filtered)} assets)"
     ws_ua["A1"].fill = fill(NAVY); ws_ua["A1"].font = fnt(WHITE, bold=True, size=14)
     ws_ua["A1"].alignment = Alignment(horizontal="center", vertical="center")
     ws_ua.row_dimensions[1].height = 35
@@ -961,7 +961,7 @@ def main():
                   "Total Disk (MB)", "Used Disk %", "Last Seen"]
 
     ws_hm.merge_cells(f"A1:{get_column_letter(len(HM_HEADERS))}1")
-    ws_hm["A1"] = f"TeknoSA – High Memory Usage (>80%)  ({len(hm_hosts)} hosts)"
+    ws_hm["A1"] = f"{{CUSTOMER_NAME}} – High Memory Usage (>80%)  ({len(hm_hosts)} hosts)"
     ws_hm["A1"].fill = fill(NAVY); ws_hm["A1"].font = fnt(WHITE, bold=True, size=14)
     ws_hm["A1"].alignment = Alignment(horizontal="center", vertical="center")
     ws_hm.row_dimensions[1].height = 35
