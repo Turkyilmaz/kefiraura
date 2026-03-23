@@ -821,6 +821,197 @@ def main():
     for col_i, w in enumerate([16,55,30,16,30,25,16,25,16],1):
         set_col_width(ws_excl, col_i, w)
 
+    # ── UNMANAGED ASSETS ────────────────────────────────────
+    print("  Unmanaged Assets çekiliyor...")
+    import ipaddress as ipmod
+
+    ua_all_ids = []
+    ua_after = None
+    while True:
+        params = {"limit": 100, "filter": "data_providers:'Falcon passive discovery'"}
+        if ua_after:
+            params["after"] = ua_after
+        r_ua = requests.get(f"{BASE_URL}/discover/queries/hosts/v1",
+            headers=H, params=params, timeout=15)
+        ua_data = r_ua.json()
+        ua_ids = ua_data.get("resources", [])
+        ua_after = ua_data.get("meta",{}).get("pagination",{}).get("after")
+        if not ua_ids: break
+        ua_all_ids.extend(ua_ids)
+        if not ua_after: break
+
+    ua_hosts_raw = []
+    for i in range(0, len(ua_all_ids), 100):
+        r_ua2 = requests.get(f"{BASE_URL}/discover/entities/hosts/v1",
+            headers=H, params=[("ids", id_) for id_ in ua_all_ids[i:i+100]], timeout=15)
+        if r_ua2.status_code == 200:
+            ua_hosts_raw.extend(r_ua2.json().get("resources", []))
+
+    ua_filtered = []
+    for h in ua_hosts_raw:
+        ips = [ni.get("local_ip","") for ni in (h.get("network_interfaces") or [])]
+        if not ips:
+            ip = h.get("current_local_ip","")
+            ips = [ip] if ip else []
+        has_10x = any(str(ipmod.ip_address(ip)).startswith("10.") for ip in ips if ip)
+        if not has_10x: continue
+        discoverers = h.get("discoverer_hostnames") or []
+        clean = [d for d in discoverers if "$" not in d]
+        if not clean: continue
+        h["_ips"] = ips
+        h["_clean_discoverers"] = clean
+        ua_filtered.append(h)
+
+    print(f"  Unmanaged: {len(ua_filtered)} host")
+
+    ws_ua = wb.create_sheet("Unmanaged Assets")
+    ws_ua.sheet_properties.tabColor = "7030A0"
+
+    UA_HEADERS = ["Hostname (Discoverer)", "IP Address History", "Manufacturer",
+                  "Data Providers", "Entity Type", "Confidence",
+                  "First Seen", "Last Seen", "Review Status"]
+
+    ws_ua.merge_cells(f"A1:{get_column_letter(len(UA_HEADERS))}1")
+    ws_ua["A1"] = f"TeknoSA – Unmanaged Assets  ({len(ua_filtered)} assets)"
+    ws_ua["A1"].fill = fill(NAVY); ws_ua["A1"].font = fnt(WHITE, bold=True, size=14)
+    ws_ua["A1"].alignment = Alignment(horizontal="center", vertical="center")
+    ws_ua.row_dimensions[1].height = 35
+
+    for col_i, h in enumerate(UA_HEADERS, 1):
+        c = ws_ua.cell(row=2, column=col_i, value=h)
+        c.fill = fill(ORANGE); c.font = fnt(WHITE, bold=True, size=9)
+        c.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+        c.border = thin_border()
+    ws_ua.row_dimensions[2].height = 22
+
+    conf_map = {0:"Low", 25:"Low", 50:"Medium", 75:"High", 100:"Very High"}
+
+    for idx, h in enumerate(sorted(ua_filtered, key=lambda x: x.get("last_seen_timestamp",""), reverse=True), 1):
+        row = idx + 2
+        bg = WHITE if idx % 2 != 0 else GRAY
+
+        conf_val = h.get("confidence", 0)
+        conf_label = conf_map.get(conf_val, str(conf_val))
+        if conf_val >= 75: conf_color = GREEN_FG; conf_bg = GREEN_BG
+        elif conf_val >= 50: conf_color = YELLOW_FG; conf_bg = YELLOW_BG
+        else: conf_color = RED_FG; conf_bg = RED_BG
+
+        row_data = [
+            ", ".join(h["_clean_discoverers"]),
+            ", ".join(h["_ips"]),
+            h.get("system_manufacturer","—") or "—",
+            ", ".join(h.get("data_providers") or []),
+            h.get("entity_type","—").capitalize(),
+            conf_label,
+            fmt_date(h.get("first_seen_timestamp","")),
+            fmt_date(h.get("last_seen_timestamp","")),
+            h.get("review_status","Not Reviewed") or "Not Reviewed",
+        ]
+
+        for col_i, val in enumerate(row_data, 1):
+            c = ws_ua.cell(row=row, column=col_i, value=val)
+            c.border = thin_border()
+            c.alignment = Alignment(horizontal="left", vertical="center", wrap_text=True)
+            if col_i == 6:
+                c.fill = fill(conf_bg); c.font = fnt(conf_color, bold=True, size=9)
+                c.alignment = Alignment(horizontal="center", vertical="center")
+            else:
+                c.fill = fill(bg); c.font = fnt(NAVY if col_i==1 else "000000", bold=(col_i==1), size=9)
+        ws_ua.row_dimensions[row].height = 18
+
+    ws_ua.freeze_panes = "A3"
+    for col_i, w in enumerate([35, 20, 25, 22, 14, 12, 16, 16, 16], 1):
+        set_col_width(ws_ua, col_i, w)
+
+    # ── HIGH MEMORY USAGE ───────────────────────────────────
+    print("  High Memory Usage çekiliyor...")
+
+    hm_all_ids = []
+    hm_after = None
+    while True:
+        params = {"limit": 100, "filter": "average_memory_usage_pct:>80",
+                  "sort": "average_memory_usage_pct.desc"}
+        if hm_after:
+            params["after"] = hm_after
+        r_hm = requests.get(f"{BASE_URL}/discover/queries/hosts/v1",
+            headers=H, params=params, timeout=15)
+        hm_data = r_hm.json()
+        hm_ids = hm_data.get("resources", [])
+        hm_after = hm_data.get("meta",{}).get("pagination",{}).get("after")
+        if not hm_ids: break
+        hm_all_ids.extend(hm_ids)
+        if not hm_after: break
+
+    hm_hosts = []
+    for i in range(0, len(hm_all_ids), 100):
+        r_hm2 = requests.get(f"{BASE_URL}/discover/entities/hosts/v1",
+            headers=H, params=[("ids", id_) for id_ in hm_all_ids[i:i+100]], timeout=15)
+        if r_hm2.status_code == 200:
+            hm_hosts.extend(r_hm2.json().get("resources", []))
+
+    hm_hosts.sort(key=lambda x: x.get("average_memory_usage_pct", 0), reverse=True)
+    print(f"  High Memory: {len(hm_hosts)} host")
+
+    ws_hm = wb.create_sheet("High Memory Usage")
+    ws_hm.sheet_properties.tabColor = RED_FG
+
+    HM_HEADERS = ["Hostname", "OS Version", "Platform",
+                  "Total Memory (MB)", "Avg Memory Usage (MB)", "Avg Memory %",
+                  "Max Memory %", "Avg CPU %", "Max CPU %",
+                  "Total Disk (MB)", "Used Disk %", "Last Seen"]
+
+    ws_hm.merge_cells(f"A1:{get_column_letter(len(HM_HEADERS))}1")
+    ws_hm["A1"] = f"TeknoSA – High Memory Usage (>80%)  ({len(hm_hosts)} hosts)"
+    ws_hm["A1"].fill = fill(NAVY); ws_hm["A1"].font = fnt(WHITE, bold=True, size=14)
+    ws_hm["A1"].alignment = Alignment(horizontal="center", vertical="center")
+    ws_hm.row_dimensions[1].height = 35
+
+    for col_i, h in enumerate(HM_HEADERS, 1):
+        c = ws_hm.cell(row=2, column=col_i, value=h)
+        c.fill = fill(ORANGE); c.font = fnt(WHITE, bold=True, size=9)
+        c.alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+        c.border = thin_border()
+    ws_hm.row_dimensions[2].height = 22
+
+    for idx, h in enumerate(hm_hosts, 1):
+        row = idx + 2
+        mem_pct = h.get("average_memory_usage_pct", 0)
+        if mem_pct >= 95: bg = RED_BG
+        elif mem_pct >= 90: bg = YELLOW_BG
+        else: bg = WHITE if idx % 2 != 0 else GRAY
+
+        row_data = [
+            h.get("hostname","—") or "—",
+            h.get("os_version","—") or "—",
+            h.get("platform_name","—") or "—",
+            h.get("total_memory","—"),
+            h.get("average_memory_usage","—"),
+            f"{mem_pct}%",
+            f"{h.get('max_memory_usage_pct','—')}%",
+            f"{h.get('average_processor_usage','—')}%",
+            f"{h.get('max_processor_usage','—')}%",
+            h.get("total_disk_space","—"),
+            f"{h.get('used_disk_space_pct','—')}%",
+            fmt_date(h.get("last_seen_timestamp","")),
+        ]
+
+        for col_i, val in enumerate(row_data, 1):
+            c = ws_hm.cell(row=row, column=col_i, value=val)
+            c.fill = fill(bg); c.border = thin_border()
+            c.alignment = Alignment(horizontal="left" if col_i in (1,2,3) else "center",
+                                    vertical="center")
+            if col_i == 1: c.font = fnt(NAVY, bold=True, size=9)
+            elif col_i == 6:
+                if mem_pct >= 95: c.font = fnt(RED_FG, bold=True, size=9)
+                elif mem_pct >= 90: c.font = fnt(YELLOW_FG, bold=True, size=9)
+                else: c.font = fnt(GREEN_FG, bold=True, size=9)
+            else: c.font = fnt(size=9)
+        ws_hm.row_dimensions[row].height = 16
+
+    ws_hm.freeze_panes = "A3"
+    for col_i, w in enumerate([25, 20, 12, 18, 22, 14, 12, 10, 10, 18, 12, 16], 1):
+        set_col_width(ws_hm, col_i, w)
+
     # ── KAYDET ──────────────────────────────────────────────
     filename = f"TeknoSA_CrowdStrike_HealthCheck_{date_str}.xlsx"
     output_path = f"{OUTPUT_DIR}/{filename}"
