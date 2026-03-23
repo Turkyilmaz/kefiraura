@@ -152,7 +152,7 @@ def main():
     today_display = now_istanbul.strftime("%d/%m/%Y")
     report_month = now_istanbul.strftime("%B %Y")
 
-    print(f"[{date_str}] TeknoSA raporu oluşturuluyor...")
+    print(f"[{date_str}] {{CUSTOMER_NAME}} raporu oluşturuluyor...")
 
     # ── API BAĞLANTISI ──────────────────────────────────────
     token_r = requests.post(f"{BASE_URL}/oauth2/token",
