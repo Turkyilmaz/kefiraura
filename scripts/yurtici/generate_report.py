@@ -826,19 +826,22 @@ def main():
     import ipaddress as ipmod
 
     ua_all_ids = []
-    ua_after = None
+    ua_offset = 0
     while True:
-        params = {"limit": 100, "filter": "data_providers:'Falcon passive discovery'"}
-        if ua_after:
-            params["after"] = ua_after
         r_ua = requests.get(f"{BASE_URL}/discover/queries/hosts/v1",
-            headers=H, params=params, timeout=15)
+            headers=H, params={
+                "limit": 100,
+                "offset": ua_offset,
+                "filter": "entity_type:'unmanaged'+data_providers:'Falcon passive discovery'",
+                "sort": "last_seen_timestamp.desc"
+            }, timeout=15)
         ua_data = r_ua.json()
         ua_ids = ua_data.get("resources", [])
-        ua_after = ua_data.get("meta",{}).get("pagination",{}).get("after")
         if not ua_ids: break
         ua_all_ids.extend(ua_ids)
-        if not ua_after: break
+        ua_offset += len(ua_ids)
+        total = ua_data.get("meta",{}).get("pagination",{}).get("total", 0)
+        if ua_offset >= total: break
 
     ua_hosts_raw = []
     for i in range(0, len(ua_all_ids), 100):
@@ -849,17 +852,12 @@ def main():
 
     ua_filtered = []
     for h in ua_hosts_raw:
-        ips = [ni.get("local_ip","") for ni in (h.get("network_interfaces") or [])]
-        if not ips:
-            ip = h.get("current_local_ip","")
-            ips = [ip] if ip else []
-        has_10x = any(str(ipmod.ip_address(ip)).startswith("10.") for ip in ips if ip)
-        if not has_10x: continue
-        discoverers = h.get("discoverer_hostnames") or []
-        clean = [d for d in discoverers if "$" not in d]
-        if not clean: continue
-        h["_ips"] = ips
-        h["_clean_discoverers"] = clean
+        network_interfaces = h.get("network_interfaces") or []
+        all_ips = [ni.get("local_ip","") for ni in network_interfaces if ni.get("local_ip")]
+        all_prefixes = [ni.get("network_prefix","") for ni in network_interfaces if ni.get("network_prefix")]
+        h["_ips"] = all_ips
+        h["_prefixes"] = all_prefixes
+        # Her entity = 1 satır (portal mantığı)
         ua_filtered.append(h)
 
     print(f"  Unmanaged: {len(ua_filtered)} host")
@@ -867,9 +865,10 @@ def main():
     ws_ua = wb.create_sheet("Unmanaged Assets")
     ws_ua.sheet_properties.tabColor = "7030A0"
 
-    UA_HEADERS = ["Hostname (Discoverer)", "IP Address History", "Manufacturer",
-                  "Data Providers", "Entity Type", "Confidence",
-                  "First Seen", "Last Seen", "Review Status"]
+    UA_HEADERS = ["Hostname", "Manufacturer", "Data Providers", "IP Address History",
+                  "Network Prefix", "Last Seen", "Confidence", "Last Seen By",
+                  "Seen By (Count)", "Active Directory", "Platform", "Review Status",
+                  "Action Recommended"]
 
     ws_ua.merge_cells(f"A1:{get_column_letter(len(UA_HEADERS))}1")
     ws_ua["A1"] = f"Yurtiçi Kargo – Unmanaged Assets  ({len(ua_filtered)} assets)"
@@ -897,30 +896,37 @@ def main():
         else: conf_color = RED_FG; conf_bg = RED_BG
 
         row_data = [
-            ", ".join(h["_clean_discoverers"]),
-            ", ".join(h["_ips"]),
-            h.get("system_manufacturer","—") or "—",
+            h.get("hostname","") or "",
+            h.get("system_manufacturer","") or "",
             ", ".join(h.get("data_providers") or []),
-            h.get("entity_type","—").capitalize(),
-            conf_label,
-            fmt_date(h.get("first_seen_timestamp","")),
+            ", ".join(h.get("_ips", [])),
+            ", ".join(h.get("_prefixes", [])),
             fmt_date(h.get("last_seen_timestamp","")),
-            h.get("review_status","Not Reviewed") or "Not Reviewed",
+            conf_label,
+            h.get("last_discoverer_aid","") or "",
+            h.get("discoverer_count","") or "",
+            h.get("ad_user_name","") or "",
+            h.get("platform_name","") or "",
+            h.get("review_status","Not reviewed") or "Not reviewed",
+            "--",
         ]
 
         for col_i, val in enumerate(row_data, 1):
             c = ws_ua.cell(row=row, column=col_i, value=val)
             c.border = thin_border()
             c.alignment = Alignment(horizontal="left", vertical="center", wrap_text=True)
-            if col_i == 6:
+            if col_i == 7:  # Confidence
                 c.fill = fill(conf_bg); c.font = fnt(conf_color, bold=True, size=9)
+                c.alignment = Alignment(horizontal="center", vertical="center")
+            elif col_i == 9:  # Seen By Count
+                c.fill = fill(bg); c.font = fnt("000000", size=9)
                 c.alignment = Alignment(horizontal="center", vertical="center")
             else:
                 c.fill = fill(bg); c.font = fnt(NAVY if col_i==1 else "000000", bold=(col_i==1), size=9)
         ws_ua.row_dimensions[row].height = 18
 
     ws_ua.freeze_panes = "A3"
-    for col_i, w in enumerate([35, 20, 25, 22, 14, 12, 16, 16, 16], 1):
+    for col_i, w in enumerate([22, 22, 22, 30, 14, 16, 12, 34, 14, 14, 12, 14, 14], 1):
         set_col_width(ws_ua, col_i, w)
 
     # ── HIGH MEMORY USAGE ───────────────────────────────────

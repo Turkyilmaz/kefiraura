@@ -826,19 +826,22 @@ def main():
     import ipaddress as ipmod
 
     ua_all_ids = []
-    ua_after = None
+    ua_offset = 0
     while True:
-        params = {"limit": 100, "filter": "data_providers:'Falcon passive discovery'"}
-        if ua_after:
-            params["after"] = ua_after
         r_ua = requests.get(f"{BASE_URL}/discover/queries/hosts/v1",
-            headers=H, params=params, timeout=15)
+            headers=H, params={
+                "limit": 100,
+                "offset": ua_offset,
+                "filter": "entity_type:'unmanaged'+data_providers:'Falcon passive discovery'",
+                "sort": "last_seen_timestamp.desc"
+            }, timeout=15)
         ua_data = r_ua.json()
         ua_ids = ua_data.get("resources", [])
-        ua_after = ua_data.get("meta",{}).get("pagination",{}).get("after")
         if not ua_ids: break
         ua_all_ids.extend(ua_ids)
-        if not ua_after: break
+        ua_offset += len(ua_ids)
+        total = ua_data.get("meta",{}).get("pagination",{}).get("total", 0)
+        if ua_offset >= total: break
 
     ua_hosts_raw = []
     for i in range(0, len(ua_all_ids), 100):
