@@ -1,0 +1,31 @@
+baseURL = "https://kefiraura.example.com/"
+languageCode = "tr-TR"
+title = "Kefir Aura"
+paginate = 10
+
+[menu]
+  [[menu.main]]
+    name = "Ana Sayfa"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Hakkımızda"
+    url = "/hakkimizda/"
+    weight = 2
+  [[menu.main]]
+    name = "Ürünlerimiz"
+    url = "/urunlerimiz/"
+    weight = 3
+  [[menu.main]]
+    name = "Blog"
+    url = "/blog/"
+    weight = 4
+  [[menu.main]]
+    name = "İletişim"
+    url = "/iletisim/"
+    weight = 5
+
+[outputs]
+  home = ["HTML"]
+  page = ["HTML"]
+  section = ["HTML"]

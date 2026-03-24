@@ -1,0 +1,31 @@
+{{ define "content" }}
+
+<section class="list-page">
+    <div class="container">
+        <header class="list-header">
+            <h1>{{ .Title }}</h1>
+            {{ if .Description }}
+                <p class="list-description">{{ .Description }}</p>
+            {{ end }}
+        </header>
+
+        {{ if eq .Section "blog" }}
+            <div class="blog-list">
+                {{ range .Pages.ByDate.Reverse }}
+                    <article class="blog-card">
+                        <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+                        <p class="blog-date">{{ .Date.Format "2 January 2006" }}</p>
+                        <p class="blog-excerpt">{{ .Summary | plainify }}</p>
+                        <a href="{{ .RelPermalink }}" class="read-more">Devamını Oku →</a>
+                    </article>
+                {{ end }}
+            </div>
+        {{ else }}
+            <div class="content-list">
+                {{ .Content }}
+            </div>
+        {{ end }}
+    </div>
+</section>
+
+{{ end }}

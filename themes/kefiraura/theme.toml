@@ -1,0 +1,12 @@
+name = "Kefir Aura"
+license = "MIT"
+licenselink = "https://github.com/example/kefiraura/blob/master/LICENSE"
+description = "A custom theme for Kefir Aura - Traditional Turkish Kefir Brand"
+homepage = "https://github.com/example/kefiraura"
+tags = ["kefir", "brand", "responsive", "minimal"]
+features = ["responsive", "minimal", "dark", "fast"]
+min_version = "0.87.0"
+
+[author]
+  name = "Kefir Aura"
+  homepage = "https://kefiraura.com"

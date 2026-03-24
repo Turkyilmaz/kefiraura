@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Title }} | {{ .Site.Title }}</title>
+    <meta name="description" content="{{ .Description | default .Site.Params.description }}">
+    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1><a href="/">Kefir Aura</a></h1>
+                <p class="slogan">Enerjisi Başka</p>
+            </div>
+            <nav class="nav">
+                <ul>
+                    {{ range .Site.Menus.main }}
+                        <li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+                    {{ end }}
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        {{ block "content" . }}{{ end }}
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Kefir Aura</h3>
+                    <p>Anadolu'nun binlerce yıllık kefir kültürünü modern yaşama taşıyoruz.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Hızlı Bağlantılar</h3>
+                    <ul>
+                        {{ range .Site.Menus.main }}
+                            <li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+                        {{ end }}
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>İletişim</h3>
+                    <p>Email: info@kefiraura.com</p>
+                    <p>Telefon: +90 (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; {{ now.Year }} Kefir Aura. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
