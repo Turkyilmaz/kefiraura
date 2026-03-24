@@ -32,8 +32,8 @@ html {
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    line-height: 1.6;
+    font-family: 'Cardo', Georgia, serif;
+    line-height: 1.7;
     color: var(--text-primary);
     background-color: var(--color-cream);
 }
@@ -46,9 +46,14 @@ body {
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
+    font-family: 'Manrope', sans-serif;
     font-weight: 700;
     margin-bottom: 1rem;
     color: var(--text-primary);
+}
+
+nav, .header, button, .btn {
+    font-family: 'Manrope', sans-serif;
 }
 
 h1 {
