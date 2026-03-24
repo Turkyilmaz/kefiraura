@@ -1,5 +1,5 @@
 ---
-title: "Kefirin Sağlığa Faydaları Saymakla Bitmiyor!"
+title: "Kefirin Sağlığa Faydaları"
 date: 2025-07-17
 summary: "1 bardağında ortalama 100 kalori olan kefir, bağışıklık sistemini güçlendirerek sağlığımıza önemli katkılarda bulunuyor. Ülserden sindirime, kemik sağlığından kan şekerine kadar pek çok alanda etkili."
 tags: ["kefir", "sağlık", "probiyotik", "beslenme"]

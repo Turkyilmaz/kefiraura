@@ -1,5 +1,5 @@
 ---
-title: "Kefir Nedir? Kefirin Faydaları Nelerdir?"
+title: "Kefir Nedir? Faydaları Nelerdir?"
 date: 2025-07-17
 summary: "Anavatanı Kafkaslar olan kefir, zengin probiyotik, vitamin ve mineral içeriğiyle bağışıklıktan kalp sağlığına, kemiklerden sindirime kadar pek çok alanda vücudu destekleyen güçlü bir fermente süt ürünüdür."
 tags: ["kefir", "sağlık", "probiyotik", "beslenme"]
