@@ -1,9 +1,10 @@
 {{ define "content" }}
 
-<!-- HERO -->
+<!-- HERO SPLIT -->
 <section class="hero">
-    <div class="container">
-        <div class="hero-content">
+    <!-- Sol: Açık kısım -->
+    <div class="hero-left">
+        <div class="hero-left-inner">
             <div class="hero-badge">
                 🌿 Geleneksel Fermentasyon · 10+ Yıl
             </div>
@@ -12,6 +13,29 @@
             <div class="hero-buttons">
                 <a href="/urunlerimiz/" class="btn btn-primary">Ürünlerimizi Keşfedin</a>
                 <a href="/hakkimizda/" class="btn btn-outline">Hikayemiz</a>
+            </div>
+        </div>
+    </div>
+    <!-- Sağ: Koyu mor kısım -->
+    <div class="hero-right">
+        <div class="hero-right-glow"></div>
+        <div class="hero-right-content">
+            <img src="{{ "images/logo.png" | relURL }}" alt="Kefir Aura" class="hero-logo">
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-number">10+</div>
+                    <div class="hero-stat-label">Yıl Deneyim</div>
+                </div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">%100</div>
+                    <div class="hero-stat-label">Doğal</div>
+                </div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">0</div>
+                    <div class="hero-stat-label">Katkı Maddesi</div>
+                </div>
             </div>
         </div>
     </div>
