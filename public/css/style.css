@@ -839,7 +839,7 @@ p { margin-bottom: 1rem; }
     color: var(--white);
     position: relative;
     z-index: 2;
-    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    font-size: clamp(1.6rem, 3vw, 2.6rem);
     margin-bottom: 1rem;
 }
 .page-header h1 span {
