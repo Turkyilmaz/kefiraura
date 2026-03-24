@@ -22,59 +22,83 @@
     <div class="container">
         <div class="section-title">
             <span class="eyebrow">Kalite Güvencesi</span>
-            <h2>Belgelerimiz</h2>
-            <p>Ürünlerimizin güvenliği ve kalitesi resmi belgelerle desteklenmektedir.</p>
+            <h2>Resmi Belgelerimiz</h2>
+            <p>Kefir Aura ürünlerinin güvenliği ve kalitesi resmi belgelerle desteklenmektedir.</p>
         </div>
 
-        <div class="grid-3">
+        <div class="grid-2" style="max-width:900px; margin:0 auto;">
+
+            <!-- Analiz Raporu -->
             <div class="card cert-card">
-                <div class="cert-icon">📋</div>
-                <h3>Gıda Güvenliği</h3>
-                <p>Türk Gıda Kodeksi'ne uygun üretim standartlarımız belgelenmiştir.</p>
-                <span class="cert-badge">Aktif</span>
+                <div class="cert-header">
+                    <div class="cert-icon-wrap">
+                        <span style="font-size:2.5rem;">🏛️</span>
+                    </div>
+                    <div class="cert-badge-wrap">
+                        <span class="cert-badge-active">✓ Resmi Belge</span>
+                    </div>
+                </div>
+                <h3>Tarım ve Orman Bakanlığı<br>Analiz Raporu</h3>
+                <p>İstanbul Gıda Kontrol Laboratuvar Müdürlüğü tarafından düzenlenmiş muayene ve analiz raporu.</p>
+                <a href="{{ "docs/analiz-raporu.pdf" | relURL }}" target="_blank" class="btn btn-primary cert-btn">
+                    📄 Raporu Görüntüle
+                </a>
             </div>
+
+            <!-- Marka Tescil Belgesi -->
             <div class="card cert-card">
-                <div class="cert-icon">🌿</div>
-                <h3>Doğallık Belgesi</h3>
-                <p>Ürünlerimizin katkısız ve doğal olduğuna dair resmi onay.</p>
-                <span class="cert-badge">Aktif</span>
+                <div class="cert-header">
+                    <div class="cert-icon-wrap">
+                        <span style="font-size:2.5rem;">®️</span>
+                    </div>
+                    <div class="cert-badge-wrap">
+                        <span class="cert-badge-active">✓ Tescilli Marka</span>
+                    </div>
+                </div>
+                <h3>Kefir Aura<br>Marka Tescil Belgesi</h3>
+                <p>Türk Patent ve Marka Kurumu tarafından tescil edilmiş resmi marka belgesi.</p>
+                <a href="{{ "docs/marka-tescil-belgesi.pdf" | relURL }}" target="_blank" class="btn btn-primary cert-btn">
+                    📄 Belgeyi Görüntüle
+                </a>
             </div>
-            <div class="card cert-card">
-                <div class="cert-icon">🏭</div>
-                <h3>Üretim İzni</h3>
-                <p>Yetkili makamlarca onaylı üretim tesisi belgesi.</p>
-                <span class="cert-badge">Aktif</span>
-            </div>
+
         </div>
 
+        <!-- Alt bilgi -->
         <div class="cert-note">
-            <p>📌 Sertifikalarımız hakkında daha fazla bilgi almak için <a href="/iletisim/">bizimle iletişime geçebilirsiniz</a>.</p>
+            <p>📌 Sertifikalarımız hakkında daha fazla bilgi için <a href="/iletisim/">bizimle iletişime geçebilirsiniz</a>.</p>
         </div>
     </div>
 </section>
 
 <style>
-.cert-card { text-align: center; padding: 2.5rem 2rem; }
-.cert-icon { font-size: 3rem; margin-bottom: 1rem; }
-.cert-badge {
-    display: inline-block;
-    margin-top: 1rem;
+.cert-card { text-align: center; padding: 2.5rem 2rem; display: flex; flex-direction: column; gap: 1rem; }
+.cert-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; }
+.cert-icon-wrap { font-size: 2.5rem; }
+.cert-badge-active {
     font-family: 'Manrope', sans-serif;
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     font-weight: 700;
     background: rgba(55,86,35,0.1);
     color: #375623;
-    padding: 0.3rem 0.9rem;
+    border: 1px solid rgba(55,86,35,0.2);
+    padding: 0.25rem 0.75rem;
     border-radius: 50px;
-    letter-spacing: 0.05em;
 }
+.cert-card h3 { font-size: 1.1rem; line-height: 1.4; margin: 0; }
+.cert-card p { color: var(--gray); font-size: 0.9rem; flex: 1; margin: 0; }
+.cert-btn { margin-top: 0.5rem; justify-content: center; }
 .cert-note {
     margin-top: 3rem;
     text-align: center;
     color: var(--gray);
     font-size: 0.95rem;
+    padding: 1.5rem;
+    background: rgba(147,24,122,0.04);
+    border-radius: var(--radius);
+    border: 1px dashed rgba(147,24,122,0.2);
 }
-.cert-note a { color: var(--purple); }
+.cert-note a { color: var(--purple); font-weight: 600; }
 </style>
 
 {{ end }}
