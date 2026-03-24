@@ -15,11 +15,11 @@ Bağışıklık sistemimizin **%80'i** bağırsaklarımızda yaşıyor. Bu oran,
 
 ## Bağırsaklarınızı Nasıl Şımartabilirsiniz?
 
-🛡️ **Bağışıklık:** Güçlü bir bağırsak florası ile hastalıklara "dur" deyin.
+️ **Bağışıklık:** Güçlü bir bağırsak florası ile hastalıklara "dur" deyin.
 
-✨ **Işıltı:** Temiz bir bağırsak, parlayan bir cilt demektir.
+ **Işıltı:** Temiz bir bağırsak, parlayan bir cilt demektir.
 
-🌱 **Huzur:** Sindirim sorunlarını geride bırakın, hafifleyin.
+ **Huzur:** Sindirim sorunlarını geride bırakın, hafifleyin.
 
 ## Kefirin Rolü
 
@@ -29,9 +29,9 @@ Her sabah bir bardak **Kefir Aura**, içerdiği milyonlarca canlı probiyotikle 
 
 Vücudunuzun yenilenmesi için ona zaman tanıyın:
 
-- **1. Hafta:** Sindiriminiz düzene girer ☁️
-- **2. Hafta:** Şişkinlik yerini hafifliğe bırakır 🌱
-- **3. Hafta:** Cildiniz parlar, enerjiniz yükselir ⚡
+- **1. Hafta:** Sindiriminiz düzene girer ️
+- **2. Hafta:** Şişkinlik yerini hafifliğe bırakır 
+- **3. Hafta:** Cildiniz parlar, enerjiniz yükselir 
 
 Doğal, canlı ve geleneksel mayalı Kefir Aura ile bu yolculuğa bugün başlayın.
 

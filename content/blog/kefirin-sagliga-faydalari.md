@@ -24,25 +24,25 @@ Kefirin sıklıkla tüketildiği Kafkasya bölgesi, tüberküloz, kanser ve sind
 
 ## Kefirin Faydaları
 
-### 🛡️ Ülseri Önlüyor
+### ️ Ülseri Önlüyor
 Kefirdeki probiyotikler, mide zarını koruyarak ülser oluşumunu engeller.
 
-### 🌱 Sindirime Yardımcı
+### Sindirime Yardımcı
 Bağırsak florasını düzenler, kabızlık ve sindirim sorunlarını giderir.
 
-### 🦴 Kemik Sağlığına İyi Geliyor
+### Kemik Sağlığına İyi Geliyor
 Kalsiyum ve D vitamini içeriğiyle kemik yoğunluğunu artırır, osteoporoza karşı korur.
 
-### 😌 Sinirleri Yatıştırıcı Etkisi Var
+### Sinirleri Yatıştırıcı Etkisi Var
 Bağırsak-beyin bağlantısı sayesinde ruh halini olumlu etkiler, stresi azaltır.
 
-### ✨ Hücreler Yenileniyor
+### Hücreler Yenileniyor
 Antioksidan içeriği sayesinde hücre yenilenmesini destekler, cildi parlatır.
 
-### 🩸 Kan Şekerini Dengeleyici
+### Kan Şekerini Dengeleyici
 Düzenli tüketim, kan şekeri dalgalanmalarını azaltır.
 
-### 💨 Mide Gazını Azaltıyor
+### Mide Gazını Azaltıyor
 Sindirimi kolaylaştırarak gaz ve şişkinliği giderir.
 
 ---
