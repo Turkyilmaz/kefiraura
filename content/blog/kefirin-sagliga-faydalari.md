@@ -47,4 +47,4 @@ Sindirimi kolaylaştırarak gaz ve şişkinliği giderir.
 
 ---
 
-**Kaynak:** [acibadem.com.tr](https://www.acibadem.com.tr/hayat/kefirin-sagliga-faydalari-saymakla-bitmiyor/)
+**Kaynak:** [https://www.acibadem.com.tr/hayat/kefirin-sagliga-faydalari-saymakla-bitmiyor/](https://www.acibadem.com.tr/hayat/kefirin-sagliga-faydalari-saymakla-bitmiyor/)

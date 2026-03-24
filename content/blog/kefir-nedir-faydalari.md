@@ -53,4 +53,4 @@ Vitamin ve mineral zenginliğiyle kronik yorgunluğu azaltır, enerji seviyesini
 
 ---
 
-**Kaynak:** [memorial.com.tr](https://www.memorial.com.tr/saglik-rehberi/kefirin-faydalari-nelerdir)
+**Kaynak:** [https://www.memorial.com.tr/saglik-rehberi/kefirin-faydalari-nelerdir](https://www.memorial.com.tr/saglik-rehberi/kefirin-faydalari-nelerdir)
