@@ -1,18 +1,17 @@
 {{ define "content" }}
 
-<section class="single-page">
+<section class="page-header">
     <div class="container">
-        <article class="article">
-            <header class="article-header">
-                <h1>{{ .Title }}</h1>
-                {{ if .Date }}
-                    <p class="article-date">{{ .Date.Format "2 January 2006" }}</p>
-                {{ end }}
-            </header>
-            <div class="article-content">
-                {{ .Content }}
-            </div>
-        </article>
+        <h1>{{ .Title }}</h1>
+        {{ with .Params.description }}<p>{{ . }}</p>{{ end }}
+    </div>
+</section>
+
+<section class="content-page">
+    <div class="container">
+        <div class="prose">
+            {{ .Content }}
+        </div>
     </div>
 </section>
 
