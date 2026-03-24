@@ -59,16 +59,13 @@ p { margin-bottom: 1rem; }
     z-index: 1000;
     transition: var(--transition);
     padding: 0;
-    background: rgba(10, 10, 10, 0.75);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(255,255,255,0.07);
+    background: #0d000b;
+    border-bottom: 1px solid rgba(147,24,122,0.2);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.4);
 }
 .header.scrolled {
-    background: rgba(10, 10, 10, 0.95);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+    background: #0d000b;
+    box-shadow: 0 4px 28px rgba(0,0,0,0.5);
 }
 .header .container {
     display: flex;
