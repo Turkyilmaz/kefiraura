@@ -90,7 +90,7 @@
 <section class="page-header">
     <div class="container" style="position:relative; z-index:1;">
         <h1>Satış Noktalarımız</h1>
-        <p>Kefir Aura ürünlerine aşağıdaki platformlardan ulaşabilirsiniz</p>
+        <p>Kefir Aura ürünlerine aşağıdaki satış noktalarından ulaşabilirsiniz</p>
     </div>
     <div class="page-header-bubbles">
         <div class="bubble"></div><div class="bubble"></div><div class="bubble"></div>
@@ -106,99 +106,100 @@
 </section>
 
 <section class="section">
-    <div class="container">
+    <div class="container" style="max-width:900px;">
+
         <div class="section-title">
             <span class="eyebrow">Nerede Bulunur?</span>
-            <h2>Yetkili Satıcımız</h2>
-            <p>Kefir Aura ürünleri Köylü Peynircilik'in tüm şubelerinde satışa sunulmaktadır.</p>
+            <h2>Yetkili Satıcılarımız</h2>
+            <p>Kefir Aura ürünlerini aşağıdaki satış noktalarından temin edebilirsiniz.</p>
         </div>
 
         
-        <div class="koylu-main-card">
-            <div class="koylu-header">
-                <img src="/images/partners/koylu-peynircilik.png" alt="Köylü Peynircilik" class="koylu-logo">
-                <div class="koylu-info">
-                    <h2>Köylü Peynircilik</h2>
-                    <p>10 mağaza ile İstanbul'un dört bir yanında hizmet veren, doğal ve geleneksel ürünlerin buluşma noktası.</p>
-                    <div class="koylu-contact">
-                        <span>📞 +90 212 461 85 00</span>
-                        <a href="https://koylupeynircilik.com.tr/" target="_blank" rel="noopener" class="btn btn-primary" style="margin-left:1rem;">Web Sitesi →</a>
+        <div class="partner-card">
+            <div class="partner-header" onclick="toggleBranches('koylu')">
+                <div class="partner-left">
+                    <img src="/images/partners/koylu-peynircilik.png" alt="Köylü Peynircilik" class="partner-logo">
+                    <div>
+                        <h3>Köylü Peynircilik</h3>
+                        <span class="branch-count">10 Şube — İstanbul</span>
+                    </div>
+                </div>
+                <div class="partner-right">
+                    <a href="https://koylupeynircilik.com.tr/" target="_blank" rel="noopener" class="btn btn-primary" onclick="event.stopPropagation()">Web Sitesi →</a>
+                    <span class="toggle-icon" id="icon-koylu">▼</span>
+                </div>
+            </div>
+
+            
+            <div class="branches-list" id="branches-koylu">
+                <div class="branch-row">
+                    <div class="branch-name">📍 Bağcılar</div>
+                    <div class="branch-address">İstanbul Cad. No:53, Bağcılar</div>
+                    <div class="branch-phone"><a href="tel:+902124618500">(212) 461 85 00</a></div>
+                </div>
+                <div class="branch-row">
+                    <div class="branch-name">📍 Erenköy</div>
+                    <div class="branch-address">Sinan Ercan Sok. Figen Apt. 7/A, Kozyatağı</div>
+                    <div class="branch-phone"><a href="tel:+902163024268">(216) 302 42 68</a></div>
+                </div>
+                <div class="branch-row">
+                    <div class="branch-name">📍 Okmeydanı</div>
+                    <div class="branch-address">Fatih Sultan Cad. Fetip Tepe Mah. No:31/2</div>
+                    <div class="branch-phone"><a href="tel:+902123618075">(212) 361 80 75</a></div>
+                </div>
+                <div class="branch-row">
+                    <div class="branch-name">📍 Atışalanı</div>
+                    <div class="branch-address">Havaalanı Mah. Taşocağı Cad. No:24, Esenler</div>
+                    <div class="branch-phone"><a href="tel:+902124291165">(212) 429 11 65</a></div>
+                </div>
+                <div class="branch-row">
+                    <div class="branch-name">📍 Esenler</div>
+                    <div class="branch-address">Atışalan Caddesi No:46, Esenler</div>
+                    <div class="branch-phone"><a href="tel:+902125699431">(212) 569 94 31</a></div>
+                </div>
+                <div class="branch-row">
+                    <div class="branch-name">📍 Mahmutbey</div>
+                    <div class="branch-address">Kocasinan Merkez Mah. Site Sok. No:321, Yenibosna</div>
+                    <div class="branch-phone"><a href="tel:+902126576365">(212) 657 63 65</a></div>
+                </div>
+                <div class="branch-row">
+                    <div class="branch-name">📍 Yenibosna</div>
+                    <div class="branch-address">Çobançeşme Mah. Fatih Cad. No:55/1, Bahçelievler</div>
+                    <div class="branch-phone"><a href="tel:+902124524025">(212) 452 40 25</a></div>
+                </div>
+                <div class="branch-row">
+                    <div class="branch-name">📍 Beylikdüzü</div>
+                    <div class="branch-address">Barış Mah. Palmiye Sok. Tuzcukent Sit. A Blok No:1</div>
+                    <div class="branch-phone"><a href="tel:+902128542781">(212) 854 27 81</a></div>
+                </div>
+                <div class="branch-row">
+                    <div class="branch-name">📍 Beykent</div>
+                    <div class="branch-address">Adnan Kahveci Mah. Sayaca Cad. No:7</div>
+                    <div class="branch-phone"><a href="tel:+902128555152">(212) 855 51 52</a></div>
+                </div>
+                <div class="branch-row">
+                    <div class="branch-name">📍 Büyükçekmece</div>
+                    <div class="branch-address">19 Mayıs Mh. Atatürk Cd. No:73/A</div>
+                    <div class="branch-phone"><a href="tel:+902128821664">(212) 882 16 64</a></div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="partner-card partner-coming">
+            <div class="partner-header">
+                <div class="partner-left">
+                    <div class="partner-logo-placeholder">⏳</div>
+                    <div>
+                        <h3>Yeni Satış Noktası</h3>
+                        <span class="branch-count">Yakında eklenecek</span>
                     </div>
                 </div>
             </div>
         </div>
 
         
-        <div class="section-title" style="margin-top:4rem;">
-            <span class="eyebrow">Şubeler</span>
-            <h2>10 Mağaza</h2>
-        </div>
-
-        <div class="grid-3 sube-grid">
-            <div class="card sube-card">
-                <div class="sube-icon">🏪</div>
-                <h3>Bağcılar</h3>
-                <p>Bağcılar Köylü Peynircilik</p>
-                <a href="https://koylupeynircilik.com.tr/bagcilar.html" target="_blank" class="sube-link">Detay →</a>
-            </div>
-            <div class="card sube-card">
-                <div class="sube-icon">🏪</div>
-                <h3>Erenköy</h3>
-                <p>Erenköy Köylü Peynircilik</p>
-                <a href="https://koylupeynircilik.com.tr/erenkoey.html" target="_blank" class="sube-link">Detay →</a>
-            </div>
-            <div class="card sube-card">
-                <div class="sube-icon">🏪</div>
-                <h3>Okmeydanı</h3>
-                <p>Okmeydanı Köylü Peynircilik</p>
-                <a href="https://koylupeynircilik.com.tr/okmeydani.html" target="_blank" class="sube-link">Detay →</a>
-            </div>
-            <div class="card sube-card">
-                <div class="sube-icon">🏪</div>
-                <h3>Atışalanı</h3>
-                <p>Atışalanı Köylü Peynircilik</p>
-                <a href="https://koylupeynircilik.com.tr/atisalani.html" target="_blank" class="sube-link">Detay →</a>
-            </div>
-            <div class="card sube-card">
-                <div class="sube-icon">🏪</div>
-                <h3>Esenler</h3>
-                <p>Esenler Köylü Peynircilik</p>
-                <a href="https://koylupeynircilik.com.tr/esenler.html" target="_blank" class="sube-link">Detay →</a>
-            </div>
-            <div class="card sube-card">
-                <div class="sube-icon">🏪</div>
-                <h3>Mahmutbey</h3>
-                <p>Mahmutbey Köylü Peynircilik</p>
-                <a href="https://koylupeynircilik.com.tr/mahmutbey.html" target="_blank" class="sube-link">Detay →</a>
-            </div>
-            <div class="card sube-card">
-                <div class="sube-icon">🏪</div>
-                <h3>Yenibosna</h3>
-                <p>Yenibosna Köylü Peynircilik</p>
-                <a href="https://koylupeynircilik.com.tr/yenibosna.html" target="_blank" class="sube-link">Detay →</a>
-            </div>
-            <div class="card sube-card">
-                <div class="sube-icon">🏪</div>
-                <h3>Beylikdüzü</h3>
-                <p>Beylikdüzü Köylü Peynircilik</p>
-                <a href="https://koylupeynircilik.com.tr/beylikduzu.html" target="_blank" class="sube-link">Detay →</a>
-            </div>
-            <div class="card sube-card">
-                <div class="sube-icon">🏪</div>
-                <h3>Beykent</h3>
-                <p>Beykent Köylü Peynircilik</p>
-                <a href="https://koylupeynircilik.com.tr/beykent.html" target="_blank" class="sube-link">Detay →</a>
-            </div>
-            <div class="card sube-card">
-                <div class="sube-icon">🏪</div>
-                <h3>Büyükçekmece</h3>
-                <p>Büyükçekmece Köylü Peynircilik</p>
-                <a href="https://koylupeynircilik.com.tr/buyukcekmece.html" target="_blank" class="sube-link">Detay →</a>
-            </div>
-        </div>
-
-        
-        <div class="satis-partner" style="margin-top:4rem;">
+        <div class="satis-partner" style="margin-top:3rem;">
             <div class="satis-partner-inner">
                 <div>
                     <h3>Satış Ortağımız Olmak İster misiniz?</h3>
@@ -207,42 +208,95 @@
                 <a href="/iletisim/" class="btn btn-primary">İletişime Geçin</a>
             </div>
         </div>
+
     </div>
 </section>
 
+<script>
+function toggleBranches(id) {
+    const el = document.getElementById('branches-' + id);
+    const icon = document.getElementById('icon-' + id);
+    if (el.style.display === 'none' || el.style.display === '') {
+        el.style.display = 'block';
+        icon.textContent = '▲';
+    } else {
+        el.style.display = 'none';
+        icon.textContent = '▼';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('branches-koylu').style.display = 'block';
+});
+</script>
+
 <style>
- 
-.koylu-main-card {
+.partner-card {
     background: var(--white);
     border-radius: var(--radius);
-    padding: 2.5rem;
-    box-shadow: var(--shadow-md);
-    border: 1px solid rgba(147,24,122,0.1);
-    margin-bottom: 1rem;
-}
-.koylu-header { display: flex; align-items: center; gap: 2.5rem; flex-wrap: wrap; }
-.koylu-logo { height: 80px; width: auto; object-fit: contain; }
-.koylu-info { flex: 1; }
-.koylu-info h2 { margin-bottom: 0.5rem; }
-.koylu-info p { color: var(--gray); margin-bottom: 1rem; }
-.koylu-contact { display: flex; align-items: center; flex-wrap: wrap; gap: 0.5rem; font-family: 'Manrope', sans-serif; font-size: 0.9rem; }
-
- 
-.sube-grid { margin-top: 0; }
-.sube-card { text-align: center; padding: 1.75rem 1.5rem; }
-.sube-icon { font-size: 2rem; margin-bottom: 0.75rem; }
-.sube-card h3 { font-size: 1rem; margin-bottom: 0.25rem; }
-.sube-card p { color: var(--gray); font-size: 0.85rem; margin-bottom: 1rem; }
-.sube-link {
-    font-family: 'Manrope', sans-serif;
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: var(--purple);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(0,0,0,0.06);
+    margin-bottom: 1.25rem;
+    overflow: hidden;
     transition: var(--transition);
 }
-.sube-link:hover { color: var(--purple-dark); }
+.partner-card:hover { box-shadow: var(--shadow-md); }
+.partner-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.75rem 2rem;
+    cursor: pointer;
+    gap: 1rem;
+}
+.partner-left { display: flex; align-items: center; gap: 1.5rem; flex: 1; }
+.partner-logo { height: 56px; width: auto; object-fit: contain; }
+.partner-logo-placeholder { font-size: 2rem; width: 56px; text-align: center; }
+.partner-left h3 { margin: 0 0 0.2rem; font-size: 1.1rem; }
+.branch-count {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.8rem;
+    color: var(--purple);
+    font-weight: 600;
+}
+.partner-right { display: flex; align-items: center; gap: 1rem; flex-shrink: 0; }
+.toggle-icon {
+    font-size: 0.8rem;
+    color: var(--gray);
+    font-family: 'Manrope', sans-serif;
+    transition: var(--transition);
+}
 
  
+.branches-list {
+    display: none;
+    border-top: 1px solid rgba(0,0,0,0.06);
+}
+.branch-row {
+    display: grid;
+    grid-template-columns: 160px 1fr 140px;
+    gap: 1rem;
+    padding: 0.875rem 2rem;
+    align-items: center;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+    transition: var(--transition);
+}
+.branch-row:last-child { border-bottom: none; }
+.branch-row:hover { background: rgba(147,24,122,0.03); }
+.branch-name {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 0.88rem;
+    color: var(--black);
+}
+.branch-address { font-size: 0.85rem; color: var(--gray); }
+.branch-phone { font-family: 'Manrope', sans-serif; font-size: 0.85rem; text-align: right; }
+.branch-phone a { color: var(--purple); font-weight: 600; }
+.branch-phone a:hover { color: var(--purple-dark); }
+
+.partner-coming { opacity: 0.5; cursor: default; }
+.partner-coming .partner-header { cursor: default; }
+
 .satis-partner {
     background: linear-gradient(135deg, #2d0a26 0%, #1a0015 100%);
     border-radius: var(--radius);
@@ -250,14 +304,18 @@
     box-shadow: var(--shadow-lg);
 }
 .satis-partner-inner {
-    display: flex;
-    align-items: center;
+    display: flex; align-items: center;
     justify-content: space-between;
-    gap: 2rem;
-    flex-wrap: wrap;
+    gap: 2rem; flex-wrap: wrap;
 }
 .satis-partner h3 { color: var(--white); margin-bottom: 0.5rem; }
 .satis-partner p { color: rgba(255,255,255,0.65); margin: 0; }
+
+@media (max-width: 640px) {
+    .branch-row { grid-template-columns: 1fr; gap: 0.25rem; }
+    .branch-phone { text-align: left; }
+    .partner-header { flex-wrap: wrap; }
+}
 </style>
 
 
