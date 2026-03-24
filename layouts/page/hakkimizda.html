@@ -1,43 +1,6 @@
-<!DOCTYPE html>
-<html lang="tr-TR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hakkımızda | Kefir Aura</title>
-    <meta name="description" content="Meltem Kahramaner ve Kefir Aura&#39;nın hikayesi">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Cardo:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/style.css">
-</head>
-<body>
-    <header class="header">
-        <div class="container">
-            <div class="logo">
-                <a href="/"><img src="/images/logo.png" alt="Kefir Aura" class="logo-img"></a>
-            </div>
-            <nav class="nav">
-                <ul>
-                    
-                        <li><a href="/">Ana Sayfa</a></li>
-                    
-                        <li><a href="/hakkimizda/">Hakkımızda</a></li>
-                    
-                        <li><a href="/urunlerimiz/">Ürünlerimiz</a></li>
-                    
-                        <li><a href="/blog/">Blog</a></li>
-                    
-                        <li><a href="/iletisim/">İletişim</a></li>
-                    
-                </ul>
-            </nav>
-        </div>
-    </header>
+{{ define "content" }}
 
-    <main class="main">
-        
-
-
+<!-- PAGE HEADER -->
 <section class="page-header">
     <div class="container">
         <h1>Hakkımızda</h1>
@@ -45,7 +8,7 @@
     </div>
 </section>
 
-
+<!-- HİKAYE -->
 <section class="section about-section">
     <div class="container">
         <div class="about-content">
@@ -84,7 +47,7 @@
     </div>
 </section>
 
-
+<!-- MİSYON & VİZYON -->
 <section class="section" style="background: var(--offwhite-dark);">
     <div class="container">
         <div class="section-title">
@@ -106,7 +69,7 @@
     </div>
 </section>
 
-
+<!-- DEĞERLERİMİZ -->
 <section class="section values-section">
     <div class="container">
         <div class="section-title">
@@ -148,7 +111,7 @@
     </div>
 </section>
 
-
+<!-- CTA -->
 <section class="cta-section">
     <div class="container">
         <h2>Sizi de Bu Ailenin Parçası Yapalım</h2>
@@ -157,42 +120,4 @@
     </div>
 </section>
 
-
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Kefir Aura</h3>
-                    <p>Anadolu'nun binlerce yıllık kefir kültürünü modern yaşama taşıyoruz.</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Hızlı Bağlantılar</h3>
-                    <ul>
-                        
-                            <li><a href="/">Ana Sayfa</a></li>
-                        
-                            <li><a href="/hakkimizda/">Hakkımızda</a></li>
-                        
-                            <li><a href="/urunlerimiz/">Ürünlerimiz</a></li>
-                        
-                            <li><a href="/blog/">Blog</a></li>
-                        
-                            <li><a href="/iletisim/">İletişim</a></li>
-                        
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>İletişim</h3>
-                    <p>Email: info@kefiraura.com</p>
-                    <p>Telefon: +90 (555) 123-4567</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Kefir Aura. Tüm hakları saklıdır.</p>
-            </div>
-        </div>
-    </footer>
-</body>
-</html>
+{{ end }}

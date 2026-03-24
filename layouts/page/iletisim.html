@@ -1,41 +1,4 @@
-<!DOCTYPE html>
-<html lang="tr-TR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>İletişim | Kefir Aura</title>
-    <meta name="description" content="Sorularınız, siparişleriniz için bize ulaşın">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Cardo:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/style.css">
-</head>
-<body>
-    <header class="header">
-        <div class="container">
-            <div class="logo">
-                <a href="/"><img src="/images/logo.png" alt="Kefir Aura" class="logo-img"></a>
-            </div>
-            <nav class="nav">
-                <ul>
-                    
-                        <li><a href="/">Ana Sayfa</a></li>
-                    
-                        <li><a href="/hakkimizda/">Hakkımızda</a></li>
-                    
-                        <li><a href="/urunlerimiz/">Ürünlerimiz</a></li>
-                    
-                        <li><a href="/blog/">Blog</a></li>
-                    
-                        <li><a href="/iletisim/">İletişim</a></li>
-                    
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <main class="main">
-        
+{{ define "content" }}
 
 <section class="page-header">
     <div class="container">
@@ -48,7 +11,7 @@
     <div class="container">
         <div class="grid-2" style="align-items:start; gap:4rem;">
 
-            
+            <!-- İletişim Bilgileri -->
             <div>
                 <span class="eyebrow" style="font-family:'Manrope',sans-serif; font-size:0.8rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--purple); margin-bottom:0.75rem; display:block;">Bize Ulaşın</span>
                 <h2 style="margin-bottom:2rem;">Merhaba, Nasıl Yardımcı Olabiliriz?</h2>
@@ -78,7 +41,7 @@
                 </div>
             </div>
 
-            
+            <!-- Form -->
             <div class="contact-form">
                 <h3 style="margin-bottom:1.5rem;">Mesaj Gönderin</h3>
                 <form>
@@ -106,42 +69,4 @@
     </div>
 </section>
 
-
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Kefir Aura</h3>
-                    <p>Anadolu'nun binlerce yıllık kefir kültürünü modern yaşama taşıyoruz.</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Hızlı Bağlantılar</h3>
-                    <ul>
-                        
-                            <li><a href="/">Ana Sayfa</a></li>
-                        
-                            <li><a href="/hakkimizda/">Hakkımızda</a></li>
-                        
-                            <li><a href="/urunlerimiz/">Ürünlerimiz</a></li>
-                        
-                            <li><a href="/blog/">Blog</a></li>
-                        
-                            <li><a href="/iletisim/">İletişim</a></li>
-                        
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>İletişim</h3>
-                    <p>Email: info@kefiraura.com</p>
-                    <p>Telefon: +90 (555) 123-4567</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Kefir Aura. Tüm hakları saklıdır.</p>
-            </div>
-        </div>
-    </footer>
-</body>
-</html>
+{{ end }}
