@@ -123,7 +123,7 @@
             
             <div class="card satis-card">
                 <div class="satis-logo-wrap">
-                    <div class="satis-icon">🏪</div>
+                    <div class="satis-brand-name">Köylü<br>Peynircilik</div>
                 </div>
                 <h3>Köylü Peynircilik</h3>
                 <p>Doğal ve geleneksel ürünlerin buluşma noktası. Kefir Aura ürünlerimize buradan ulaşabilirsiniz.</p>
@@ -178,15 +178,26 @@
     gap: 1rem;
 }
 .satis-logo-wrap {
-    width: 80px; height: 80px;
-    background: linear-gradient(135deg, rgba(147,24,122,0.1), rgba(147,24,122,0.05));
-    border-radius: 20px;
+    width: 100%; height: 80px;
+    background: linear-gradient(135deg, rgba(147,24,122,0.08), rgba(147,24,122,0.03));
+    border-radius: 12px;
+    border: 1px solid rgba(147,24,122,0.15);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
+    overflow: hidden;
 }
 .satis-icon { font-size: 2.2rem; }
+.satis-brand-name {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--purple);
+    text-align: center;
+    line-height: 1.3;
+    letter-spacing: 0.02em;
+}
 .satis-card h3 { margin-bottom: 0.5rem; }
 .satis-card p { color: var(--gray); font-size: 0.95rem; flex: 1; }
 .satis-btn { margin-top: 0.5rem; width: 100%; justify-content: center; }
