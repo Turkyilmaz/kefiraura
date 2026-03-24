@@ -61,10 +61,10 @@ p { margin-bottom: 1rem; }
     padding: 1rem 0;
 }
 .header.scrolled {
-    background: rgba(249, 245, 240, 0.85);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    box-shadow: 0 1px 0 rgba(0,0,0,0.08), var(--shadow-sm);
+    background: rgba(10, 10, 10, 0.88);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    box-shadow: 0 1px 0 rgba(255,255,255,0.06), 0 4px 24px rgba(0,0,0,0.3);
     padding: 0.6rem 0;
 }
 .header .container {
@@ -104,12 +104,12 @@ p { margin-bottom: 1rem; }
     color: var(--white);
 }
 .header.scrolled .nav ul li a {
-    color: var(--black-soft);
+    color: rgba(255,255,255,0.85);
     text-shadow: none;
 }
 .header.scrolled .nav ul li a:hover {
-    background: rgba(147,24,122,0.08);
-    color: var(--purple);
+    background: rgba(255,255,255,0.1);
+    color: var(--white);
 }
 .nav ul li:last-child a {
     background: var(--purple);
@@ -130,7 +130,7 @@ p { margin-bottom: 1rem; }
     align-items: center;
     position: relative;
     overflow: hidden;
-    padding-top: 5rem;
+    padding: 8rem 0 5rem;
 }
 .hero::before {
     content: '';
