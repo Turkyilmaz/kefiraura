@@ -1,0 +1,120 @@
+{{ define "content" }}
+
+<section class="page-header">
+    <div class="container">
+        <h1>Satış Noktalarımız</h1>
+        <p>Kefir Aura ürünlerine aşağıdaki platformlardan ulaşabilirsiniz</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="section-title">
+            <span class="eyebrow">Nerede Bulunur?</span>
+            <h2>Yetkili Satıcılarımız</h2>
+            <p>Güvenilir satış noktalarımızdan doğal kefirlerimizi sipariş edebilirsiniz.</p>
+        </div>
+
+        <div class="grid-3">
+
+            <!-- Köylü Peynircilik -->
+            <div class="card satis-card">
+                <div class="satis-logo-wrap">
+                    <div class="satis-icon">🏪</div>
+                </div>
+                <h3>Köylü Peynircilik</h3>
+                <p>Doğal ve geleneksel ürünlerin buluşma noktası. Kefir Aura ürünlerimize buradan ulaşabilirsiniz.</p>
+                <a href="https://koylupeynircilik.com.tr/" target="_blank" rel="noopener" class="btn btn-primary satis-btn">
+                    Siteye Git →
+                </a>
+            </div>
+
+            <!-- Yakında -->
+            <div class="card satis-card satis-coming">
+                <div class="satis-logo-wrap">
+                    <div class="satis-icon">⏳</div>
+                </div>
+                <h3>Yeni Nokta</h3>
+                <p>Yeni satış noktalarımız yakında eklenecek. Takipte kalın!</p>
+                <span class="coming-badge">Yakında</span>
+            </div>
+
+            <!-- Yakında -->
+            <div class="card satis-card satis-coming">
+                <div class="satis-logo-wrap">
+                    <div class="satis-icon">⏳</div>
+                </div>
+                <h3>Yeni Nokta</h3>
+                <p>Daha fazla satış noktasına ulaşmak için bizi takip edin.</p>
+                <span class="coming-badge">Yakında</span>
+            </div>
+
+        </div>
+
+        <!-- Satıcı olmak ister misiniz? -->
+        <div class="satis-partner">
+            <div class="satis-partner-inner">
+                <div>
+                    <h3>Satış Ortağımız Olmak İster misiniz?</h3>
+                    <p>Kefir Aura ürünlerini mağazanızda veya platformunuzda satmak istiyorsanız bizimle iletişime geçin.</p>
+                </div>
+                <a href="/iletisim/" class="btn btn-primary">İletişime Geçin</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+.satis-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2.5rem 2rem;
+    gap: 1rem;
+}
+.satis-logo-wrap {
+    width: 80px; height: 80px;
+    background: linear-gradient(135deg, rgba(147,24,122,0.1), rgba(147,24,122,0.05));
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+}
+.satis-icon { font-size: 2.2rem; }
+.satis-card h3 { margin-bottom: 0.5rem; }
+.satis-card p { color: var(--gray); font-size: 0.95rem; flex: 1; }
+.satis-btn { margin-top: 0.5rem; width: 100%; justify-content: center; }
+.satis-coming { opacity: 0.55; pointer-events: none; }
+.coming-badge {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    background: rgba(147,24,122,0.08);
+    color: var(--purple);
+    border: 1px dashed rgba(147,24,122,0.3);
+    padding: 0.4rem 1.2rem;
+    border-radius: 50px;
+    letter-spacing: 0.05em;
+}
+.satis-partner {
+    margin-top: 4rem;
+    background: linear-gradient(135deg, #2d0a26 0%, #1a0015 100%);
+    border-radius: var(--radius);
+    padding: 2.5rem 3rem;
+    box-shadow: var(--shadow-lg);
+}
+.satis-partner-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+.satis-partner h3 { color: var(--white); margin-bottom: 0.5rem; }
+.satis-partner p { color: rgba(255,255,255,0.65); margin: 0; }
+</style>
+
+{{ end }}

@@ -21,9 +21,13 @@ paginate = 10
     url = "/blog/"
     weight = 4
   [[menu.main]]
+    name = "Satış Noktalarımız"
+    url = "/satis-noktalari/"
+    weight = 5
+  [[menu.main]]
     name = "İletişim"
     url = "/iletisim/"
-    weight = 5
+    weight = 6
 
 [outputs]
   home = ["HTML"]
