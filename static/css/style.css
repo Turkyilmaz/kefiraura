@@ -642,7 +642,6 @@ p { margin-bottom: 1rem; }
 .form-group textarea { resize: vertical; min-height: 120px; }
 
 /* ── SCROLL JS ── */
-.header { background: transparent; }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
