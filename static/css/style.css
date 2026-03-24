@@ -74,14 +74,14 @@ p { margin-bottom: 1rem; }
     gap: 2rem;
 }
 .logo-img {
-    height: 64px;
+    height: 80px;
     width: auto;
-    filter: drop-shadow(0 2px 8px rgba(147,24,122,0.2));
+    filter: drop-shadow(0 0 12px rgba(147,24,122,0.5)) drop-shadow(0 0 24px rgba(196,74,170,0.25));
     transition: var(--transition);
 }
 .logo-img:hover {
-    filter: drop-shadow(0 4px 16px rgba(147,24,122,0.4));
-    transform: scale(1.03);
+    filter: drop-shadow(0 0 18px rgba(147,24,122,0.8)) drop-shadow(0 0 36px rgba(196,74,170,0.4));
+    transform: scale(1.05);
 }
 .nav ul {
     display: flex;
