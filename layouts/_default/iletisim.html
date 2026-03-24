@@ -67,7 +67,7 @@
             <!-- Form -->
             <div class="contact-form">
                 <h3 style="margin-bottom:1.5rem;">Mesaj Gönderin</h3>
-                <form action="https://formspree.io/f/mjgpbbyo" method="POST">
+                <form action="https://formspree.io/f/mjgpbbyo" method="POST" id="contact-form">
                     <div class="form-group">
                         <label>Adınız</label>
                         <input type="text" name="name" placeholder="Adınız Soyadınız" required>
@@ -85,7 +85,45 @@
                         <textarea name="message" placeholder="Mesajınızı buraya yazın..." required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">Gönder →</button>
+                    <div id="form-success" style="display:none; margin-top:1rem; padding:1rem; background:rgba(55,86,35,0.1); border-radius:8px; color:#375623; font-family:'Manrope',sans-serif; font-size:0.9rem; text-align:center;">
+                        ✅ Mesajınız iletildi! En kısa sürede dönüş yapacağız.
+                    </div>
+                    <div id="form-error" style="display:none; margin-top:1rem; padding:1rem; background:rgba(192,0,0,0.08); border-radius:8px; color:#C00000; font-family:'Manrope',sans-serif; font-size:0.9rem; text-align:center;">
+                        ❌ Bir hata oluştu. Lütfen tekrar deneyin.
+                    </div>
                 </form>
+
+                <script>
+                const form = document.getElementById('contact-form');
+                if (form) {
+                    form.addEventListener('submit', async function(e) {
+                        e.preventDefault();
+                        const data = new FormData(form);
+                        const btn = form.querySelector('button[type="submit"]');
+                        btn.textContent = 'Gönderiliyor...';
+                        btn.disabled = true;
+                        try {
+                            const res = await fetch(form.action, {
+                                method: 'POST',
+                                body: data,
+                                headers: { 'Accept': 'application/json' }
+                            });
+                            if (res.ok) {
+                                form.reset();
+                                document.getElementById('form-success').style.display = 'block';
+                                document.getElementById('form-error').style.display = 'none';
+                                btn.textContent = 'Gönderildi ✓';
+                            } else {
+                                throw new Error('Form error');
+                            }
+                        } catch(err) {
+                            document.getElementById('form-error').style.display = 'block';
+                            btn.textContent = 'Gönder →';
+                            btn.disabled = false;
+                        }
+                    });
+                }
+                </script>
             </div>
 
         </div>
