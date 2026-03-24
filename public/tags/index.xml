@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Kefir Aura</title>
-    <link>https://kefiraura.example.com/tags/</link>
+    <link>https://funny-zabaione-6b04cb.netlify.app/tags/</link>
     <description>Recent content in Tags on Kefir Aura</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>tr-TR</language>
-    <atom:link href="https://kefiraura.example.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://funny-zabaione-6b04cb.netlify.app/tags/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

@@ -1,3 +1,10 @@
+/* Logo */
+.logo-img {
+    height: 80px;
+    width: auto;
+    display: block;
+}
+
 /* Variables */
 :root {
     --color-cream: #f9f5f0;
