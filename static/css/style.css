@@ -130,8 +130,11 @@ p { margin-bottom: 1rem; }
 .header {
     top: 34px !important;
 }
-.hero, .page-header {
+.hero {
     padding-top: calc(8rem + 34px);
+}
+.page-header {
+    padding-top: calc(10rem + 34px) !important;
 }
 
 @media (max-width: 768px) {
