@@ -59,13 +59,13 @@ p { margin-bottom: 1rem; }
     z-index: 1000;
     transition: var(--transition);
     padding: 0;
-    background: #0d000b;
-    border-bottom: 1px solid rgba(147,24,122,0.2);
-    box-shadow: 0 2px 20px rgba(0,0,0,0.4);
+    background: linear-gradient(90deg, #2d0a26 0%, #1a0015 100%);
+    border-bottom: 1px solid rgba(147,24,122,0.3);
+    box-shadow: 0 2px 24px rgba(0,0,0,0.4);
 }
 .header.scrolled {
-    background: #0d000b;
-    box-shadow: 0 4px 28px rgba(0,0,0,0.5);
+    background: linear-gradient(90deg, #2d0a26 0%, #1a0015 100%);
+    box-shadow: 0 4px 32px rgba(0,0,0,0.5);
 }
 .header .container {
     display: flex;
