@@ -3,7 +3,7 @@
 <section class="page-header">
     <div class="container" style="position:relative; z-index:1;">
         <h1>{{ .Title }}</h1>
-        <p>{{ .Date.Format "02 January 2006" }}</p>
+        <p>{{ partial "tr-date.html" .Date }}</p>
     </div>
     <div class="page-header-bubbles">
         <div class="bubble"></div><div class="bubble"></div><div class="bubble"></div>

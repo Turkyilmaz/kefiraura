@@ -1,6 +1,12 @@
 baseURL = "https://kefiraura.pages.dev/"
 languageCode = "tr-TR"
+defaultContentLanguage = "tr"
 title = "Kefir Aura"
+
+[languages]
+  [languages.tr]
+    languageName = "Türkçe"
+    weight = 1
 [pagination]
   pagerSize = 10
 

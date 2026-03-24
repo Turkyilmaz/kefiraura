@@ -14,7 +14,7 @@
                 {{ range .Pages.ByDate.Reverse }}
                     <article class="blog-card">
                         <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-                        <p class="blog-date">{{ .Date.Format "2 January 2006" }}</p>
+                        <p class="blog-date">{{ partial "tr-date.html" .Date }}</p>
                         <p class="blog-excerpt">{{ .Summary | plainify }}</p>
                         <a href="{{ .RelPermalink }}" class="read-more">Devamını Oku →</a>
                     </article>

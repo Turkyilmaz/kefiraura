@@ -26,7 +26,7 @@
             <article class="blog-card">
                 <div class="blog-card-body">
                     <div class="blog-meta">
-                        <span class="blog-date">📅 {{ .Date.Format "02 January 2006" }}</span>
+                        <span class="blog-date">📅 {{ partial "tr-date.html" .Date }}</span>
                         {{ range .Params.tags }}
                         <span class="blog-tag">{{ . }}</span>
                         {{ end }}

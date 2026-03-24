@@ -1,0 +1,5 @@
+{{- $months := slice "" "Ocak" "Şubat" "Mart" "Nisan" "Mayıs" "Haziran" "Temmuz" "Ağustos" "Eylül" "Ekim" "Kasım" "Aralık" -}}
+{{- $day := .Format "02" -}}
+{{- $month := index $months (int (.Format "1")) -}}
+{{- $year := .Format "2006" -}}
+{{- printf "%s %s %s" $day $month $year -}}
