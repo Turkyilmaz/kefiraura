@@ -1,20 +1,15 @@
 {{ define "content" }}
 
 <section class="page-header">
-    <div class="container">
+    <div class="container" style="position:relative; z-index:1;">
         <h1>Satış Noktalarımız</h1>
         <p>Kefir Aura ürünlerine aşağıdaki platformlardan ulaşabilirsiniz</p>
     </div>
-    <div class="page-header-blob">
-        <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,40 C180,80 360,0 540,40 C720,80 900,0 1080,40 C1260,80 1380,20 1440,40 L1440,80 L0,80 Z" fill="#f9f5f0"/></svg>
-    </div>
-    <!-- Kabarcıklar -->
     <div class="page-header-bubbles">
         <div class="bubble"></div><div class="bubble"></div><div class="bubble"></div>
         <div class="bubble"></div><div class="bubble"></div><div class="bubble"></div>
         <div class="bubble"></div><div class="bubble"></div>
     </div>
-    <!-- Dalgalı alt geçiş -->
     <div class="page-header-wave">
         <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="display:block;width:100%;height:80px;">
             <path d="M0,20 C240,70 480,0 720,35 C960,70 1200,5 1440,30 L1440,80 L0,80 Z" fill="#f9f5f0" opacity="0.5"/>
@@ -27,107 +22,141 @@
     <div class="container">
         <div class="section-title">
             <span class="eyebrow">Nerede Bulunur?</span>
-            <h2>Yetkili Satıcılarımız</h2>
-            <p>Güvenilir satış noktalarımızdan doğal kefirlerimizi sipariş edebilirsiniz.</p>
+            <h2>Yetkili Satıcımız</h2>
+            <p>Kefir Aura ürünleri Köylü Peynircilik'in tüm şubelerinde satışa sunulmaktadır.</p>
         </div>
 
-        <div class="grid-3">
-
-            <!-- Köylü Peynircilik -->
-            <div class="card satis-card">
-                <div class="satis-logo-wrap">
-                    <img src="{{ "images/partners/koylu-peynircilik.png" | relURL }}" alt="Köylü Peynircilik" style="max-height:60px; max-width:100%; object-fit:contain; padding:0.5rem;">
+        <!-- Köylü Peynircilik Ana Kart -->
+        <div class="koylu-main-card">
+            <div class="koylu-header">
+                <img src="{{ "images/partners/koylu-peynircilik.png" | relURL }}" alt="Köylü Peynircilik" class="koylu-logo">
+                <div class="koylu-info">
+                    <h2>Köylü Peynircilik</h2>
+                    <p>10 mağaza ile İstanbul'un dört bir yanında hizmet veren, doğal ve geleneksel ürünlerin buluşma noktası.</p>
+                    <div class="koylu-contact">
+                        <span>📞 +90 212 461 85 00</span>
+                        <a href="https://koylupeynircilik.com.tr/" target="_blank" rel="noopener" class="btn btn-primary" style="margin-left:1rem;">Web Sitesi →</a>
+                    </div>
                 </div>
-                <h3>Köylü Peynircilik</h3>
-                <p>Doğal ve geleneksel ürünlerin buluşma noktası. Kefir Aura ürünlerimize buradan ulaşabilirsiniz.</p>
-                <a href="https://koylupeynircilik.com.tr/" target="_blank" rel="noopener" class="btn btn-primary satis-btn">
-                    Siteye Git →
-                </a>
             </div>
-
-            <!-- Yakında -->
-            <div class="card satis-card satis-coming">
-                <div class="satis-logo-wrap">
-                    <div class="satis-icon">⏳</div>
-                </div>
-                <h3>Yeni Nokta</h3>
-                <p>Yeni satış noktalarımız yakında eklenecek. Takipte kalın!</p>
-                <span class="coming-badge">Yakında</span>
-            </div>
-
-            <!-- Yakında -->
-            <div class="card satis-card satis-coming">
-                <div class="satis-logo-wrap">
-                    <div class="satis-icon">⏳</div>
-                </div>
-                <h3>Yeni Nokta</h3>
-                <p>Daha fazla satış noktasına ulaşmak için bizi takip edin.</p>
-                <span class="coming-badge">Yakında</span>
-            </div>
-
         </div>
 
-        <!-- Satıcı olmak ister misiniz? -->
-        <div class="satis-partner">
+        <!-- Şubeler -->
+        <div class="section-title" style="margin-top:4rem;">
+            <span class="eyebrow">Şubeler</span>
+            <h2>10 Mağaza</h2>
+        </div>
+
+        <div class="grid-3 sube-grid">
+            <div class="card sube-card">
+                <div class="sube-icon">🏪</div>
+                <h3>Bağcılar</h3>
+                <p>Bağcılar Köylü Peynircilik</p>
+                <a href="https://koylupeynircilik.com.tr/bagcilar.html" target="_blank" class="sube-link">Detay →</a>
+            </div>
+            <div class="card sube-card">
+                <div class="sube-icon">🏪</div>
+                <h3>Erenköy</h3>
+                <p>Erenköy Köylü Peynircilik</p>
+                <a href="https://koylupeynircilik.com.tr/erenkoey.html" target="_blank" class="sube-link">Detay →</a>
+            </div>
+            <div class="card sube-card">
+                <div class="sube-icon">🏪</div>
+                <h3>Okmeydanı</h3>
+                <p>Okmeydanı Köylü Peynircilik</p>
+                <a href="https://koylupeynircilik.com.tr/okmeydani.html" target="_blank" class="sube-link">Detay →</a>
+            </div>
+            <div class="card sube-card">
+                <div class="sube-icon">🏪</div>
+                <h3>Atışalanı</h3>
+                <p>Atışalanı Köylü Peynircilik</p>
+                <a href="https://koylupeynircilik.com.tr/atisalani.html" target="_blank" class="sube-link">Detay →</a>
+            </div>
+            <div class="card sube-card">
+                <div class="sube-icon">🏪</div>
+                <h3>Esenler</h3>
+                <p>Esenler Köylü Peynircilik</p>
+                <a href="https://koylupeynircilik.com.tr/esenler.html" target="_blank" class="sube-link">Detay →</a>
+            </div>
+            <div class="card sube-card">
+                <div class="sube-icon">🏪</div>
+                <h3>Mahmutbey</h3>
+                <p>Mahmutbey Köylü Peynircilik</p>
+                <a href="https://koylupeynircilik.com.tr/mahmutbey.html" target="_blank" class="sube-link">Detay →</a>
+            </div>
+            <div class="card sube-card">
+                <div class="sube-icon">🏪</div>
+                <h3>Yenibosna</h3>
+                <p>Yenibosna Köylü Peynircilik</p>
+                <a href="https://koylupeynircilik.com.tr/yenibosna.html" target="_blank" class="sube-link">Detay →</a>
+            </div>
+            <div class="card sube-card">
+                <div class="sube-icon">🏪</div>
+                <h3>Beylikdüzü</h3>
+                <p>Beylikdüzü Köylü Peynircilik</p>
+                <a href="https://koylupeynircilik.com.tr/beylikduzu.html" target="_blank" class="sube-link">Detay →</a>
+            </div>
+            <div class="card sube-card">
+                <div class="sube-icon">🏪</div>
+                <h3>Beykent</h3>
+                <p>Beykent Köylü Peynircilik</p>
+                <a href="https://koylupeynircilik.com.tr/beykent.html" target="_blank" class="sube-link">Detay →</a>
+            </div>
+            <div class="card sube-card">
+                <div class="sube-icon">🏪</div>
+                <h3>Büyükçekmece</h3>
+                <p>Büyükçekmece Köylü Peynircilik</p>
+                <a href="https://koylupeynircilik.com.tr/buyukcekmece.html" target="_blank" class="sube-link">Detay →</a>
+            </div>
+        </div>
+
+        <!-- Satış ortağı banner -->
+        <div class="satis-partner" style="margin-top:4rem;">
             <div class="satis-partner-inner">
                 <div>
                     <h3>Satış Ortağımız Olmak İster misiniz?</h3>
-                    <p>Kefir Aura ürünlerini mağazanızda veya platformunuzda satmak istiyorsanız bizimle iletişime geçin.</p>
+                    <p>Kefir Aura ürünlerini mağazanızda satmak istiyorsanız bizimle iletişime geçin.</p>
                 </div>
                 <a href="/iletisim/" class="btn btn-primary">İletişime Geçin</a>
             </div>
         </div>
-
     </div>
 </section>
 
 <style>
-.satis-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 2.5rem 2rem;
-    gap: 1rem;
+/* Ana kart */
+.koylu-main-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 2.5rem;
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(147,24,122,0.1);
+    margin-bottom: 1rem;
 }
-.satis-logo-wrap {
-    width: 100%; height: 80px;
-    background: linear-gradient(135deg, rgba(147,24,122,0.08), rgba(147,24,122,0.03));
-    border-radius: 12px;
-    border: 1px solid rgba(147,24,122,0.15);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 0.75rem;
-    overflow: hidden;
-}
-.satis-icon { font-size: 2.2rem; }
-.satis-brand-name {
-    font-family: 'Manrope', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 800;
-    color: var(--purple);
-    text-align: center;
-    line-height: 1.3;
-    letter-spacing: 0.02em;
-}
-.satis-card h3 { margin-bottom: 0.5rem; }
-.satis-card p { color: var(--gray); font-size: 0.95rem; flex: 1; }
-.satis-btn { margin-top: 0.5rem; width: 100%; justify-content: center; }
-.satis-coming { opacity: 0.55; pointer-events: none; }
-.coming-badge {
+.koylu-header { display: flex; align-items: center; gap: 2.5rem; flex-wrap: wrap; }
+.koylu-logo { height: 80px; width: auto; object-fit: contain; }
+.koylu-info { flex: 1; }
+.koylu-info h2 { margin-bottom: 0.5rem; }
+.koylu-info p { color: var(--gray); margin-bottom: 1rem; }
+.koylu-contact { display: flex; align-items: center; flex-wrap: wrap; gap: 0.5rem; font-family: 'Manrope', sans-serif; font-size: 0.9rem; }
+
+/* Şube kartları */
+.sube-grid { margin-top: 0; }
+.sube-card { text-align: center; padding: 1.75rem 1.5rem; }
+.sube-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+.sube-card h3 { font-size: 1rem; margin-bottom: 0.25rem; }
+.sube-card p { color: var(--gray); font-size: 0.85rem; margin-bottom: 1rem; }
+.sube-link {
     font-family: 'Manrope', sans-serif;
     font-size: 0.8rem;
     font-weight: 700;
-    background: rgba(147,24,122,0.08);
     color: var(--purple);
-    border: 1px dashed rgba(147,24,122,0.3);
-    padding: 0.4rem 1.2rem;
-    border-radius: 50px;
-    letter-spacing: 0.05em;
+    transition: var(--transition);
 }
+.sube-link:hover { color: var(--purple-dark); }
+
+/* Partner banner */
 .satis-partner {
-    margin-top: 4rem;
     background: linear-gradient(135deg, #2d0a26 0%, #1a0015 100%);
     border-radius: var(--radius);
     padding: 2.5rem 3rem;
