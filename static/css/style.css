@@ -761,7 +761,7 @@ p { margin-bottom: 1rem; }
 /* ── PAGE HEADER ── */
 .page-header {
     background: linear-gradient(160deg, #3d0a35 0%, #2d0a26 40%, #1a0015 100%);
-    padding: 9rem 0 7rem;
+    padding: 11rem 0 7rem;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -841,6 +841,7 @@ p { margin-bottom: 1rem; }
     z-index: 2;
     font-size: clamp(1.6rem, 3vw, 2.6rem);
     margin-bottom: 1rem;
+    margin-top: 1.5rem;
 }
 .page-header h1 span {
     background: linear-gradient(135deg, #e890d8, var(--purple-light));
