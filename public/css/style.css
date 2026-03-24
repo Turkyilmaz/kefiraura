@@ -92,13 +92,22 @@ p { margin-bottom: 1rem; }
     font-family: 'Manrope', sans-serif;
     font-size: 0.9rem;
     font-weight: 600;
-    color: var(--black-soft);
+    color: var(--white);
     padding: 0.5rem 1rem;
     border-radius: 50px;
     transition: var(--transition);
     letter-spacing: 0.01em;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.3);
 }
 .nav ul li a:hover {
+    background: rgba(255,255,255,0.12);
+    color: var(--white);
+}
+.header.scrolled .nav ul li a {
+    color: var(--black-soft);
+    text-shadow: none;
+}
+.header.scrolled .nav ul li a:hover {
     background: rgba(147,24,122,0.08);
     color: var(--purple);
 }
