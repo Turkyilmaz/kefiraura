@@ -157,6 +157,20 @@ p { margin-bottom: 1rem; }
 }
 
 /* ── HERO ── */
+/* ── HEADER WAVE ── */
+.header-wave {
+    position: absolute;
+    bottom: -16px; left: 0; right: 0;
+    z-index: 10;
+    line-height: 0;
+    pointer-events: none;
+}
+.header-wave svg {
+    display: block;
+    width: 100%;
+    height: 18px;
+}
+
 /* ── HERO SPLIT ── */
 .hero {
     min-height: 100vh;
