@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
 </head>
 <body>
-    <header class="header">
+    <header class="header{{ if not .IsHome }} scrolled{{ end }}">
         <div class="container">
             <div class="logo">
                 <a href="/"><img src="{{ "images/logo.png" | relURL }}" alt="Kefir Aura" class="logo-img"></a>
