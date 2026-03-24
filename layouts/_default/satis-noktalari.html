@@ -38,8 +38,8 @@
                     </div>
                 </div>
                 <div class="partner-right">
-                    <a href="https://koylupeynircilik.com.tr/" target="_blank" rel="noopener" class="btn btn-primary" onclick="event.stopPropagation()">Web Sitesi →</a>
-                    <span class="toggle-icon" id="icon-koylu">▼</span>
+                    <a href="https://koylupeynircilik.com.tr/" target="_blank" rel="noopener" class="btn btn-outline-purple" onclick="event.stopPropagation()">Web Sitesi →</a>
+                    <button class="toggle-btn" id="icon-koylu">▼ Şubeleri Gör</button>
                 </div>
             </div>
 
@@ -128,18 +128,21 @@
 <script>
 function toggleBranches(id) {
     const el = document.getElementById('branches-' + id);
-    const icon = document.getElementById('icon-' + id);
+    const btn = document.getElementById('icon-' + id);
     if (el.style.display === 'none' || el.style.display === '') {
         el.style.display = 'block';
-        icon.textContent = '▲';
+        btn.textContent = '▲ Kapat';
+        btn.classList.add('active');
     } else {
         el.style.display = 'none';
-        icon.textContent = '▼';
+        btn.textContent = '▼ Şubeleri Gör';
+        btn.classList.remove('active');
     }
 }
-// Başlangıçta açık
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('branches-koylu').style.display = 'block';
+    document.getElementById('icon-koylu').textContent = '▲ Kapat';
+    document.getElementById('icon-koylu').classList.add('active');
 });
 </script>
 
@@ -173,11 +176,41 @@ document.addEventListener('DOMContentLoaded', function() {
     font-weight: 600;
 }
 .partner-right { display: flex; align-items: center; gap: 1rem; flex-shrink: 0; }
-.toggle-icon {
-    font-size: 0.8rem;
-    color: var(--gray);
+.toggle-btn {
     font-family: 'Manrope', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--purple);
+    background: rgba(147,24,122,0.08);
+    border: 1.5px solid rgba(147,24,122,0.25);
+    border-radius: 50px;
+    padding: 0.5rem 1.1rem;
+    cursor: pointer;
     transition: var(--transition);
+    white-space: nowrap;
+}
+.toggle-btn:hover, .toggle-btn.active {
+    background: var(--purple);
+    color: var(--white);
+    border-color: var(--purple);
+}
+.btn-outline-purple {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.6rem 1.4rem;
+    border-radius: 50px;
+    border: 1.5px solid var(--purple);
+    color: var(--purple);
+    background: transparent;
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+    display: inline-block;
+}
+.btn-outline-purple:hover {
+    background: var(--purple);
+    color: var(--white);
 }
 
 /* Şubeler */
