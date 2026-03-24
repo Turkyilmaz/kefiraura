@@ -58,20 +58,25 @@ p { margin-bottom: 1rem; }
     top: 0; left: 0; right: 0;
     z-index: 1000;
     transition: var(--transition);
-    padding: 1rem 0;
+    padding: 0;
+    background: rgba(10, 10, 10, 0.75);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
 }
 .header.scrolled {
-    background: rgba(10, 10, 10, 0.88);
+    background: rgba(10, 10, 10, 0.95);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
-    box-shadow: 0 1px 0 rgba(255,255,255,0.06), 0 4px 24px rgba(0,0,0,0.3);
-    padding: 0.6rem 0;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.4);
 }
 .header .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 2rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
 }
 .logo-img {
     height: 80px;
@@ -92,34 +97,26 @@ p { margin-bottom: 1rem; }
     font-family: 'Manrope', sans-serif;
     font-size: 0.9rem;
     font-weight: 600;
-    color: var(--white);
-    padding: 0.5rem 1rem;
+    color: rgba(255,255,255,0.85);
+    padding: 0.6rem 1.1rem;
     border-radius: 50px;
     transition: var(--transition);
     letter-spacing: 0.01em;
-    text-shadow: 0 1px 4px rgba(0,0,0,0.3);
 }
 .nav ul li a:hover {
-    background: rgba(255,255,255,0.12);
-    color: var(--white);
-}
-.header.scrolled .nav ul li a {
-    color: rgba(255,255,255,0.85);
-    text-shadow: none;
-}
-.header.scrolled .nav ul li a:hover {
     background: rgba(255,255,255,0.1);
     color: var(--white);
 }
 .nav ul li:last-child a {
-    background: var(--purple);
-    color: var(--white);
-    padding: 0.5rem 1.25rem;
+    background: linear-gradient(135deg, var(--purple), var(--purple-dark));
+    color: var(--white) !important;
+    padding: 0.6rem 1.4rem;
+    box-shadow: 0 4px 16px rgba(147,24,122,0.35);
 }
 .nav ul li:last-child a:hover {
-    background: var(--purple-dark);
-    transform: translateY(-1px);
-    box-shadow: var(--shadow-purple);
+    background: linear-gradient(135deg, var(--purple-light), var(--purple));
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(147,24,122,0.5);
 }
 
 /* ── HERO ── */
