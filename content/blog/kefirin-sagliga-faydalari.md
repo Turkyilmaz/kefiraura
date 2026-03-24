@@ -27,4 +27,4 @@ Kefir, fermente süt ürünleri içerisinde yoğurttan sonra en çok bilinen sü
 
 Kafkasya bölgesinde tüberküloz, kanser ve sindirim bozukluğu gibi hastalıklara az rastlanması ve ortalama ömrün 110-130 yıla ulaşması kefir tüketimiyle ilişkilendirilir.
 
-*Kaynak: [kefiraura.com](https://www.kefiraura.com/2025/07/17/kefirin-sagliga-faydalari-saymakla-bitmiyor/)*
+**Kaynak:** [memorial.com.tr](https://www.memorial.com.tr/saglik-rehberi/kefirin-faydalari-nelerdir)

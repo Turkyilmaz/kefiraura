@@ -24,4 +24,4 @@ Bir bardak az yağlı kefir: **104 kalori**, **9g protein**, **2,5g yağ**, **11
 - Kolesterol ve kan basıncını düzenler
 - Kan şekeri seviyelerini düşürür
 
-*Kaynak: [kefiraura.com](https://www.kefiraura.com/2025/07/17/kefir-nedir-kefirin-faydalari-nelerdir/)*
+**Kaynak:** [memorial.com.tr](https://www.memorial.com.tr/saglik-rehberi/kefirin-faydalari-nelerdir)
