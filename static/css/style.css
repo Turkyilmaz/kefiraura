@@ -52,6 +52,57 @@ p { margin-bottom: 1rem; }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
 .section { padding: 6rem 0; }
 
+/* ── TOPBAR ── */
+.topbar {
+    background: rgba(45,10,38,0.95);
+    border-bottom: 1px solid rgba(196,74,170,0.15);
+    padding: 0.5rem 0;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.78rem;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1001;
+}
+.topbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.topbar-links {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+.topbar-item {
+    color: rgba(255,255,255,0.7);
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    transition: var(--transition);
+    white-space: nowrap;
+}
+.topbar-item:hover { color: var(--purple-light); }
+.topbar-divider {
+    width: 1px;
+    height: 14px;
+    background: rgba(255,255,255,0.15);
+}
+.topbar-address { cursor: default; }
+
+/* Header'ı topbar kadar aşağı it */
+.header {
+    top: 34px !important;
+}
+.hero, .page-header {
+    padding-top: calc(8rem + 34px);
+}
+
+@media (max-width: 768px) {
+    .topbar { display: none; }
+    .header { top: 0 !important; }
+}
+
 /* ── HEADER / GLASSMORPHISM NAV ── */
 .header {
     position: fixed;
