@@ -19,15 +19,50 @@
     .logo-img { height: 100px; }
 }
 
-/* ===== KALICI WAVE DIVIDER ÇÖZÜMÜ ===== */
+/* ===== KALICI WAVE DIVIDER ÇÖZÜMÜ - HEADER DARALTILDI ===== */
 
-/* Page Header - Negatif Margin YOK, Padding Var */
+/* Page Header - KOMPAKT HEDEFLİ DARALTMA */
 .page-header {
     position: relative;
     z-index: 5;
     margin-bottom: 0;
-    padding-bottom: 0;
+    padding: 2rem 0 1rem 0; /* Yukarı ve aşağı padding azaltıldı */
     overflow: visible;
+}
+
+/* Page Header Container - İçerik Hizalaması */
+.page-header .container {
+    padding: 1rem 0; /* İçerideki padding'i azalt */
+}
+
+/* Page Header Title - Başlık Yüksekliğini Azalt */
+.page-header h1 {
+    font-size: 2.5rem; /* Daha küçük başlık */
+    margin: 0.5rem 0;
+    line-height: 1.2;
+}
+
+.page-header p {
+    margin: 0.5rem 0 0 0;
+    font-size: 1rem;
+}
+
+/* Kabarcıklar - Gizle (Yer Kazandır) */
+.page-header-bubbles {
+    display: none;
+}
+
+/* Blob (İlk Dalga) - Yüksekliğini Azalt */
+.page-header-blob {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 2;
+    overflow: visible;
+}
+
+.page-header-blob svg {
+    height: 40px !important; /* Blob yüksekliğini yarıya indir */
 }
 
 /* Wave Divider SVG - Transform ile Yukarı Kaydır */
@@ -37,9 +72,9 @@
     padding: 0;
     position: relative;
     z-index: 3;
-    height: 80px;
+    height: 60px; /* Yükseklik azaltıldı */
     overflow: visible;
-    transform: translateY(-100%);
+    transform: translateY(-50px); /* Başlığın altına yaklaştır */
     pointer-events: none;
 }
 
@@ -47,8 +82,8 @@
 .page-header + .section {
     position: relative;
     z-index: 10;
-    margin-top: -80px;
-    padding-top: 100px;
+    margin-top: -50px; /* Boşluk minimize edildi */
+    padding-top: 60px;
     background: #f9f5f0;
 }
 
@@ -62,39 +97,79 @@
 
 /* Tablet Cihazlar (768px - 1024px) */
 @media (max-width: 1024px) {
+    .page-header {
+        padding: 1.5rem 0 0.5rem 0;
+    }
+    
+    .page-header h1 {
+        font-size: 2rem;
+    }
+    
+    .page-header-blob svg {
+        height: 35px !important;
+    }
+    
     .page-header-wave {
-        transform: translateY(-85%);
-        height: 70px;
+        height: 55px;
+        transform: translateY(-45px);
     }
     
     .page-header + .section {
-        margin-top: -60px;
-        padding-top: 80px;
+        margin-top: -45px;
+        padding-top: 55px;
     }
 }
 
 /* Mobil Cihazlar (480px - 768px) */
 @media (max-width: 768px) {
+    .page-header {
+        padding: 1rem 0 0.25rem 0;
+    }
+    
+    .page-header h1 {
+        font-size: 1.75rem;
+    }
+    
+    .page-header p {
+        font-size: 0.95rem;
+    }
+    
+    .page-header-blob svg {
+        height: 30px !important;
+    }
+    
     .page-header-wave {
-        transform: translateY(-80%);
-        height: 60px;
+        height: 50px;
+        transform: translateY(-40px);
     }
     
     .page-header + .section {
-        margin-top: -50px;
-        padding-top: 70px;
+        margin-top: -40px;
+        padding-top: 50px;
     }
 }
 
 /* Küçük Mobil Cihazlar (<480px) */
 @media (max-width: 480px) {
+    .page-header {
+        padding: 0.75rem 0 0;
+    }
+    
+    .page-header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .page-header-blob svg {
+        height: 25px !important;
+    }
+    
     .page-header-wave {
-        transform: translateY(-80%);
-        height: 50px;
+        height: 45px;
+        transform: translateY(-35px);
     }
     
     .page-header + .section {
-        margin-top: -40px;
-        padding-top: 60px;
+        margin-top: -35px;
+        padding-top: 45px;
     }
 }
