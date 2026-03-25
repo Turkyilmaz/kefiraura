@@ -991,3 +991,21 @@ p { margin-bottom: 1rem; }
     .contact-form { padding: 2rem; }
 }
 <!-- cache bust Tue Mar 24 03:46:41 PM UTC 2026 -->
+
+/* Dalga yazı üstüne binme sorunu düzeltmesi */
+.page-header-wave,
+.page-header-blob { display: none; }
+
+/* Yumuşak gradient geçiş */
+.page-header {
+    padding-bottom: 5rem !important;
+}
+.page-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 80px;
+    background: linear-gradient(180deg, transparent 0%, #f9f5f0 100%);
+    pointer-events: none;
+    z-index: 4;
+}
