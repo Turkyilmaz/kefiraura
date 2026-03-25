@@ -18,3 +18,30 @@
     .header { top: 0 !important; }
     .logo-img { height: 100px; }
 }
+
+/* Wave Divider Düzeltmesi - Tüm Sayfalar */
+.page-header-wave {
+    margin-bottom: -100px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Wave Divider Sonrası İçerik */
+.page-header + .section {
+    margin-top: -80px;
+    position: relative;
+    z-index: 2;
+    padding-top: 40px;
+}
+
+/* Mobil için wave divider ayarı */
+@media (max-width: 768px) {
+    .page-header-wave {
+        margin-bottom: -70px;
+    }
+    
+    .page-header + .section {
+        margin-top: -50px;
+        padding-top: 30px;
+    }
+}
