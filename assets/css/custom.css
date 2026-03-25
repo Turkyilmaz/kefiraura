@@ -1,37 +1,18 @@
-/* ===== STYLE.CSS OVERRIDE ===== */
-
-/* style.css'deki padding-top: calc(1rem + 120px) !important EZİLİYOR */
-.page-header {
-    padding-top: calc(1rem + 80px) !important; /* 120px → 80px */
-    padding-bottom: 0 !important;
-    margin-bottom: 0 !important;
-}
-
-/* style.css'deki .section { padding: 6rem 0 } EZİLİYOR */
-.page-header + .section,
-.page-header + .section.about-section {
-    padding-top: 1rem !important;
-    margin-top: -80px !important;
-}
-
-/* Page header wave gizleme override */
-.page-header-wave {
-    display: block !important;
-}
+/* ===== KEFIR AURA CUSTOM CSS ===== */
 
 /* Header container */
 .header {
-    padding: 0.5rem 0; /* Daha kompakt padding */
+    padding: 0.5rem 0;
 }
 
 /* Logo boyutu */
 .logo-img {
-    height: 114px; /* 120px'ten %5 küçültülmüş hali */
+    height: 114px;
 }
 
 /* Topbar varsa ayarı */
 .header {
-    top: 32.3px !important; /* 34px'ten %5 küçültülmüş */
+    top: 32.3px !important;
 }
 
 /* Mobil uyumluluk */
@@ -40,163 +21,33 @@
     .logo-img { height: 100px; }
 }
 
-/* ===== ULTIMATE WAVE DIVIDER ÇÖZÜMÜ - HEADER MİNİMAL ===== */
+/* ===== WAVE DIVIDER KÖK NEDEN DÜZELTMESİ ===== */
+/*
+ * SORUN: .page-header-wave position:absolute olduğu için
+ *        page-header'ın yüksekliğini etkilemiyor.
+ *        .section padding:6rem (96px) çok büyük.
+ *
+ * ÇÖZÜM: page-header'ı wave yüksekliği kadar küçültelim
+ *        ve section'ın üst padding'ini azaltalım.
+ */
 
-/* Page Header - MİNİMAL YÜKSEKLIK */
+/* Page header'ın alt kısmını wave yüksekliği (80px) kadar küçült */
 .page-header {
-    position: relative;
-    z-index: 5;
-    margin-bottom: 0;
-    padding: 0.75rem 0 0 0; /* AŞIRI KOMPAKT */
-    overflow: visible;
-    background: linear-gradient(135deg, #2d0a26 0%, #1a0015 100%);
+    padding-bottom: 80px !important; /* wave yüksekliği kadar yer bırak */
 }
 
-/* Page Header Container - İçerik Hizalaması */
-.page-header .container {
-    padding: 0.5rem 0; /* Sıfıra yakın padding */
+/* Page header sonrası ilk section - üst padding azalt */
+.page-header + .section,
+.page-header + .section.about-section {
+    padding-top: 2rem !important; /* 6rem → 2rem */
 }
 
-/* Page Header Title - KÜÇÜLTÜLMÜŞ */
-.page-header h1 {
-    font-size: 2rem; /* Başlık azaltıldı */
-    margin: 0.25rem 0;
-    line-height: 1.1;
-    padding: 0;
-}
-
-.page-header p {
-    margin: 0.25rem 0 0 0;
-    font-size: 0.95rem;
-    padding: 0;
-}
-
-/* Kabarcıklar - Tamamen Gizle */
+/* Kabarcıkları gizle (yer kazandır) */
 .page-header-bubbles {
     display: none !important;
 }
 
-/* Blob (İlk Dalga) - MINIMAL */
-.page-header-blob {
-    margin: 0 !important;
-    padding: 0 !important;
-    position: relative;
-    z-index: 2;
-    overflow: visible;
-    height: 20px !important;
-}
-
-.page-header-blob svg {
-    height: 20px !important;
-    display: block !important;
-    width: 100% !important;
-}
-
-/* Wave Divider SVG - AŞIRI KAYDIRMA */
+/* Wave divider görünür kalsın */
 .page-header-wave {
-    display: block;
-    margin: 0;
-    padding: 0;
-    position: relative;
-    z-index: 3;
-    height: 50px; /* Daha küçük */
-    overflow: visible;
-    transform: translateY(-30px); /* Agresif yukarı kaydırma */
-    pointer-events: none;
-}
-
-/* İlk Section - AŞIRI YAKIN */
-.page-header + .section {
-    position: relative;
-    z-index: 10;
-    margin-top: -30px; /* Maksimum yaklaştırma */
-    padding-top: 40px;
-    background: #f9f5f0;
-}
-
-/* CTA Section */
-.cta-section {
-    margin-top: 0;
-    padding-top: 2rem;
-    position: relative;
-    z-index: 8;
-}
-
-/* Tablet Cihazlar (768px - 1024px) */
-@media (max-width: 1024px) {
-    .page-header {
-        padding: 0.75rem 0 0;
-    }
-    
-    .page-header h1 {
-        font-size: 1.75rem;
-    }
-    
-    .page-header-blob svg {
-        height: 18px !important;
-    }
-    
-    .page-header-wave {
-        height: 48px;
-        transform: translateY(-28px);
-    }
-    
-    .page-header + .section {
-        margin-top: -28px;
-        padding-top: 40px;
-    }
-}
-
-/* Mobil Cihazlar (480px - 768px) */
-@media (max-width: 768px) {
-    .page-header {
-        padding: 0.5rem 0 0;
-    }
-    
-    .page-header h1 {
-        font-size: 1.5rem;
-    }
-    
-    .page-header p {
-        font-size: 0.9rem;
-    }
-    
-    .page-header-blob svg {
-        height: 15px !important;
-    }
-    
-    .page-header-wave {
-        height: 45px;
-        transform: translateY(-25px);
-    }
-    
-    .page-header + .section {
-        margin-top: -25px;
-        padding-top: 35px;
-    }
-}
-
-/* Küçük Mobil Cihazlar (<480px) */
-@media (max-width: 480px) {
-    .page-header {
-        padding: 0.5rem 0 0;
-    }
-    
-    .page-header h1 {
-        font-size: 1.3rem;
-    }
-    
-    .page-header-blob svg {
-        height: 12px !important;
-    }
-    
-    .page-header-wave {
-        height: 40px;
-        transform: translateY(-20px);
-    }
-    
-    .page-header + .section {
-        margin-top: -20px;
-        padding-top: 30px;
-    }
+    display: block !important;
 }
