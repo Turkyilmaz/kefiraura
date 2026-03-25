@@ -65,3 +65,26 @@ Detaylar: `customers/customers.md`
 | TeknoSA | ✅ | ❌ | ML Prevention DISABLED |
 | Pizza Lazza | ✅ | ❌ | Quarantine/Cred Dumping kapalı |
 | Yurtiçi Kargo | ✅ | ✅ | 2.694 pwd never expires |
+| CarrefourSA | ✅ | ❌ | — |
+
+---
+
+## Kefir Aura Projesi
+
+- **Site:** https://kefiraura.pages.dev
+- **Platform:** Cloudflare Pages (ücretsiz)
+- **GitHub:** https://github.com/Turkyilmaz/kefiraura
+- **Klasör:** `kefiraura/`
+
+### Yapılanlar
+- Hugo static site — tüm sayfalar hazır
+- Formspree iletişim formu (mjgpbbyo)
+- Blog: 4 yazı (kefir, sağlık, 21 gün, ikinci beyin)
+- Satış Noktaları: Köylü Peynircilik (10 şube), Emek Yufka & Mantı
+- Sertifikalar: 3 PDF belge
+- Sosyal medya takvimi + içerik şablonları
+
+### Bekleyenler
+- kefiraura.com domain bağlantısı
+- Yeni logo (Boyacıyan — #05 önerisi)
+- Ürün ve Meltem Hanım fotoğrafları
