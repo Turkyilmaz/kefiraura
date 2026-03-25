@@ -183,7 +183,7 @@ p { margin-bottom: 1rem; }
 }
 .logo-wrap:hover { transform: scale(1.04); }
 .logo-img {
-    height: 110px;
+    height: 72px;
     width: auto;
     display: block;
     filter: brightness(0) invert(1)
@@ -631,12 +631,17 @@ p { margin-bottom: 1rem; }
 }
 .about-card-main .author {
     font-family: 'Manrope', sans-serif;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--purple-light);
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+    background: rgba(255,255,255,0.12);
+    border-left: 3px solid rgba(255,255,255,0.6);
+    padding: 0.5rem 1rem;
+    border-radius: 0 8px 8px 0;
     margin-top: 1.5rem;
     position: relative;
     z-index: 1;
+    letter-spacing: 0.02em;
 }
 .about-stats {
     display: grid;
