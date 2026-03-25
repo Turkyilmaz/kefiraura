@@ -21,99 +21,80 @@
 
 /* ===== GLOBAL WAVE DIVIDER FIX ===== */
 
-/* Page Header - Wave Divider Konteynerı */
+/* Page Header - Marjin Sıfırlanıyor */
 .page-header {
     position: relative;
     z-index: 5;
-    margin-bottom: 0;
+    margin-bottom: -120px !important;
     padding-bottom: 0;
+    overflow: visible;
 }
 
-/* Wave Divider SVG - Negatif Margin */
+/* Wave Divider SVG */
 .page-header-wave {
     display: block;
     margin: 0;
-    margin-top: -1px;
-    margin-bottom: -120px;
+    padding: 0;
     position: relative;
     z-index: 3;
     height: 80px;
     overflow: visible;
 }
 
-/* Page Header Blob (İlk dalga) */
-.page-header-blob {
-    margin: 0;
-    padding: 0;
-    position: relative;
-    z-index: 2;
-}
-
-/* İlk Section - Content Üst Hizalaması */
-.page-header + .section,
-.page-header-wave + .section {
-    margin-top: -120px !important;
+/* İlk Section - Doğrudan Page Header Sonrası */
+.page-header + .section {
     position: relative;
     z-index: 10;
-    padding-top: 80px;
+    margin-top: 0 !important;
+    padding-top: 120px;
     background: #f9f5f0;
 }
 
-/* CTA Section - Alt Boşluk */
+/* CTA Section */
 .cta-section {
-    margin-top: -60px;
-    padding-top: 80px;
+    margin-top: 0;
+    padding-top: 3rem;
     position: relative;
     z-index: 8;
 }
 
-/* Tablet Cihazlar */
+/* Tablet Cihazlar (768px - 1024px) */
 @media (max-width: 1024px) {
-    .page-header-wave {
-        margin-bottom: -100px;
-        height: 70px;
+    .page-header {
+        margin-bottom: -100px !important;
     }
     
-    .page-header + .section,
-    .page-header-wave + .section {
-        margin-top: -100px !important;
-        padding-top: 60px;
+    .page-header + .section {
+        padding-top: 100px;
     }
 }
 
-/* Mobil Cihazlar */
+/* Mobil Cihazlar (480px - 768px) */
 @media (max-width: 768px) {
     .page-header {
-        padding-bottom: 0;
+        margin-bottom: -80px !important;
     }
     
     .page-header-wave {
-        margin-bottom: -80px;
         height: 60px;
     }
     
-    .page-header + .section,
-    .page-header-wave + .section {
-        margin-top: -80px !important;
-        padding-top: 50px;
-    }
-    
-    .cta-section {
-        margin-top: -40px;
-        padding-top: 60px;
+    .page-header + .section {
+        padding-top: 80px;
     }
 }
 
-/* Çok Küçük Cihazlar */
+/* Küçük Mobil Cihazlar (<480px) */
 @media (max-width: 480px) {
+    .page-header {
+        margin-bottom: -60px !important;
+    }
+    
     .page-header-wave {
-        margin-bottom: -60px;
         height: 50px;
     }
     
-    .page-header + .section,
-    .page-header-wave + .section {
-        margin-top: -60px !important;
-        padding-top: 40px;
+    .page-header + .section {
+        padding-top: 60px;
     }
 }
