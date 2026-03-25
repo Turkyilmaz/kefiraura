@@ -44,6 +44,54 @@
     </div>
 </section>
 
+<!-- Ambalaj Tasarımları -->
+<section class="section">
+    <div class="container">
+        <div class="section-title">
+            <span class="eyebrow">Ambalaj Tasarımları</span>
+            <h2>Yeni Tasarımlarımız</h2>
+            <p>Geleneksel kefirimizi modern ve şık ambalajlarla sunuyoruz.</p>
+        </div>
+        <div class="ambalaj-slider">
+            <img src="{{ "images/ambalaj_1.png" | relURL }}" alt="Kefir Aura Ambalaj Tasarımı 1" class="ambalaj-img">
+            <img src="{{ "images/ambalaj_2.png" | relURL }}" alt="Kefir Aura Ambalaj Tasarımı 2" class="ambalaj-img">
+            <img src="{{ "images/ambalaj_3.png" | relURL }}" alt="Kefir Aura Ambalaj Tasarımı 3" class="ambalaj-img">
+            <img src="{{ "images/ambalaj_4.png" | relURL }}" alt="Kefir Aura Ambalaj Tasarımı 4" class="ambalaj-img">
+            <img src="{{ "images/ambalaj_5.png" | relURL }}" alt="Kefir Aura Ambalaj Tasarımı 5" class="ambalaj-img">
+        </div>
+    </div>
+</section>
+
+<style>
+.ambalaj-slider {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+.ambalaj-slider::-webkit-scrollbar { height: 6px; }
+.ambalaj-slider::-webkit-scrollbar-track { background: var(--offwhite-dark); border-radius: 3px; }
+.ambalaj-slider::-webkit-scrollbar-thumb { background: var(--purple); border-radius: 3px; }
+.ambalaj-img {
+    min-width: 480px;
+    max-width: 480px;
+    height: auto;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    scroll-snap-align: start;
+    transition: var(--transition);
+}
+.ambalaj-img:hover {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-lg);
+}
+@media (max-width: 768px) {
+    .ambalaj-img { min-width: 300px; max-width: 300px; }
+}
+</style>
+
 <!-- Neden Kefir Aura -->
 <section class="section" style="background:var(--offwhite-dark);">
     <div class="container">
