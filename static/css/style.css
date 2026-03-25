@@ -134,7 +134,7 @@ p { margin-bottom: 1rem; }
     padding-top: calc(8rem + 34px);
 }
 .page-header {
-    padding-top: calc(10rem + 34px) !important;
+    padding-top: calc(5rem + 34px) !important;
 }
 
 @media (max-width: 768px) {
@@ -792,7 +792,7 @@ p { margin-bottom: 1rem; }
 /* ── PAGE HEADER ── */
 .page-header {
     background: linear-gradient(160deg, #2A0060 0%, #1E0050 40%, #120035 100%);
-    padding: 11rem 0 7rem;
+    padding: 4rem 0 4rem;
     text-align: center;
     position: relative;
     overflow: hidden;
