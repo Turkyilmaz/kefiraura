@@ -1,3 +1,24 @@
+/* ===== STYLE.CSS OVERRIDE ===== */
+
+/* style.css'deki padding-top: calc(1rem + 120px) !important EZİLİYOR */
+.page-header {
+    padding-top: calc(1rem + 80px) !important; /* 120px → 80px */
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+/* style.css'deki .section { padding: 6rem 0 } EZİLİYOR */
+.page-header + .section,
+.page-header + .section.about-section {
+    padding-top: 1rem !important;
+    margin-top: -80px !important;
+}
+
+/* Page header wave gizleme override */
+.page-header-wave {
+    display: block !important;
+}
+
 /* Header container */
 .header {
     padding: 0.5rem 0; /* Daha kompakt padding */
