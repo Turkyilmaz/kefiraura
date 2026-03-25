@@ -90,9 +90,9 @@ p { margin-bottom: 1rem; }
 
 /* ── TOPBAR ── */
 .topbar {
-    background: rgba(45,10,38,0.95);
-    border-bottom: 1px solid rgba(123,45,192,0.15);
-    padding: 0.5rem 0;
+    background: linear-gradient(90deg, #1E0050 0%, #2A0060 50%, #1E0050 100%);
+    border-bottom: none;
+    padding: 0.4rem 0;
     font-family: 'Manrope', sans-serif;
     font-size: 0.78rem;
     position: fixed;
@@ -150,8 +150,9 @@ p { margin-bottom: 1rem; }
     transition: var(--transition);
     padding: 0;
     background: linear-gradient(90deg, #2A0060 0%, #1E0050 50%, #120035 100%);
+    border-top: 1px solid rgba(123,45,192,0.2);
     border-bottom: none;
-    box-shadow: 0 4px 32px rgba(0,0,0,0.5), 0 1px 0 rgba(123,45,192,0.15);
+    box-shadow: 0 4px 32px rgba(0,0,0,0.5);
 }
 .header::after {
     content: '';
@@ -176,31 +177,25 @@ p { margin-bottom: 1rem; }
 .logo-wrap {
     display: inline-flex;
     align-items: center;
-    gap: 0;
+    padding: 0.5rem 0;
     transition: var(--transition);
     position: relative;
 }
-.logo-wrap::before {
-    content: '';
-    position: absolute;
-    inset: -8px -16px;
-    background: rgba(255,255,255,0.06);
-    border-radius: 16px;
-    border: 1px solid rgba(255,255,255,0.1);
-    opacity: 0;
-    transition: var(--transition);
-}
-.logo-wrap:hover::before { opacity: 1; }
 .logo-wrap:hover { transform: scale(1.04); }
 .logo-img {
-    height: 72px;
+    height: 96px;
     width: auto;
     display: block;
-    filter: brightness(0) invert(1) drop-shadow(0 0 16px rgba(123,45,192,0.6));
+    filter: brightness(0) invert(1)
+            drop-shadow(0 0 14px rgba(255,255,255,0.5))
+            drop-shadow(0 0 35px rgba(123,45,192,0.7));
     transition: var(--transition);
 }
 .logo-wrap:hover .logo-img {
-    filter: brightness(0) invert(1) drop-shadow(0 0 24px rgba(123,45,192,0.9));
+    filter: brightness(0) invert(1)
+            drop-shadow(0 0 22px rgba(255,255,255,0.8))
+            drop-shadow(0 0 55px rgba(123,45,192,1.0));
+    transform: scale(1.07);
 }
 .nav ul {
     display: flex;
