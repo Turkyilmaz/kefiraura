@@ -134,7 +134,7 @@ p { margin-bottom: 1rem; }
     padding-top: calc(8rem + 34px);
 }
 .page-header {
-    padding-top: calc(1.5rem + 120px) !important;
+    padding-top: calc(1rem + 120px) !important;
 }
 
 @media (max-width: 768px) {
@@ -794,7 +794,7 @@ p { margin-bottom: 1rem; }
 /* ── PAGE HEADER ── */
 .page-header {
     background: linear-gradient(160deg, #2A0060 0%, #1E0050 40%, #120035 100%);
-    padding: 4rem 0 4rem;
+    padding: 1rem 0 2rem;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -1000,7 +1000,7 @@ p { margin-bottom: 1rem; }
 
 /* Yumuşak gradient geçiş */
 .page-header {
-    padding-bottom: 4.5rem !important;
+    padding-bottom: 2rem !important;
 }
 .page-header::after {
     content: '';
