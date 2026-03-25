@@ -183,7 +183,7 @@ p { margin-bottom: 1rem; }
 }
 .logo-wrap:hover { transform: scale(1.04); }
 .logo-img {
-    height: 96px;
+    height: 130px;
     width: auto;
     display: block;
     filter: brightness(0) invert(1)
