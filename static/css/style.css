@@ -183,18 +183,20 @@ p { margin-bottom: 1rem; }
 }
 .logo-wrap:hover { transform: scale(1.04); }
 .logo-img {
-    height: 72px;
+    height: 100px;
     width: auto;
     display: block;
     filter: brightness(0) invert(1)
-            drop-shadow(0 0 14px rgba(255,255,255,0.5))
-            drop-shadow(0 0 35px rgba(123,45,192,0.7));
+            drop-shadow(0 0 8px rgba(255,255,255,1.0))
+            drop-shadow(0 0 20px rgba(255,255,255,0.8))
+            drop-shadow(0 0 40px rgba(123,45,192,0.9));
     transition: var(--transition);
 }
 .logo-wrap:hover .logo-img {
     filter: brightness(0) invert(1)
-            drop-shadow(0 0 22px rgba(255,255,255,0.8))
-            drop-shadow(0 0 55px rgba(123,45,192,1.0));
+            drop-shadow(0 0 12px rgba(255,255,255,1.0))
+            drop-shadow(0 0 30px rgba(255,255,255,0.9))
+            drop-shadow(0 0 60px rgba(123,45,192,1.0));
     transform: scale(1.07);
 }
 .nav ul {
