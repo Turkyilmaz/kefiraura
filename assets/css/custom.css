@@ -19,18 +19,18 @@
     .logo-img { height: 100px; }
 }
 
-/* ===== GLOBAL WAVE DIVIDER FIX ===== */
+/* ===== KALICI WAVE DIVIDER ÇÖZÜMÜ ===== */
 
-/* Page Header - Marjin Sıfırlanıyor */
+/* Page Header - Negatif Margin YOK, Padding Var */
 .page-header {
     position: relative;
     z-index: 5;
-    margin-bottom: -120px !important;
+    margin-bottom: 0;
     padding-bottom: 0;
     overflow: visible;
 }
 
-/* Wave Divider SVG */
+/* Wave Divider SVG - Transform ile Yukarı Kaydır */
 .page-header-wave {
     display: block;
     margin: 0;
@@ -39,62 +39,62 @@
     z-index: 3;
     height: 80px;
     overflow: visible;
+    transform: translateY(-100%);
+    pointer-events: none;
 }
 
 /* İlk Section - Doğrudan Page Header Sonrası */
 .page-header + .section {
     position: relative;
     z-index: 10;
-    margin-top: 0 !important;
-    padding-top: 120px;
+    margin-top: -80px;
+    padding-top: 100px;
     background: #f9f5f0;
 }
 
 /* CTA Section */
 .cta-section {
     margin-top: 0;
-    padding-top: 3rem;
+    padding-top: 2rem;
     position: relative;
     z-index: 8;
 }
 
 /* Tablet Cihazlar (768px - 1024px) */
 @media (max-width: 1024px) {
-    .page-header {
-        margin-bottom: -100px !important;
+    .page-header-wave {
+        transform: translateY(-85%);
+        height: 70px;
     }
     
     .page-header + .section {
-        padding-top: 100px;
+        margin-top: -60px;
+        padding-top: 80px;
     }
 }
 
 /* Mobil Cihazlar (480px - 768px) */
 @media (max-width: 768px) {
-    .page-header {
-        margin-bottom: -80px !important;
-    }
-    
     .page-header-wave {
+        transform: translateY(-80%);
         height: 60px;
     }
     
     .page-header + .section {
-        padding-top: 80px;
+        margin-top: -50px;
+        padding-top: 70px;
     }
 }
 
 /* Küçük Mobil Cihazlar (<480px) */
 @media (max-width: 480px) {
-    .page-header {
-        margin-bottom: -60px !important;
-    }
-    
     .page-header-wave {
+        transform: translateY(-80%);
         height: 50px;
     }
     
     .page-header + .section {
+        margin-top: -40px;
         padding-top: 60px;
     }
 }
