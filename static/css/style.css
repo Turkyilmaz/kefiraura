@@ -134,7 +134,7 @@ p { margin-bottom: 1rem; }
     padding-top: calc(8rem + 34px);
 }
 .page-header {
-    padding-top: calc(3rem + 164px) !important;
+    padding-top: calc(1.5rem + 120px) !important;
 }
 
 @media (max-width: 768px) {
@@ -171,8 +171,8 @@ p { margin-bottom: 1rem; }
     align-items: center;
     justify-content: space-between;
     gap: 2rem;
-    padding-top: 0.35rem;
-    padding-bottom: 0.35rem;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
 }
 .logo-wrap {
     display: inline-flex;
@@ -183,7 +183,7 @@ p { margin-bottom: 1rem; }
 }
 .logo-wrap:hover { transform: scale(1.04); }
 .logo-img {
-    height: 116px;
+    height: 80px;
     width: auto;
     display: block;
     filter: brightness(0) invert(1)
@@ -1000,7 +1000,7 @@ p { margin-bottom: 1rem; }
 
 /* Yumuşak gradient geçiş */
 .page-header {
-    padding-bottom: 5rem !important;
+    padding-bottom: 2.5rem !important;
 }
 .page-header::after {
     content: '';
