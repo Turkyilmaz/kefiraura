@@ -8,6 +8,15 @@ _Learn about the person you're helping. Update this as you go._
 - **Timezone:** Istanbul, Turkey (UTC+3)
 - **Notes:** Türkçe konuşuyor, samimi bir tarz tercih ediyor gibi görünüyor.
 
+## Work
+
+**Company:** Pure7 (Siber Güvenlik Partner)
+- **Website:** www.pure7.com.tr
+- **Role:** InfoSec Takım Lideri
+- **Products:**
+  1. **CrowdStrike Falcon** (EDR/XDR)
+  2. **Netskope** (SASE/Cloud Security)
+
 ## Context
 
 _(What do they care about? What projects are they working on? What annoys them? What makes them laugh? Build this over time.)_

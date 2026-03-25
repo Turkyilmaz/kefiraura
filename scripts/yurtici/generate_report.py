@@ -6,7 +6,7 @@ Her Cuma 15:00 (Istanbul) otomatik çalışır.
 
 import json, ast, requests
 from datetime import datetime, timezone
-from falconpy import MLExclusions, IOAExclusions, SensorVisibilityExclusions
+from falconpy import MLExclusions, IOAExclusions, SensorVisibilityExclusions, Discover
 from openpyxl import Workbook
 from openpyxl.styles import PatternFill, Font, Alignment, Border, Side
 from openpyxl.utils import get_column_letter
@@ -14,7 +14,7 @@ from openpyxl.worksheet.properties import WorksheetProperties, Outline
 
 # ── CONFIG ──────────────────────────────────────────────────
 CLIENT_ID  = "a6df49f452c144ecaf630aae61b1d571"
-SECRET     = "cEbAP1k3tFT45hJWqey7ad9Q6IGDKw0lr8u2LnRC"
+SECRET     = "1JWgqADk6idMC4hpctzK7sxfXlTo3S02rE8OQb59"
 BASE_URL   = "https://api.eu-1.crowdstrike.com"
 OUTPUT_DIR = "/home/infosec/.openclaw/workspace/customers/reports/yurtici"
 
@@ -277,6 +277,7 @@ def main():
 
     # ── EXCLUSIONS ─────────────────────────────────────────
     print("  Exclusions çekiliyor...")
+    discover_client = Discover(client_id=CLIENT_ID, client_secret=SECRET, base_url=BASE_URL)
     ml_client = MLExclusions(client_id=CLIENT_ID, client_secret=SECRET, base_url=BASE_URL)
     ml_ids = ml_client.queryMLExclusionsV1(limit=500)['body']['resources']
     ml_details = []
@@ -828,14 +829,16 @@ def main():
     ua_all_ids = []
     ua_offset = 0
     while True:
-        r_ua = requests.get(f"{BASE_URL}/discover/queries/hosts/v1",
-            headers=H, params={
-                "limit": 100,
-                "offset": ua_offset,
-                "filter": "entity_type:'unmanaged'+data_providers:'Falcon passive discovery'",
-                "sort": "last_seen_timestamp.desc"
-            }, timeout=15)
-        ua_data = r_ua.json()
+        r_ua = discover_client.query_hosts(
+            filter="entity_type:'unmanaged'+data_providers:'Falcon passive discovery'",
+            sort="last_seen_timestamp.desc",
+            limit=100,
+            offset=ua_offset
+        )
+        if r_ua['status_code'] != 200:
+            print(f"  ⚠️  Error querying unmanaged assets: {r_ua.get('body',{}).get('errors', [])}")
+            break
+        ua_data = r_ua.get("body", {})
         ua_ids = ua_data.get("resources", [])
         if not ua_ids: break
         ua_all_ids.extend(ua_ids)
@@ -845,10 +848,9 @@ def main():
 
     ua_hosts_raw = []
     for i in range(0, len(ua_all_ids), 100):
-        r_ua2 = requests.get(f"{BASE_URL}/discover/entities/hosts/v1",
-            headers=H, params=[("ids", id_) for id_ in ua_all_ids[i:i+100]], timeout=15)
-        if r_ua2.status_code == 200:
-            ua_hosts_raw.extend(r_ua2.json().get("resources", []))
+        r_ua2 = discover_client.get_hosts(ids=ua_all_ids[i:i+100])
+        if r_ua2['status_code'] == 200:
+            ua_hosts_raw.extend(r_ua2.get("body", {}).get("resources", []))
 
     ua_filtered = []
     for h in ua_hosts_raw:
@@ -933,27 +935,30 @@ def main():
     print("  High Memory Usage çekiliyor...")
 
     hm_all_ids = []
-    hm_after = None
+    hm_offset = 0
     while True:
-        params = {"limit": 100, "filter": "average_memory_usage_pct:>80",
-                  "sort": "average_memory_usage_pct.desc"}
-        if hm_after:
-            params["after"] = hm_after
-        r_hm = requests.get(f"{BASE_URL}/discover/queries/hosts/v1",
-            headers=H, params=params, timeout=15)
-        hm_data = r_hm.json()
+        r_hm = discover_client.query_hosts(
+            filter="average_memory_usage_pct:>80",
+            sort="average_memory_usage_pct.desc",
+            limit=100,
+            offset=hm_offset
+        )
+        if r_hm['status_code'] != 200:
+            print(f"  ⚠️  Error querying high memory hosts: {r_hm.get('body',{}).get('errors', [])}")
+            break
+        hm_data = r_hm.get("body", {})
         hm_ids = hm_data.get("resources", [])
-        hm_after = hm_data.get("meta",{}).get("pagination",{}).get("after")
         if not hm_ids: break
         hm_all_ids.extend(hm_ids)
-        if not hm_after: break
+        hm_offset += len(hm_ids)
+        total = hm_data.get("meta",{}).get("pagination",{}).get("total", 0)
+        if hm_offset >= total: break
 
     hm_hosts = []
     for i in range(0, len(hm_all_ids), 100):
-        r_hm2 = requests.get(f"{BASE_URL}/discover/entities/hosts/v1",
-            headers=H, params=[("ids", id_) for id_ in hm_all_ids[i:i+100]], timeout=15)
-        if r_hm2.status_code == 200:
-            hm_hosts.extend(r_hm2.json().get("resources", []))
+        r_hm2 = discover_client.get_hosts(ids=hm_all_ids[i:i+100])
+        if r_hm2['status_code'] == 200:
+            hm_hosts.extend(r_hm2.get("body", {}).get("resources", []))
 
     hm_hosts.sort(key=lambda x: x.get("average_memory_usage_pct", 0), reverse=True)
     print(f"  High Memory: {len(hm_hosts)} host")

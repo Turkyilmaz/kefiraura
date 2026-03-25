@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-TeknoSA CrowdStrike Weekly Health Check Report
+CarrefourSA CrowdStrike Weekly Health Check Report
 Her Cuma 15:00 (Istanbul) otomatik çalışır.
 """
 
@@ -17,10 +17,10 @@ from openpyxl.utils import get_column_letter
 from openpyxl.worksheet.properties import WorksheetProperties, Outline
 
 # ── CONFIG ──────────────────────────────────────────────────
-CLIENT_ID  = "c18f8fd7b9ce49d0bf68c5336cd5e7c0"
-SECRET     = "JD6dZpQ13rIA5KnU0ukw2q8F9O7BMYvS4sXajbhN"
+CLIENT_ID  = "4c6024b3d8524613b5c37abe055140e5"
+SECRET     = "O4E7rwYKC2cBsPletv0X5pU9kfbao6FI31uzNx8H"
 BASE_URL   = "https://api.eu-1.crowdstrike.com"
-OUTPUT_DIR = "/home/infosec/.openclaw/workspace/customers/reports/teknosa"
+OUTPUT_DIR = "/home/infosec/.openclaw/workspace/customers/reports/carrefoursa"
 
 # ── STYLE ───────────────────────────────────────────────────
 FONT       = "Helvetica"
@@ -156,7 +156,7 @@ def main():
     today_display = now_istanbul.strftime("%d/%m/%Y")
     report_month = now_istanbul.strftime("%B %Y")
 
-    print(f"[{date_str}] TeknoSA raporu oluşturuluyor...")
+    print(f"[{date_str}] CarrefourSA raporu oluşturuluyor...")
 
     # ── INITIALIZE FALCONPY CLIENTS ────────────────────────
     print("  FalconPy clients initializing...")
@@ -344,7 +344,7 @@ def main():
         ws_cover.cell(row=6, column=col).fill = fill(ORANGE)
     ws_cover.row_dimensions[6].height = 6
     ws_cover.merge_cells("B8:N9")
-    ws_cover["B8"] = "TeknoSA"
+    ws_cover["B8"] = "CarrefourSA"
     ws_cover["B8"].font = Font(color=NAVY, bold=True, size=32, name=FONT)
     ws_cover["B8"].alignment = Alignment(horizontal="left", vertical="center")
     ws_cover.merge_cells("B10:N11")
@@ -356,7 +356,7 @@ def main():
     ws_cover.row_dimensions[12].height = 3
     for i, (label, value) in enumerate([
         ("Report Date", today_display), ("Report Period", report_month),
-        ("Prepared by", "Pure7"), ("Customer", "TeknoSA"),
+        ("Prepared by", "Pure7"), ("Customer", "CarrefourSA"),
         ("Product", "CrowdStrike Falcon"), ("Version", "1.0"),
     ]):
         r = 14 + i * 2
@@ -386,7 +386,7 @@ def main():
     ws_sum.sheet_properties.tabColor = ORANGE
     ws_sum.sheet_view.showGridLines = False
     ws_sum.merge_cells("A1:L1")
-    ws_sum["A1"] = "TeknoSA – CrowdStrike Security Dashboard"
+    ws_sum["A1"] = "CarrefourSA – CrowdStrike Security Dashboard"
     ws_sum["A1"].fill = fill(NAVY); ws_sum["A1"].font = fnt(WHITE, bold=True, size=16)
     ws_sum["A1"].alignment = Alignment(horizontal="center", vertical="center")
     ws_sum.row_dimensions[1].height = 40
@@ -468,7 +468,7 @@ def main():
     ws_risk = wb.create_sheet("Risk & Actions")
     ws_risk.sheet_properties.tabColor = "C00000"
     ws_risk.merge_cells("A1:E1")
-    ws_risk["A1"] = "TeknoSA – Risk & Action Required"
+    ws_risk["A1"] = "CarrefourSA – Risk & Action Required"
     ws_risk["A1"].fill = fill(NAVY); ws_risk["A1"].font = fnt(WHITE, bold=True, size=14)
     ws_risk["A1"].alignment = Alignment(horizontal="center", vertical="center")
     ws_risk.row_dimensions[1].height = 35
@@ -545,7 +545,7 @@ def main():
     HEADERS = ["Hostname","Status","Platform","Device Type","OS Version","Local IP",
                "Sensor Version","Last Seen","Host Groups","Prevention Policy","Sensor Update Policy","Last Logged In User"]
     ws_hosts.merge_cells(f"A1:{get_column_letter(len(HEADERS))}1")
-    ws_hosts["A1"] = f"TeknoSA – CrowdStrike Host Inventory  ({len(hosts)} hosts)"
+    ws_hosts["A1"] = f"CarrefourSA – CrowdStrike Host Inventory  ({len(hosts)} hosts)"
     ws_hosts["A1"].fill = fill(NAVY); ws_hosts["A1"].font = fnt(WHITE, bold=True, size=14)
     ws_hosts["A1"].alignment = Alignment(horizontal="center", vertical="center")
     ws_hosts.row_dimensions[1].height = 35
@@ -600,7 +600,7 @@ def main():
     ws1 = wb.create_sheet("Host Grupları"); set_outline(ws1)
     ws1.sheet_properties.tabColor = ORANGE
     ws1.merge_cells("A1:E1")
-    ws1["A1"] = "TeknoSA – CrowdStrike Host Grupları"
+    ws1["A1"] = "CarrefourSA – CrowdStrike Host Grupları"
     ws1["A1"].fill = fill(NAVY); ws1["A1"].font = fnt(WHITE, bold=True, size=14)
     ws1["A1"].alignment = Alignment(horizontal="center", vertical="center")
     ws1.row_dimensions[1].height = 35
@@ -638,7 +638,7 @@ def main():
     ws2 = wb.create_sheet("Policy Atamaları"); set_outline(ws2)
     ws2.sheet_properties.tabColor = ORANGE
     ws2.merge_cells("A1:D1")
-    ws2["A1"] = "TeknoSA – Host Grubu / Policy Atamaları"
+    ws2["A1"] = "CarrefourSA – Host Grubu / Policy Atamaları"
     ws2["A1"].fill = fill(NAVY); ws2["A1"].font = fnt(WHITE, bold=True, size=14)
     ws2["A1"].alignment = Alignment(horizontal="center", vertical="center")
     ws2.row_dimensions[1].height = 35
@@ -696,7 +696,7 @@ def main():
     ws3 = wb.create_sheet("Policy Detayları"); set_outline(ws3)
     ws3.sheet_properties.tabColor = ORANGE
     ws3.merge_cells("A1:D1")
-    ws3["A1"] = "TeknoSA – CrowdStrike Policy Details"
+    ws3["A1"] = "CarrefourSA – CrowdStrike Policy Details"
     ws3["A1"].fill = fill(NAVY); ws3["A1"].font = fnt(WHITE, bold=True, size=14)
     ws3["A1"].alignment = Alignment(horizontal="center", vertical="center")
     ws3.row_dimensions[1].height = 35
@@ -791,7 +791,7 @@ def main():
     ws_excl.sheet_properties.tabColor = "808080"
     EXCL_HEADERS = ["Type","Value","Comment","Applied Globally","Groups","Created By","Created On","Modified By","Modified On"]
     ws_excl.merge_cells(f"A1:{get_column_letter(len(EXCL_HEADERS))}1")
-    ws_excl["A1"] = f"TeknoSA – CrowdStrike Exclusions  ({len(ml_details)+len(ioa_details)+len(sv_details)} total)"
+    ws_excl["A1"] = f"CarrefourSA – CrowdStrike Exclusions  ({len(ml_details)+len(ioa_details)+len(sv_details)} total)"
     ws_excl["A1"].fill = fill(NAVY); ws_excl["A1"].font = fnt(WHITE, bold=True, size=14)
     ws_excl["A1"].alignment = Alignment(horizontal="center", vertical="center")
     ws_excl.row_dimensions[1].height = 35
@@ -895,7 +895,7 @@ def main():
                   "First Seen", "Last Seen", "Review Status"]
 
     ws_ua.merge_cells(f"A1:{get_column_letter(len(UA_HEADERS))}1")
-    ws_ua["A1"] = f"TeknoSA – Unmanaged Assets  ({len(ua_filtered)} assets)"
+    ws_ua["A1"] = f"CarrefourSA – Unmanaged Assets  ({len(ua_filtered)} assets)"
     ws_ua["A1"].fill = fill(NAVY); ws_ua["A1"].font = fnt(WHITE, bold=True, size=14)
     ws_ua["A1"].alignment = Alignment(horizontal="center", vertical="center")
     ws_ua.row_dimensions[1].height = 35
@@ -1003,7 +1003,7 @@ def main():
                   "Total Disk (MB)", "Used Disk %", "Last Seen"]
 
     ws_hm.merge_cells(f"A1:{get_column_letter(len(HM_HEADERS))}1")
-    ws_hm["A1"] = f"TeknoSA – High Memory Usage (>80%)  ({len(hm_hosts)} hosts)"
+    ws_hm["A1"] = f"CarrefourSA – High Memory Usage (>80%)  ({len(hm_hosts)} hosts)"
     ws_hm["A1"].fill = fill(NAVY); ws_hm["A1"].font = fnt(WHITE, bold=True, size=14)
     ws_hm["A1"].alignment = Alignment(horizontal="center", vertical="center")
     ws_hm.row_dimensions[1].height = 35
@@ -1055,7 +1055,7 @@ def main():
         set_col_width(ws_hm, col_i, w)
 
     # ── KAYDET ──────────────────────────────────────────────
-    filename = f"TeknoSA_CrowdStrike_HealthCheck_{date_str}.xlsx"
+    filename = f"CarrefourSA_CrowdStrike_HealthCheck_{date_str}.xlsx"
     output_path = f"{OUTPUT_DIR}/{filename}"
     wb.save(output_path)
     print(f"✅ Rapor kaydedildi: {output_path}")

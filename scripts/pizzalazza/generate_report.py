@@ -4,9 +4,13 @@ Pizza Lazza CrowdStrike Weekly Health Check Report
 Her Cuma 15:00 (Istanbul) otomatik çalışır.
 """
 
-import json, ast, requests
+import json, ast
 from datetime import datetime, timezone
-from falconpy import MLExclusions, IOAExclusions, SensorVisibilityExclusions
+from falconpy import (
+    Hosts, HostGroup, PreventionPolicy, SensorUpdatePolicy, 
+    FirewallPolicies, DeviceControlPolicies, ResponsePolicies, Discover,
+    MLExclusions, IOAExclusions, SensorVisibilityExclusions
+)
 from openpyxl import Workbook
 from openpyxl.styles import PatternFill, Font, Alignment, Border, Side
 from openpyxl.utils import get_column_letter
@@ -154,153 +158,165 @@ def main():
 
     print(f"[{date_str}] Pizza Lazza raporu oluşturuluyor...")
 
-    # ── API BAĞLANTISI ──────────────────────────────────────
-    token_r = requests.post(f"{BASE_URL}/oauth2/token",
-        data={"client_id": CLIENT_ID, "client_secret": SECRET}, timeout=15)
-    token = token_r.json().get("access_token")
-    H = {"Authorization": f"Bearer {token}"}
+    # ── INITIALIZE FALCONPY CLIENTS ────────────────────────
+    print("  FalconPy clients initializing...")
+    hosts_client = Hosts(client_id=CLIENT_ID, client_secret=SECRET, base_url=BASE_URL)
+    hg_client = HostGroup(client_id=CLIENT_ID, client_secret=SECRET, base_url=BASE_URL)
+    prevent_client = PreventionPolicy(client_id=CLIENT_ID, client_secret=SECRET, base_url=BASE_URL)
+    sensor_client = SensorUpdatePolicy(client_id=CLIENT_ID, client_secret=SECRET, base_url=BASE_URL)
+    firewall_client = FirewallPolicies(client_id=CLIENT_ID, client_secret=SECRET, base_url=BASE_URL)
+    devctrl_client = DeviceControlPolicies(client_id=CLIENT_ID, client_secret=SECRET, base_url=BASE_URL)
+    response_client = ResponsePolicies(client_id=CLIENT_ID, client_secret=SECRET, base_url=BASE_URL)
+    discover_client = Discover(client_id=CLIENT_ID, client_secret=SECRET, base_url=BASE_URL)
 
-    # ── HOSTLARI ÇEK ───────────────────────────────────────
+    # ── HOSTLARI ÇEK (FALCONPY) ────────────────────────────
     print("  Hostlar çekiliyor...")
     all_ids = []
     offset = 0
     while True:
-        r = requests.get(f"{BASE_URL}/devices/queries/devices/v1",
-            headers=H, params={"limit": 500, "offset": offset}, timeout=15)
-        ids = r.json().get("resources", [])
-        if not ids: break
+        r = hosts_client.query_devices_by_filter(limit=500, offset=offset)
+        if r['status_code'] != 200:
+            print(f"  ⚠️  Error querying device IDs: {r.get('errors', [])}")
+            break
+        ids = r.get("body", {}).get("resources", [])
+        if not ids: 
+            break
         all_ids.extend(ids)
         offset += len(ids)
-        if len(ids) < 500: break
+        if len(ids) < 500: 
+            break
 
     hosts = []
     for i in range(0, len(all_ids), 100):
         batch = all_ids[i:i+100]
-        r = requests.get(f"{BASE_URL}/devices/entities/devices/v2",
-            headers=H, params=[("ids", id_) for id_ in batch], timeout=15)
-        if r.status_code == 200:
-            hosts.extend(r.json().get("resources", []))
+        r = hosts_client.get_device_details(ids=batch)
+        if r['status_code'] == 200:
+            hosts.extend(r.get("body", {}).get("resources", []))
     print(f"  {len(hosts)} host çekildi.")
 
-    # ── GRUPLARI ÇEK ───────────────────────────────────────
-    groups_r = requests.get(f"{BASE_URL}/devices/combined/host-groups/v1", headers=H, timeout=30)
-    groups = {g["id"]: g["name"] for g in groups_r.json().get("resources", [])}
+    # ── GRUPLARI ÇEK (FALCONPY) ────────────────────────────
+    r = hg_client.query_combined_host_groups(limit=500)
+    group_list = []
+    if r['status_code'] == 200:
+        group_list = r.get("body", {}).get("resources", [])
+    groups = {g["id"]: g["name"] for g in group_list}
 
-    # ── POLİCY'LERİ ÇEK ────────────────────────────────────
+    # ── POLİCY'LERİ ÇEK (FALCONPY) ─────────────────────────
     print("  Policy'ler çekiliyor...")
     policies = {}
-    for ptype, ep in [("prevention", "/policy/combined/prevention/v1"),
-                       ("sensor_update", "/policy/combined/sensor-update/v2")]:
-        r = requests.get(f"{BASE_URL}{ep}?limit=100", headers=H, timeout=30)
-        if r.status_code == 200:
-            for p in r.json().get("resources", []):
+    for ptype, client_obj in [("prevention", prevent_client), ("sensor_update", sensor_client)]:
+        r = client_obj.query_combined_policies(limit=100)
+        if r['status_code'] == 200:
+            policies_list = r.get("body", {}).get("resources", [])
+            for p in policies_list:
                 policies[p["id"]] = {"name": p["name"], "type": ptype}
 
-    # Policy detay verisi (grup bazında)
-    POLICY_TYPE_MAP = {
-        "Prevention":     "/policy/combined/prevention/v1",
-        "Sensor Update":  "/policy/combined/sensor-update/v2",
-        "Firewall":       "/policy/combined/firewall/v1",
-        "Device Control": "/policy/combined/device-control/v1",
-        "Response":       "/policy/combined/response/v1",
+    # Policy detay verisi (grup bazında) - USING FALCONPY
+    POLICY_CLIENTS = {
+        "Prevention":     prevent_client,
+        "Sensor Update":  sensor_client,
+        "Firewall":       firewall_client,
+        "Device Control": devctrl_client,
+        "Response":       response_client,
     }
+    
     policy_data = {}
-    group_list = groups_r.json().get("resources", [])
     for g in group_list:
         gname = g.get("name"); gid = g.get("id")
         policy_data[gname] = {}
-        for ptype, ep in POLICY_TYPE_MAP.items():
-            r = requests.get(f"{BASE_URL}{ep}", headers=H,
-                params={"filter": f"groups:['{gid}']"}, timeout=30)
-            if r.status_code == 200:
-                pl = r.json().get("resources", [])
-                if pl:
-                    policy_data[gname][ptype] = []
-                    for p in pl:
-                        pd = {"name": p.get("name"), "enabled": p.get("enabled"),
-                              "platform": p.get("platform_name",""), "settings": {}}
-                        for cat in p.get("prevention_settings", []):
-                            cat_name = cat.get("name","")
-                            pd["settings"][cat_name] = []
-                            for s in cat.get("settings", []):
-                                val = s.get("value", {})
-                                if isinstance(val, dict):
-                                    en = val.get("enabled", None)
-                                    if en is True: status = "ON"
-                                    elif en is False: status = "OFF"
-                                    else: status = str(val)
-                                else:
-                                    status = str(val)
-                                pd["settings"][cat_name].append({"name": s.get("name"), "status": status})
-                        raw_s = p.get("settings", {})
-                        if isinstance(raw_s, dict) and raw_s:
-                            sensor_rows = []
-                            # Policy meta bilgileri
-                            sensor_rows.append({"name": "Policy ID", "status": p.get("id","—")})
-                            sensor_rows.append({"name": "Status", "status": "ON" if p.get("enabled") else "OFF"})
-                            sensor_rows.append({"name": "Created", "status": p.get("created_timestamp","")[:16].replace("T"," ")})
-                            sensor_rows.append({"name": "Last Modified", "status": p.get("modified_timestamp","")[:16].replace("T"," ")})
-                            # Sensor version
-                            if "sensor_version" in raw_s:
-                                sensor_rows.append({"name": "Sensor Version", "status": f"{raw_s.get('sensor_version','')}  (Build: {raw_s.get('build','')})"})
-                            # Stage
-                            if "stage" in raw_s:
-                                stage_map = {"prod": "Production (N-1)", "n-1": "N-1", "lt": "Long Term", "early_adopter": "Early Adopter"}
-                                sensor_rows.append({"name": "Update Stage", "status": stage_map.get(raw_s.get("stage",""), raw_s.get("stage",""))})
-                            # Early adopter
-                            if "show_early_adopter_builds" in raw_s:
-                                sensor_rows.append({"name": "Show Early Adopter Sensor Builds", "status": "ON" if raw_s.get("show_early_adopter_builds") else "OFF"})
-                            # LTS/LTV
-                            if "is_lts_build" in raw_s:
-                                sensor_rows.append({"name": "Show LTV Sensor Builds", "status": "ON" if raw_s.get("is_lts_build") else "OFF"})
-                            # Uninstall protection
-                            if "uninstall_protection" in raw_s:
-                                sensor_rows.append({"name": "Uninstall and Maintenance Protection", "status": "ON" if raw_s.get("uninstall_protection") == "ENABLED" else "OFF"})
-                            # Scheduler
-                            scheduler = raw_s.get("scheduler", {})
-                            if isinstance(scheduler, dict):
-                                if scheduler.get("enabled"):
-                                    tz = scheduler.get("timezone", "")
-                                    schedules = scheduler.get("schedules", [])
-                                    sched_str = ""
-                                    if schedules:
-                                        days_map = {0:"Sun",1:"Mon",2:"Tue",3:"Wed",4:"Thu",5:"Fri",6:"Sat"}
-                                        s = schedules[0]
-                                        days = ", ".join([days_map.get(d,str(d)) for d in s.get("days",[])])
-                                        sched_str = f"{s.get('start','')} - {s.get('end','')}  ({days})  {tz}"
-                                    sensor_rows.append({"name": "Time Blocks", "status": sched_str or "Enabled"})
-                                else:
-                                    sensor_rows.append({"name": "Time Blocks", "status": "OFF"})
-                            if sensor_rows:
-                                pd["settings"]["Sensor Update Settings"] = sensor_rows
-                        policy_data[gname][ptype].append(pd)
+        for ptype, client_obj in POLICY_CLIENTS.items():
+            filter_str = f"groups:['{gid}']"
+            r = client_obj.query_combined_policies(filter=filter_str, limit=100)
+            if r['status_code'] == 200 and r.get("body"):
+                policy_data[gname][ptype] = []
+                for p in r.get("body", {}).get("resources", []) or []:
+                            pd = {"name": p.get("name"), "enabled": p.get("enabled"),
+                                  "platform": p.get("platform_name",""), "settings": {}}
+                            for cat in p.get("prevention_settings", []):
+                                cat_name = cat.get("name","")
+                                pd["settings"][cat_name] = []
+                                for s in cat.get("settings", []):
+                                    val = s.get("value", {})
+                                    if isinstance(val, dict):
+                                        en = val.get("enabled", None)
+                                        if en is True: status = "ON"
+                                        elif en is False: status = "OFF"
+                                        else: status = str(val)
+                                    else:
+                                        status = str(val)
+                                    pd["settings"][cat_name].append({"name": s.get("name"), "status": status})
+                            raw_s = p.get("settings", {})
+                            if isinstance(raw_s, dict) and raw_s:
+                                sensor_rows = []
+                                # Policy meta bilgileri
+                                sensor_rows.append({"name": "Policy ID", "status": p.get("id","—")})
+                                sensor_rows.append({"name": "Status", "status": "ON" if p.get("enabled") else "OFF"})
+                                sensor_rows.append({"name": "Created", "status": p.get("created_timestamp","")[:16].replace("T"," ")})
+                                sensor_rows.append({"name": "Last Modified", "status": p.get("modified_timestamp","")[:16].replace("T"," ")})
+                                # Sensor version
+                                if "sensor_version" in raw_s:
+                                    sensor_rows.append({"name": "Sensor Version", "status": f"{raw_s.get('sensor_version','')}  (Build: {raw_s.get('build','')})"})
+                                # Stage
+                                if "stage" in raw_s:
+                                    stage_map = {"prod": "Production (N-1)", "n-1": "N-1", "lt": "Long Term", "early_adopter": "Early Adopter"}
+                                    sensor_rows.append({"name": "Update Stage", "status": stage_map.get(raw_s.get("stage",""), raw_s.get("stage",""))})
+                                # Early adopter
+                                if "show_early_adopter_builds" in raw_s:
+                                    sensor_rows.append({"name": "Show Early Adopter Sensor Builds", "status": "ON" if raw_s.get("show_early_adopter_builds") else "OFF"})
+                                # LTS/LTV
+                                if "is_lts_build" in raw_s:
+                                    sensor_rows.append({"name": "Show LTV Sensor Builds", "status": "ON" if raw_s.get("is_lts_build") else "OFF"})
+                                # Uninstall protection
+                                if "uninstall_protection" in raw_s:
+                                    sensor_rows.append({"name": "Uninstall and Maintenance Protection", "status": "ON" if raw_s.get("uninstall_protection") == "ENABLED" else "OFF"})
+                                # Scheduler
+                                scheduler = raw_s.get("scheduler", {})
+                                if isinstance(scheduler, dict):
+                                    if scheduler.get("enabled"):
+                                        tz = scheduler.get("timezone", "")
+                                        schedules = scheduler.get("schedules", [])
+                                        sched_str = ""
+                                        if schedules:
+                                            days_map = {0:"Sun",1:"Mon",2:"Tue",3:"Wed",4:"Thu",5:"Fri",6:"Sat"}
+                                            s = schedules[0]
+                                            days = ", ".join([days_map.get(d,str(d)) for d in s.get("days",[])])
+                                            sched_str = f"{s.get('start','')} - {s.get('end','')}  ({days})  {tz}"
+                                        sensor_rows.append({"name": "Time Blocks", "status": sched_str or "Enabled"})
+                                    else:
+                                        sensor_rows.append({"name": "Time Blocks", "status": "OFF"})
+                                if sensor_rows:
+                                    pd["settings"]["Sensor Update Settings"] = sensor_rows
+                            policy_data[gname][ptype].append(pd)
 
-    # ── EXCLUSIONS ─────────────────────────────────────────
+    # ── EXCLUSIONS (FALCONPY) ──────────────────────────────
     print("  Exclusions çekiliyor...")
     ml_client = MLExclusions(client_id=CLIENT_ID, client_secret=SECRET, base_url=BASE_URL)
-    ml_ids = ml_client.queryMLExclusionsV1(limit=500)['body']['resources']
+    r = ml_client.query_exclusions(limit=500)
+    ml_ids = r.get("body", {}).get("resources", []) if r['status_code'] == 200 else []
     ml_details = []
     for i in range(0, len(ml_ids), 100):
-        r = ml_client.getMLExclusionsV1(ids=ml_ids[i:i+100])
+        r = ml_client.get_exclusions(ids=ml_ids[i:i+100])
         if r['status_code'] == 200:
-            ml_details.extend(r['body']['resources'])
+            ml_details.extend(r.get("body", {}).get("resources", []))
 
     ioa_client = IOAExclusions(client_id=CLIENT_ID, client_secret=SECRET, base_url=BASE_URL)
-    ioa_ids = ioa_client.queryIOAExclusionsV1(limit=500)['body']['resources']
+    r = ioa_client.query_exclusions(limit=500)
+    ioa_ids = r.get("body", {}).get("resources", []) if r['status_code'] == 200 else []
     ioa_details = []
     for i in range(0, len(ioa_ids), 100):
-        r = ioa_client.getIOAExclusionsV1(ids=ioa_ids[i:i+100])
+        r = ioa_client.get_exclusions(ids=ioa_ids[i:i+100])
         if r['status_code'] == 200:
-            ioa_details.extend(r['body']['resources'])
+            ioa_details.extend(r.get("body", {}).get("resources", []))
 
     sv_client = SensorVisibilityExclusions(client_id=CLIENT_ID, client_secret=SECRET, base_url=BASE_URL)
-    sv_ids = sv_client.querySensorVisibilityExclusionsV1(limit=500)['body']['resources']
+    r = sv_client.query_exclusions(limit=500)
+    sv_ids = r.get("body", {}).get("resources", []) if r['status_code'] == 200 else []
     sv_details = []
     if sv_ids:
         for i in range(0, len(sv_ids), 100):
-            r = sv_client.getSensorVisibilityExclusionsV1(ids=sv_ids[i:i+100])
+            r = sv_client.get_exclusions(ids=sv_ids[i:i+100])
             if r['status_code'] == 200:
-                sv_details.extend(r['body']['resources'])
+                sv_details.extend(r.get("body", {}).get("resources", []))
 
     # ── WORKBOOK OLUŞTUR ────────────────────────────────────
     wb = Workbook()
@@ -821,34 +837,38 @@ def main():
     for col_i, w in enumerate([16,55,30,16,30,25,16,25,16],1):
         set_col_width(ws_excl, col_i, w)
 
-    # ── UNMANAGED ASSETS ────────────────────────────────────
+    # ── UNMANAGED ASSETS (FALCONPY) ─────────────────────────
     print("  Unmanaged Assets çekiliyor...")
     import ipaddress as ipmod
 
     ua_all_ids = []
     ua_offset = 0
     while True:
-        r_ua = requests.get(f"{BASE_URL}/discover/queries/hosts/v1",
-            headers=H, params={
-                "limit": 100,
-                "offset": ua_offset,
-                "filter": "entity_type:'unmanaged'+data_providers:'Falcon passive discovery'",
-                "sort": "last_seen_timestamp.desc"
-            }, timeout=15)
-        ua_data = r_ua.json()
+        r_ua = discover_client.query_hosts(
+            filter="entity_type:'unmanaged'+data_providers:'Falcon passive discovery'",
+            sort="last_seen_timestamp.desc",
+            limit=100,
+            offset=ua_offset
+        )
+        if r_ua['status_code'] != 200:
+            print(f"  ⚠️  Error querying unmanaged assets: {r_ua.get('body',{}).get('errors', [])}")
+            break
+        ua_data = r_ua.get("body", {})
         ua_ids = ua_data.get("resources", [])
-        if not ua_ids: break
+        if not ua_ids:
+            break
         ua_all_ids.extend(ua_ids)
         ua_offset += len(ua_ids)
-        total = ua_data.get("meta",{}).get("pagination",{}).get("total", 0)
-        if ua_offset >= total: break
+        total = ua_data.get("meta", {}).get("pagination", {}).get("total", 0)
+        if ua_offset >= total:
+            break
 
     ua_hosts_raw = []
     for i in range(0, len(ua_all_ids), 100):
-        r_ua2 = requests.get(f"{BASE_URL}/discover/entities/hosts/v1",
-            headers=H, params=[("ids", id_) for id_ in ua_all_ids[i:i+100]], timeout=15)
-        if r_ua2.status_code == 200:
-            ua_hosts_raw.extend(r_ua2.json().get("resources", []))
+        batch = ua_all_ids[i:i+100]
+        r_ua2 = discover_client.get_hosts(ids=batch)
+        if r_ua2['status_code'] == 200:
+            ua_hosts_raw.extend(r_ua2.get("body", {}).get("resources", []))
 
     ua_filtered = []
     for h in ua_hosts_raw:
@@ -889,8 +909,8 @@ def main():
 
     conf_map = {0:"Low", 25:"Low", 50:"Medium", 75:"High", 100:"Very High"}
 
+    row = 3
     for idx, h in enumerate(sorted(ua_filtered, key=lambda x: x.get("last_seen_timestamp",""), reverse=True), 1):
-        row = idx + 2
         bg = WHITE if idx % 2 != 0 else GRAY
 
         conf_val = h.get("confidence", 0)
@@ -899,58 +919,76 @@ def main():
         elif conf_val >= 50: conf_color = YELLOW_FG; conf_bg = YELLOW_BG
         else: conf_color = RED_FG; conf_bg = RED_BG
 
-        row_data = [
-            ", ".join(h["_clean_discoverers"]),
-            ", ".join(h["_ips"]),
-            h.get("system_manufacturer","—") or "—",
-            ", ".join(h.get("data_providers") or []),
-            h.get("entity_type","—").capitalize(),
-            conf_label,
-            fmt_date(h.get("first_seen_timestamp","")),
-            fmt_date(h.get("last_seen_timestamp","")),
-            h.get("review_status","Not Reviewed") or "Not Reviewed",
-        ]
+        # Her discoverer için ayrı satır
+        discoverers = h["_clean_discoverers"]
+        ips_str = ", ".join(h["_ips"])
+        manufacturer = h.get("system_manufacturer","—") or "—"
+        data_providers = ", ".join(h.get("data_providers") or [])
+        entity_type = h.get("entity_type","—").capitalize()
+        first_seen = fmt_date(h.get("first_seen_timestamp",""))
+        last_seen = fmt_date(h.get("last_seen_timestamp",""))
+        review_status = h.get("review_status","Not Reviewed") or "Not Reviewed"
 
-        for col_i, val in enumerate(row_data, 1):
-            c = ws_ua.cell(row=row, column=col_i, value=val)
-            c.border = thin_border()
-            c.alignment = Alignment(horizontal="left", vertical="center", wrap_text=True)
-            if col_i == 6:
-                c.fill = fill(conf_bg); c.font = fnt(conf_color, bold=True, size=9)
-                c.alignment = Alignment(horizontal="center", vertical="center")
-            else:
-                c.fill = fill(bg); c.font = fnt(NAVY if col_i==1 else "000000", bold=(col_i==1), size=9)
-        ws_ua.row_dimensions[row].height = 18
+        for disc_idx, discoverer in enumerate(discoverers):
+            row_data = [
+                discoverer,  # Her satırda tek bir discoverer
+                ips_str if disc_idx == 0 else "",  # IP'ler sadece ilk satırda
+                manufacturer if disc_idx == 0 else "",
+                data_providers if disc_idx == 0 else "",
+                entity_type if disc_idx == 0 else "",
+                conf_label if disc_idx == 0 else "",
+                first_seen if disc_idx == 0 else "",
+                last_seen if disc_idx == 0 else "",
+                review_status if disc_idx == 0 else "",
+            ]
+
+            for col_i, val in enumerate(row_data, 1):
+                c = ws_ua.cell(row=row, column=col_i, value=val)
+                c.border = thin_border()
+                c.alignment = Alignment(horizontal="left", vertical="center", wrap_text=True)
+                if col_i == 6:
+                    c.fill = fill(conf_bg); c.font = fnt(conf_color, bold=True, size=9)
+                    c.alignment = Alignment(horizontal="center", vertical="center")
+                else:
+                    c.fill = fill(bg); c.font = fnt(NAVY if col_i==1 else "000000", bold=(col_i==1), size=9)
+            ws_ua.row_dimensions[row].height = 18
+            row += 1
 
     ws_ua.freeze_panes = "A3"
     for col_i, w in enumerate([35, 20, 25, 22, 14, 12, 16, 16, 16], 1):
         set_col_width(ws_ua, col_i, w)
 
-    # ── HIGH MEMORY USAGE ───────────────────────────────────
+    # ── HIGH MEMORY USAGE (FALCONPY) ────────────────────────
     print("  High Memory Usage çekiliyor...")
 
     hm_all_ids = []
-    hm_after = None
+    hm_offset = 0
     while True:
-        params = {"limit": 100, "filter": "average_memory_usage_pct:>80",
-                  "sort": "average_memory_usage_pct.desc"}
-        if hm_after:
-            params["after"] = hm_after
-        r_hm = requests.get(f"{BASE_URL}/discover/queries/hosts/v1",
-            headers=H, params=params, timeout=15)
-        hm_data = r_hm.json()
+        r_hm = discover_client.query_hosts(
+            filter="average_memory_usage_pct:>80",
+            sort="average_memory_usage_pct.desc",
+            limit=100,
+            offset=hm_offset
+        )
+        if r_hm['status_code'] != 200:
+            print(f"  ⚠️  Error querying high memory hosts: {r_hm.get('body',{}).get('errors', [])}")
+            break
+        hm_data = r_hm.get("body", {})
         hm_ids = hm_data.get("resources", [])
-        hm_after = hm_data.get("meta",{}).get("pagination",{}).get("after")
-        if not hm_ids: break
+        if not hm_ids:
+            break
         hm_all_ids.extend(hm_ids)
-        if not hm_after: break
+        hm_offset += len(hm_ids)
+        total = hm_data.get("meta", {}).get("pagination", {}).get("total", 0)
+        if hm_offset >= total:
+            break
 
     hm_hosts = []
     for i in range(0, len(hm_all_ids), 100):
-        r_hm2 = requests.get(f"{BASE_URL}/discover/entities/hosts/v1",
-            headers=H, params=[("ids", id_) for id_ in hm_all_ids[i:i+100]], timeout=15)
-        if r_hm2.status_code == 200:
-            hm_hosts.extend(r_hm2.json().get("resources", []))
+        batch = hm_all_ids[i:i+100]
+        r_hm2 = discover_client.get_hosts(ids=batch)
+        if r_hm2['status_code'] == 200:
+            hm_hosts.extend(r_hm2.get("body", {}).get("resources", []))
 
     hm_hosts.sort(key=lambda x: x.get("average_memory_usage_pct", 0), reverse=True)
     print(f"  High Memory: {len(hm_hosts)} host")
