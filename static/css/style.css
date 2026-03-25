@@ -171,8 +171,8 @@ p { margin-bottom: 1rem; }
     align-items: center;
     justify-content: space-between;
     gap: 2rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
 }
 .logo-wrap {
     display: inline-flex;
@@ -183,7 +183,7 @@ p { margin-bottom: 1rem; }
 }
 .logo-wrap:hover { transform: scale(1.04); }
 .logo-img {
-    height: 130px;
+    height: 110px;
     width: auto;
     display: block;
     filter: brightness(0) invert(1)
@@ -314,10 +314,38 @@ p { margin-bottom: 1rem; }
     align-items: center;
     gap: 3rem;
 }
+/* Premium logo frame */
+.hero-logo-frame {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 300px;
+}
+.hero-logo-ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.1);
+    animation: ringPulse 4s ease-in-out infinite;
+}
+.hero-logo-ring-1 { width: 260px; height: 260px; animation-delay: 0s; border-color: rgba(123,45,192,0.4); }
+.hero-logo-ring-2 { width: 300px; height: 300px; animation-delay: 0.5s; border-color: rgba(123,45,192,0.2); }
+.hero-logo-ring-3 { width: 340px; height: 340px; animation-delay: 1s; border-color: rgba(123,45,192,0.1); }
+
+@keyframes ringPulse {
+    0%, 100% { transform: scale(1); opacity: 0.6; }
+    50% { transform: scale(1.04); opacity: 1; }
+}
+
 .hero-logo {
     width: 220px;
     height: auto;
-    filter: drop-shadow(0 0 24px rgba(75,3,140,0.7)) drop-shadow(0 0 48px rgba(123,45,192,0.3));
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(0 0 20px rgba(255,255,255,0.5))
+            drop-shadow(0 0 40px rgba(123,45,192,0.8))
+            drop-shadow(0 0 80px rgba(75,3,140,0.4));
     animation: float 4s ease-in-out infinite;
 }
 .hero-stats {
