@@ -8,13 +8,11 @@
     <div class="page-header-blob" style="display:none;">
         <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,40 C180,80 360,0 540,40 C720,80 900,0 1080,40 C1260,80 1380,20 1440,40 L1440,80 L0,80 Z" fill="#f9f5f0"/></svg>
     </div>
-    <!-- Kabarcıklar -->
     <div class="page-header-bubbles">
         <div class="bubble"></div><div class="bubble"></div><div class="bubble"></div>
         <div class="bubble"></div><div class="bubble"></div><div class="bubble"></div>
         <div class="bubble"></div><div class="bubble"></div>
     </div>
-    <!-- Dalgalı alt geçiş -->
     <div class="page-header-wave">
         <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="display:block;width:100%;height:80px;">
             <path d="M0,20 C240,70 480,0 720,35 C960,70 1200,5 1440,30 L1440,80 L0,80 Z" fill="#f9f5f0" opacity="0.5"/>
@@ -23,6 +21,7 @@
     </div>
 </section>
 
+<!-- ── ÜRÜN ANA BÖLÜM ── -->
 <section class="section">
     <div class="container">
         <div class="section-title">
@@ -30,65 +29,43 @@
             <h2>Doğal Ürün Ailemiz</h2>
             <p>Her ürünümüz katkısız, koruyucusuz ve sevgiyle hazırlanır. Yetkili satış noktalarımızdan temin edebilirsiniz.</p>
         </div>
-        <div style="max-width:560px; margin:0 auto;">
-            <div class="card" style="padding:2.5rem; box-shadow: 0 8px 32px rgba(147,24,122,0.15); border:2px solid rgba(147,24,122,0.15);">
-                <div class="card-icon" style="font-size:2.5rem; margin-bottom:1.5rem;">🥛</div>
-                <h3 style="font-size:1.6rem; font-weight:800; color:var(--black); margin-bottom:1rem;">Geleneksel Kefir</h3>
-                <p style="font-size:1.1rem; line-height:1.8; color:#444; margin-bottom:1.5rem;">10 yıllık maya ile geleneksel yöntemle üretilen, ev yapımı kıvamında sade kefirimiz. Doğanın tam anlamıyla kendisi.</p>
-                <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
-                    <span style="font-family:'Manrope',sans-serif; font-size:0.9rem; font-weight:700; color:var(--purple); background:rgba(147,24,122,0.1); padding:0.4rem 1rem; border-radius:50px; border:1px solid rgba(147,24,122,0.2);">%100 Doğal</span>
-                    <span style="font-family:'Manrope',sans-serif; font-size:0.9rem; font-weight:700; color:var(--purple); background:rgba(147,24,122,0.1); padding:0.4rem 1rem; border-radius:50px; border:1px solid rgba(147,24,122,0.2);">Katkısız</span>
+
+        <!-- Ürün Kartları: 1000ml ve 250ml -->
+        <div class="urun-grid">
+
+            <!-- 1000ml -->
+            <div class="urun-card">
+                <div class="urun-badge">Büyük Boy</div>
+                <div class="urun-hacim">1000<span>ml</span></div>
+                <div class="urun-icon">🥛</div>
+                <h3>Geleneksel Kefir</h3>
+                <p>10 yıllık maya ile geleneksel yöntemle üretilen, ev yapımı kıvamında sade kefirimiz. Doğanın tam anlamıyla kendisi.</p>
+                <div class="urun-tags">
+                    <span>%100 Doğal</span>
+                    <span>Fermente Lezzet</span>
+                    <span>Probiyotik</span>
                 </div>
             </div>
+
+            <!-- 250ml -->
+            <div class="urun-card urun-card--small">
+                <div class="urun-badge urun-badge--green">Küçük Boy</div>
+                <div class="urun-hacim">250<span>ml</span></div>
+                <div class="urun-icon">🥛</div>
+                <h3>Geleneksel Kefir</h3>
+                <p>Pratik ve taşınabilir boyutuyla günlük tüketiminiz için ideal. Aynı doğallık, aynı lezzet — daha kompakt.</p>
+                <div class="urun-tags">
+                    <span>%100 Doğal</span>
+                    <span>Fermente Lezzet</span>
+                    <span>Prebiyotik</span>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
 
-<!-- Ambalaj Tasarımları -->
-<section class="section">
-    <div class="container">
-        <div class="section-title">
-            <span class="eyebrow">Ambalaj Tasarımları</span>
-            <h2>Yeni Tasarımlarımız</h2>
-            <p>Geleneksel kefirimizi modern ve şık ambalajlarla sunuyoruz.</p>
-        </div>
-        <div style="text-align:center;">
-            <img src="{{ "images/ambalaj_secilen.png" | relURL }}" alt="Kefir Aura Ambalaj Tasarımı" style="max-width:100%; border-radius:var(--radius); box-shadow:var(--shadow-md);">
-        </div>
-    </div>
-</section>
-
-<style>
-.ambalaj-slider {
-    display: flex;
-    gap: 1.5rem;
-    overflow-x: auto;
-    padding-bottom: 1rem;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-}
-.ambalaj-slider::-webkit-scrollbar { height: 6px; }
-.ambalaj-slider::-webkit-scrollbar-track { background: var(--offwhite-dark); border-radius: 3px; }
-.ambalaj-slider::-webkit-scrollbar-thumb { background: var(--purple); border-radius: 3px; }
-.ambalaj-img {
-    min-width: 480px;
-    max-width: 480px;
-    height: auto;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-md);
-    scroll-snap-align: start;
-    transition: var(--transition);
-}
-.ambalaj-img:hover {
-    transform: scale(1.02);
-    box-shadow: var(--shadow-lg);
-}
-@media (max-width: 768px) {
-    .ambalaj-img { min-width: 300px; max-width: 300px; }
-}
-</style>
-
-<!-- Neden Kefir Aura -->
+<!-- ── NEDEN KEFİR AURA ── -->
 <section class="section" style="background:var(--offwhite-dark);">
     <div class="container">
         <div class="section-title">
@@ -120,7 +97,7 @@
     </div>
 </section>
 
-<!-- Nereden Alınır -->
+<!-- ── NEREDEN ALINIR ── -->
 <section class="section">
     <div class="container">
         <div class="satis-partner" style="background: linear-gradient(135deg, #2d0a26 0%, #1a0015 100%); border-radius: var(--radius); padding: 3rem; box-shadow: var(--shadow-lg);">
@@ -135,5 +112,116 @@
         </div>
     </div>
 </section>
+
+<style>
+/* ── ÜRÜN GRID ── */
+.urun-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.urun-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 2.5rem 2rem;
+    box-shadow: 0 8px 32px rgba(147,24,122,0.12);
+    border: 2px solid rgba(147,24,122,0.12);
+    text-align: center;
+    position: relative;
+    transition: var(--transition);
+}
+
+.urun-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 48px rgba(147,24,122,0.2);
+    border-color: rgba(147,24,122,0.3);
+}
+
+.urun-badge {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--purple);
+    color: var(--white);
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.3rem 1.2rem;
+    border-radius: 50px;
+    white-space: nowrap;
+}
+
+.urun-badge--green {
+    background: #2d8a4e;
+}
+
+.urun-hacim {
+    font-family: 'Manrope', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: var(--purple);
+    line-height: 1;
+    margin: 1.5rem 0 0.5rem;
+}
+
+.urun-hacim span {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--gray);
+}
+
+.urun-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.urun-card h3 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--black);
+    margin-bottom: 0.75rem;
+}
+
+.urun-card p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+.urun-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.urun-tags span {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--purple);
+    background: rgba(147,24,122,0.08);
+    padding: 0.35rem 0.9rem;
+    border-radius: 50px;
+    border: 1px solid rgba(147,24,122,0.15);
+}
+
+/* Mobil */
+@media (max-width: 640px) {
+    .urun-grid {
+        grid-template-columns: 1fr;
+    }
+    .urun-hacim {
+        font-size: 2.5rem;
+    }
+}
+</style>
 
 {{ end }}
