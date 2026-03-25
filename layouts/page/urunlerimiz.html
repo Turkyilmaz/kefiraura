@@ -5,7 +5,6 @@
         <h1>Ürünlerimiz</h1>
         <p>Geleneksel yöntemle, doğal kefir taneleriyle üretilen ürünlerimiz</p>
     </div>
-
 </section>
 
 <!-- ── ÜRÜN ANA BÖLÜM ── -->
@@ -17,37 +16,44 @@
             <p>Her ürünümüz katkısız, koruyucusuz ve sevgiyle hazırlanır. Yetkili satış noktalarımızdan temin edebilirsiniz.</p>
         </div>
 
-        <!-- Ürün Kartları: 1000ml ve 250ml -->
-        <div class="urun-grid">
+        <!-- Şişe Görseli + Ürün Bilgileri -->
+        <div class="urun-showcase">
 
-            <!-- 1000ml -->
-            <div class="urun-card">
-                <div class="urun-badge">Büyük Boy</div>
-                <div class="urun-hacim">1000<span>ml</span></div>
-                <div class="urun-icon">🥛</div>
-                <h3>Geleneksel Kefir</h3>
-                <p>10 yıllık maya ile geleneksel yöntemle üretilen, ev yapımı kıvamında sade kefirimiz. Doğanın tam anlamıyla kendisi.</p>
-                <div class="urun-tags">
-                    <span>%100 Doğal</span>
-                    <span>Fermente Lezzet</span>
-                    <span>Probiyotik</span>
-                </div>
+            <!-- Sol: Şişe Görseli -->
+            <div class="urun-gorsel">
+                <img src="{{ "images/urunler-siseler.png" | relURL }}" alt="Kefir Aura 1000ml ve 250ml Şişeler" />
             </div>
 
-            <!-- 250ml -->
-            <div class="urun-card urun-card--small">
-                <div class="urun-badge urun-badge--green">Küçük Boy</div>
-                <div class="urun-hacim">250<span>ml</span></div>
-                <div class="urun-icon">🥛</div>
-                <h3>Geleneksel Kefir</h3>
-                <p>Pratik ve taşınabilir boyutuyla günlük tüketiminiz için ideal. Aynı doğallık, aynı lezzet — daha kompakt.</p>
-                <div class="urun-tags">
-                    <span>%100 Doğal</span>
-                    <span>Fermente Lezzet</span>
-                    <span>Prebiyotik</span>
-                </div>
-            </div>
+            <!-- Sağ: Ürün Kartları -->
+            <div class="urun-bilgi">
 
+                <!-- 1000ml -->
+                <div class="urun-card">
+                    <div class="urun-badge">Büyük Boy</div>
+                    <div class="urun-hacim">1000<span>ml</span></div>
+                    <h3>Geleneksel Kefir</h3>
+                    <p>10 yıllık maya ile geleneksel yöntemle üretilen, ev yapımı kıvamında sade kefirimiz. Doğanın tam anlamıyla kendisi.</p>
+                    <div class="urun-tags">
+                        <span>%100 Doğal</span>
+                        <span>Fermente Lezzet</span>
+                        <span>Probiyotik</span>
+                    </div>
+                </div>
+
+                <!-- 250ml -->
+                <div class="urun-card">
+                    <div class="urun-badge urun-badge--green">Küçük Boy</div>
+                    <div class="urun-hacim">250<span>ml</span></div>
+                    <h3>Geleneksel Kefir</h3>
+                    <p>Pratik ve taşınabilir boyutuyla günlük tüketiminiz için ideal. Aynı doğallık, aynı lezzet — daha kompakt.</p>
+                    <div class="urun-tags">
+                        <span>%100 Doğal</span>
+                        <span>Fermente Lezzet</span>
+                        <span>Prebiyotik</span>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
 </section>
@@ -101,47 +107,64 @@
 </section>
 
 <style>
-/* ── ÜRÜN GRID ── */
-.urun-grid {
+/* ── ÜRÜN SHOWCASE ── */
+.urun-showcase {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    max-width: 860px;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1100px;
     margin: 0 auto;
+}
+
+.urun-gorsel img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    filter: drop-shadow(0 20px 40px rgba(147,24,122,0.15));
+    transition: transform 0.4s ease;
+}
+
+.urun-gorsel img:hover {
+    transform: scale(1.03);
+}
+
+.urun-bilgi {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 .urun-card {
     background: var(--white);
     border-radius: var(--radius);
-    padding: 2.5rem 2rem;
-    box-shadow: 0 8px 32px rgba(147,24,122,0.12);
-    border: 2px solid rgba(147,24,122,0.12);
-    text-align: center;
+    padding: 1.75rem 2rem;
+    box-shadow: 0 4px 24px rgba(147,24,122,0.1);
+    border: 2px solid rgba(147,24,122,0.1);
     position: relative;
     transition: var(--transition);
 }
 
 .urun-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 16px 48px rgba(147,24,122,0.2);
-    border-color: rgba(147,24,122,0.3);
+    transform: translateX(6px);
+    box-shadow: 0 8px 32px rgba(147,24,122,0.18);
+    border-color: rgba(147,24,122,0.25);
 }
 
 .urun-badge {
-    position: absolute;
-    top: -14px;
-    left: 50%;
-    transform: translateX(-50%);
+    display: inline-block;
     background: var(--purple);
     color: var(--white);
     font-family: 'Manrope', sans-serif;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     font-weight: 700;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    padding: 0.3rem 1.2rem;
+    padding: 0.25rem 0.9rem;
     border-radius: 50px;
-    white-space: nowrap;
+    margin-bottom: 0.75rem;
 }
 
 .urun-badge--green {
@@ -150,66 +173,63 @@
 
 .urun-hacim {
     font-family: 'Manrope', sans-serif;
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     font-weight: 900;
     color: var(--purple);
     line-height: 1;
-    margin: 1.5rem 0 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .urun-hacim span {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     font-weight: 600;
     color: var(--gray);
 }
 
-.urun-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
 .urun-card h3 {
-    font-size: 1.4rem;
-    font-weight: 800;
+    font-size: 1.2rem;
+    font-weight: 700;
     color: var(--black);
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
 }
 
 .urun-card p {
-    font-size: 1rem;
+    font-size: 0.95rem;
     line-height: 1.7;
     color: #555;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .urun-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
-    justify-content: center;
+    gap: 0.4rem;
 }
 
 .urun-tags span {
     font-family: 'Manrope', sans-serif;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: 700;
     color: var(--purple);
-    background: rgba(147,24,122,0.08);
-    padding: 0.35rem 0.9rem;
+    background: rgba(147,24,122,0.07);
+    padding: 0.3rem 0.8rem;
     border-radius: 50px;
     border: 1px solid rgba(147,24,122,0.15);
 }
 
 /* Mobil */
-@media (max-width: 640px) {
-    .urun-grid {
+@media (max-width: 768px) {
+    .urun-showcase {
         grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .urun-gorsel img {
+        max-width: 320px;
     }
     .urun-hacim {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 }
 </style>
 
 {{ end }}
-<!-- build trigger Wed Mar 25 07:25:12 PM UTC 2026 -->
