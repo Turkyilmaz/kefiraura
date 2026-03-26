@@ -1,19 +1,32 @@
 /* ===== KEFIR AURA CUSTOM CSS ===== */
 
 /* ── NAV ── */
-.header { padding: 0.5rem 0; top: 32.3px !important; }
-.logo-img { height: 114px; }
+.header { padding: 0.25rem 0; top: 32.3px !important; }
+.logo-img { 
+    height: 90px !important;
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
+}
 @media (max-width: 768px) {
     .header { top: 0 !important; }
-    .logo-img { height: 100px; }
+    .logo-img { height: 70px !important; }
 }
 
-/* ── PAGE HEADER ── */
+/* ── PAGE HEADER - KOMPAKT ── */
 
-/* Nav + topbar yüksekliğini hesapla: topbar(34px) + nav(~120px) = ~160px */
 .page-header {
-    padding-top: calc(2rem + 160px) !important;
-    padding-bottom: 80px !important;
+    padding-top: calc(0.5rem + 130px) !important;
+    padding-bottom: 60px !important;
+}
+
+.page-header h1 {
+    font-size: 1.8rem !important;
+    margin-bottom: 0.4rem !important;
+    margin-top: 0 !important;
+}
+
+.page-header p {
+    font-size: 0.95rem !important;
+    margin: 0 !important;
 }
 
 /* Blob animasyonları kaldır */
@@ -59,7 +72,8 @@
 /* ── MOBİL ── */
 @media (max-width: 768px) {
     .page-header {
-        padding-top: calc(1rem + 80px) !important;
-        padding-bottom: 60px !important;
+        padding-top: calc(0.5rem + 70px) !important;
+        padding-bottom: 50px !important;
     }
+    .page-header h1 { font-size: 1.5rem !important; }
 }
