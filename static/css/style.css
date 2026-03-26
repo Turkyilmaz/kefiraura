@@ -133,10 +133,6 @@ p { margin-bottom: 1rem; }
 .hero {
     padding-top: calc(8rem + 34px);
 }
-.page-header {
-    padding-top: calc(2rem + 160px) !important;
-}
-
 @media (max-width: 768px) {
     .topbar { display: none; }
     .header { top: 0 !important; }
@@ -981,7 +977,4 @@ p { margin-bottom: 1rem; }
 /* Dalga yazı üstüne binme sorunu düzeltmesi */
 .page-header-blob { display: none; }
 
-/* Gradient geçiş kaldırıldı - wave divider kullanılıyor */
-.page-header {
-    padding-bottom: 80px !important;
-}
+/* Gradient gecis kaldirildi */

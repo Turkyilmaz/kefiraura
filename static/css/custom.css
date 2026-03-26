@@ -1,6 +1,6 @@
 /* ===== KEFIR AURA CUSTOM CSS ===== */
 
-/* Header */
+/* ── NAV ── */
 .header { padding: 0.5rem 0; top: 32.3px !important; }
 .logo-img { height: 114px; }
 @media (max-width: 768px) {
@@ -8,40 +8,58 @@
     .logo-img { height: 100px; }
 }
 
-/* Blob animasyonları gizle */
+/* ── PAGE HEADER ── */
+
+/* Nav + topbar yüksekliğini hesapla: topbar(34px) + nav(~120px) = ~160px */
+.page-header {
+    padding-top: calc(2rem + 160px) !important;
+    padding-bottom: 80px !important;
+}
+
+/* Blob animasyonları kaldır */
 .page-header::before,
-.page-header::after { display: none !important; }
+.page-header::after {
+    display: none !important;
+}
 
-/* Kabarcıklar gizle */
-.page-header-bubbles { display: none !important; }
+/* Kabarcıklar kaldır */
+.page-header-bubbles {
+    display: none !important;
+}
 
-/* Başlık - net ve görünür */
+/* Başlık görünürlüğü */
 .page-header .container {
     position: relative !important;
     z-index: 10 !important;
 }
-
 .page-header h1 {
     color: #ffffff !important;
-    text-shadow: 0 2px 16px rgba(0,0,0,0.6) !important;
-    position: relative !important;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.5) !important;
     z-index: 10 !important;
-    visibility: visible !important;
-    opacity: 1 !important;
+    position: relative !important;
 }
-
 .page-header p {
-    color: rgba(255,255,255,0.9) !important;
-    position: relative !important;
+    color: rgba(255,255,255,0.88) !important;
     z-index: 10 !important;
-    visibility: visible !important;
+    position: relative !important;
 }
 
 /* Wave görünür kalsın */
-.page-header-wave { display: block !important; }
+.page-header-wave {
+    display: block !important;
+}
 
-/* Boşluğu azalt */
+/* ── SECTION BOŞLUĞU ── */
+/* style.css'deki 6rem padding'i azalt */
 .page-header + .section,
 .page-header + .section.about-section {
     padding-top: 2rem !important;
+}
+
+/* ── MOBİL ── */
+@media (max-width: 768px) {
+    .page-header {
+        padding-top: calc(1rem + 80px) !important;
+        padding-bottom: 60px !important;
+    }
 }
