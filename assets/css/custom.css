@@ -88,3 +88,34 @@
     }
     .page-header h1 { font-size: 1.5rem !important; }
 }
+
+/* ── FOOTER KOMPAKT ── */
+.footer {
+    padding: 2rem 0 0 !important;
+}
+.footer-inner {
+    gap: 2rem !important;
+    padding-bottom: 1.5rem !important;
+}
+.footer-logo-img {
+    height: 48px !important;
+    margin-bottom: 0.6rem !important;
+}
+.footer-desc {
+    font-size: 0.85rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: 0.75rem !important;
+}
+.footer-col h4 {
+    margin-bottom: 0.6rem !important;
+}
+.footer-links-list,
+.footer-contact-list {
+    gap: 0.3rem !important;
+}
+.footer-bottom-bar {
+    padding: 0.75rem 0 !important;
+}
+@media (max-width: 768px) {
+    .footer-inner { gap: 1.5rem !important; }
+}
