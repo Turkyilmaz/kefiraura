@@ -7,7 +7,10 @@
 
 /* ── NAV - Logo solda, büyük, öne çıkar ── */
 .header {
-    top: 0 !important;
+    top: 34px !important;
+}
+@media (max-width: 768px) {
+    .header { top: 0 !important; }
 }
 
 .header .container {
@@ -30,9 +33,9 @@
 }
 
 /* ── PAGE HEADER ── */
-/* Topbar(34px) + nav(~110px) = ~144px */
+/* Topbar(34px) + header(~110px) = ~144px */
 .page-header {
-    padding-top: calc(1rem + 148px) !important;
+    padding-top: calc(1rem + 150px) !important;
     padding-bottom: 60px !important;
 }
 
