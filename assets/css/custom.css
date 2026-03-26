@@ -1,8 +1,8 @@
 /* ===== KEFIR AURA CUSTOM CSS ===== */
 
-/* ── TOPBAR GİZLE - Kompakt görünüm ── */
+/* ── TOPBAR - İletişim bilgileri görünür ── */
 .topbar {
-    display: none !important;
+    display: block !important;
 }
 
 /* ── NAV - Logo solda, büyük, öne çıkar ── */
@@ -30,9 +30,9 @@
 }
 
 /* ── PAGE HEADER ── */
-/* Topbar gizli, nav ~110px (logo 100px) */
+/* Topbar(34px) + nav(~110px) = ~144px */
 .page-header {
-    padding-top: calc(1rem + 115px) !important;
+    padding-top: calc(1rem + 148px) !important;
     padding-bottom: 60px !important;
 }
 
