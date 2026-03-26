@@ -892,7 +892,13 @@ p { margin-bottom: 1rem; }
     line-height: 1.8;
 }
 
-
+/* Dalgalı alt geçiş */
+.page-header-wave {
+    position: absolute;
+    bottom: -1px; left: 0; right: 0;
+    z-index: 3;
+    line-height: 0;
+}
 
 
 /* ── CONTENT PAGE ── */
@@ -902,20 +908,7 @@ p { margin-bottom: 1rem; }
 .content-page .prose p { font-size: 1.05rem; color: #444; }
 
 /* ── BLOG ── */
-.section {
-    padding: 4rem 0;
-}
-
-/* Blog grid */
-.blog-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    position: relative;
-    z-index: 5;
-    margin-top: 0;
-}
-
+.blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
 .blog-card {
     background: var(--white);
     border-radius: var(--radius);
@@ -1002,4 +995,19 @@ p { margin-bottom: 1rem; }
 <!-- cache bust Tue Mar 24 03:46:41 PM UTC 2026 -->
 
 /* Dalga yazı üstüne binme sorunu düzeltmesi */
+.page-header-wave,
+.page-header-blob { display: none; }
 
+/* Yumuşak gradient geçiş */
+.page-header {
+    padding-bottom: 3.5rem !important;
+}
+.page-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 50px;
+    background: linear-gradient(180deg, transparent 0%, #f9f5f0 100%);
+    pointer-events: none;
+    z-index: 4;
+}
