@@ -134,7 +134,7 @@ p { margin-bottom: 1rem; }
     padding-top: calc(8rem + 34px);
 }
 .page-header {
-    padding-top: calc(1rem + 120px) !important;
+    padding-top: calc(1rem + 60px) !important;
 }
 
 @media (max-width: 768px) {
@@ -979,7 +979,6 @@ p { margin-bottom: 1rem; }
 <!-- cache bust Tue Mar 24 03:46:41 PM UTC 2026 -->
 
 /* Dalga yazı üstüne binme sorunu düzeltmesi */
-.page-header-wave,
 .page-header-blob { display: none; }
 
 /* Gradient geçiş kaldırıldı - wave divider kullanılıyor */

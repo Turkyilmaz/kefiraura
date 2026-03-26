@@ -1,61 +1,38 @@
 /* ===== KEFIR AURA CUSTOM CSS ===== */
 
 /* Header */
-.header {
-    padding: 0.5rem 0;
-    top: 32.3px !important;
-}
+.header { padding: 0.5rem 0; top: 32.3px !important; }
 .logo-img { height: 114px; }
-
 @media (max-width: 768px) {
     .header { top: 0 !important; }
     .logo-img { height: 100px; }
 }
 
-/* ===================================================
-   PAGE HEADER - KESİN ÇÖZÜM
-   Sorun 1: ::before / ::after blob'ları başlığı eziyor
-   Sorun 2: .page-header-wave position:absolute olduğu
-            için altında büyük boşluk oluşuyor
-   =================================================== */
-
-/* Blob animasyonlarını gizle → başlık net okunur */
+/* Blob animasyonları gizle */
 .page-header::before,
-.page-header::after {
-    display: none !important;
-}
+.page-header::after { display: none !important; }
 
-/* Kabarcıkları gizle */
-.page-header-bubbles {
-    display: none !important;
-}
+/* Kabarcıklar gizle */
+.page-header-bubbles { display: none !important; }
 
-/* Page header başlığını öne çıkar */
+/* Başlık net görünsün */
 .page-header h1 {
     color: #ffffff !important;
-    text-shadow: 0 2px 12px rgba(0,0,0,0.4) !important;
-    position: relative;
+    text-shadow: 0 2px 16px rgba(0,0,0,0.5) !important;
+    position: relative !important;
     z-index: 10 !important;
 }
 
 .page-header p {
     color: rgba(255,255,255,0.9) !important;
-    position: relative;
+    position: relative !important;
     z-index: 10 !important;
 }
 
-/* Wave divider görünür kalsın */
-.page-header-wave {
-    display: block !important;
-}
+/* Wave görünür kalsın */
+.page-header-wave { display: block !important; }
 
-/* Page header'a wave için yer aç (80px = wave yüksekliği) */
-.page-header {
-    padding-bottom: 80px !important;
-    overflow: visible !important;
-}
-
-/* İlk section boşluğunu azalt */
+/* Boşluğu azalt */
 .page-header + .section,
 .page-header + .section.about-section {
     padding-top: 2rem !important;
