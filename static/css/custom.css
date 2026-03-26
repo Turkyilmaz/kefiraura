@@ -5,17 +5,29 @@
     display: none !important;
 }
 
-/* ── NAV - Logo öne çıkar, kompakt ── */
+/* ── NAV - Logo sağda, büyük, öne çıkar ── */
 .header {
     top: 0 !important;
 }
-.logo-img {
-    height: 72px !important;
-    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
-}
+
+/* Logo sağa al */
 .header .container {
-    padding-top: 0.4rem !important;
-    padding-bottom: 0.4rem !important;
+    flex-direction: row-reverse !important;
+    padding-top: 0.3rem !important;
+    padding-bottom: 0.3rem !important;
+}
+
+/* Logo büyük ve parlak */
+.logo-img {
+    height: 90px !important;
+    filter: brightness(0) invert(1)
+            drop-shadow(0 0 10px rgba(255,255,255,1.0))
+            drop-shadow(0 0 24px rgba(255,255,255,0.9))
+            drop-shadow(0 0 50px rgba(123,45,192,1.0)) !important;
+}
+
+.logo-wrap:hover .logo-img {
+    transform: scale(1.06) !important;
 }
 
 /* ── PAGE HEADER - Nav yüksekliğine göre ayarla ── */
@@ -70,9 +82,9 @@
 
 /* ── MOBİL ── */
 @media (max-width: 768px) {
-    .logo-img { height: 56px !important; }
+    .logo-img { height: 64px !important; }
     .page-header {
-        padding-top: calc(0.75rem + 70px) !important;
+        padding-top: calc(0.75rem + 80px) !important;
         padding-bottom: 50px !important;
     }
     .page-header h1 { font-size: 1.5rem !important; }
