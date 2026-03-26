@@ -801,25 +801,9 @@ p { margin-bottom: 1rem; }
 }
 
 /* Organik blob 1 - sağ üst */
-.page-header::before {
-    content: '';
-    position: absolute;
-    width: 500px; height: 500px;
-    background: radial-gradient(ellipse at center, rgba(123,45,192,0.25) 0%, transparent 65%);
-    top: -120px; right: -80px;
-    border-radius: 60% 40% 70% 30% / 50% 60% 40% 50%;
-    animation: morphBlob1 8s ease-in-out infinite;
-}
-
-/* Organik blob 2 - sol alt */
+.page-header::before,
 .page-header::after {
-    content: '';
-    position: absolute;
-    width: 350px; height: 350px;
-    background: radial-gradient(ellipse at center, rgba(75,3,140,0.2) 0%, transparent 65%);
-    bottom: 20px; left: -60px;
-    border-radius: 40% 60% 30% 70% / 60% 40% 60% 40%;
-    animation: morphBlob2 10s ease-in-out infinite;
+    display: none;
 }
 
 @keyframes morphBlob1 {
