@@ -5,21 +5,20 @@
     display: none !important;
 }
 
-/* ── NAV - Logo sağda, büyük, öne çıkar ── */
+/* ── NAV - Logo solda, büyük, öne çıkar ── */
 .header {
     top: 0 !important;
 }
 
-/* Logo sağa al */
 .header .container {
-    flex-direction: row-reverse !important;
+    flex-direction: row !important;
     padding-top: 0.3rem !important;
     padding-bottom: 0.3rem !important;
 }
 
 /* Logo büyük ve parlak */
 .logo-img {
-    height: 90px !important;
+    height: 100px !important;
     filter: brightness(0) invert(1)
             drop-shadow(0 0 10px rgba(255,255,255,1.0))
             drop-shadow(0 0 24px rgba(255,255,255,0.9))
@@ -30,10 +29,10 @@
     transform: scale(1.06) !important;
 }
 
-/* ── PAGE HEADER - Nav yüksekliğine göre ayarla ── */
-/* Nav artık ~80px (topbar gizli + kompakt logo) */
+/* ── PAGE HEADER ── */
+/* Topbar gizli, nav ~110px (logo 100px) */
 .page-header {
-    padding-top: calc(1rem + 90px) !important;
+    padding-top: calc(1rem + 115px) !important;
     padding-bottom: 60px !important;
 }
 
