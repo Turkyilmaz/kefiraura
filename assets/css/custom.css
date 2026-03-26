@@ -1,20 +1,27 @@
 /* ===== KEFIR AURA CUSTOM CSS ===== */
 
-/* ── NAV ── */
-.header { padding: 0.25rem 0; top: 32.3px !important; }
-.logo-img { 
-    height: 90px !important;
+/* ── TOPBAR GİZLE - Kompakt görünüm ── */
+.topbar {
+    display: none !important;
+}
+
+/* ── NAV - Logo öne çıkar, kompakt ── */
+.header {
+    top: 0 !important;
+}
+.logo-img {
+    height: 72px !important;
     filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
 }
-@media (max-width: 768px) {
-    .header { top: 0 !important; }
-    .logo-img { height: 70px !important; }
+.header .container {
+    padding-top: 0.4rem !important;
+    padding-bottom: 0.4rem !important;
 }
 
-/* ── PAGE HEADER - KOMPAKT ── */
-
+/* ── PAGE HEADER - Nav yüksekliğine göre ayarla ── */
+/* Nav artık ~80px (topbar gizli + kompakt logo) */
 .page-header {
-    padding-top: calc(0.5rem + 130px) !important;
+    padding-top: calc(1rem + 90px) !important;
     padding-bottom: 60px !important;
 }
 
@@ -22,48 +29,40 @@
     font-size: 1.8rem !important;
     margin-bottom: 0.4rem !important;
     margin-top: 0 !important;
+    color: #ffffff !important;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.5) !important;
+    position: relative !important;
+    z-index: 10 !important;
 }
 
 .page-header p {
     font-size: 0.95rem !important;
     margin: 0 !important;
+    color: rgba(255,255,255,0.88) !important;
+    position: relative !important;
+    z-index: 10 !important;
 }
 
-/* Blob animasyonları kaldır */
-.page-header::before,
-.page-header::after {
-    display: none !important;
-}
-
-/* Kabarcıklar kaldır */
-.page-header-bubbles {
-    display: none !important;
-}
-
-/* Başlık görünürlüğü */
 .page-header .container {
     position: relative !important;
     z-index: 10 !important;
 }
-.page-header h1 {
-    color: #ffffff !important;
-    text-shadow: 0 2px 12px rgba(0,0,0,0.5) !important;
-    z-index: 10 !important;
-    position: relative !important;
+
+/* ── BLOB VE KABARCIKları GIZLE ── */
+.page-header::before,
+.page-header::after {
+    display: none !important;
 }
-.page-header p {
-    color: rgba(255,255,255,0.88) !important;
-    z-index: 10 !important;
-    position: relative !important;
+.page-header-bubbles {
+    display: none !important;
 }
 
-/* Wave görünür kalsın */
+/* ── WAVE GÖRÜNÜR ── */
 .page-header-wave {
     display: block !important;
 }
 
-/* ── SECTION BOŞLUĞU ── */
-/* style.css'deki 6rem padding'i azalt */
+/* ── SECTION BOŞLUĞU AZALT ── */
 .page-header + .section,
 .page-header + .section.about-section {
     padding-top: 2rem !important;
@@ -71,8 +70,9 @@
 
 /* ── MOBİL ── */
 @media (max-width: 768px) {
+    .logo-img { height: 56px !important; }
     .page-header {
-        padding-top: calc(0.5rem + 70px) !important;
+        padding-top: calc(0.75rem + 70px) !important;
         padding-bottom: 50px !important;
     }
     .page-header h1 { font-size: 1.5rem !important; }
