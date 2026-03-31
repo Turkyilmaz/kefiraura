@@ -1,7 +1,7 @@
 baseURL = "https://kefiraura.pages.dev/"
 languageCode = "tr-TR"
 defaultContentLanguage = "tr"
-title = "Kefir Aura"
+title = "Kefir Aura | Doğal & Geleneksel Kefir"
 
 [languages]
   [languages.tr]
