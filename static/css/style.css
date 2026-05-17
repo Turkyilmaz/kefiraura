@@ -90,7 +90,7 @@ p { margin-bottom: 1rem; }
 
 /* ── TOPBAR ── */
 .topbar {
-    background: linear-gradient(90deg, #1E0050 0%, #2A0060 50%, #1E0050 100%);
+    background: linear-gradient(90deg, #4B2C7F 0%, #5B2E91 50%, #4B2C7F 100%);
     border-bottom: none;
     padding: 0.4rem 0;
     font-family: 'Manrope', sans-serif;
@@ -145,7 +145,7 @@ p { margin-bottom: 1rem; }
     z-index: 1000;
     transition: var(--transition);
     padding: 0;
-    background: linear-gradient(90deg, #2A0060 0%, #1E0050 50%, #120035 100%);
+    background: linear-gradient(90deg, #5B2E91 0%, #4B2C7F 50%, #3D2070 100%);
     border-top: 1px solid rgba(139,95,191,0.2);
     border-bottom: none;
     box-shadow: 0 4px 32px rgba(0,0,0,0.5);
@@ -159,7 +159,7 @@ p { margin-bottom: 1rem; }
     pointer-events: none;
 }
 .header.scrolled {
-    background: linear-gradient(90deg, #2A0060 0%, #1E0050 50%, #120035 100%);
+    background: linear-gradient(90deg, #5B2E91 0%, #4B2C7F 50%, #3D2070 100%);
     box-shadow: 0 6px 40px rgba(0,0,0,0.6);
 }
 .header .container {
@@ -287,7 +287,7 @@ p { margin-bottom: 1rem; }
 /* Sağ: koyu mor kısım */
 .hero-right {
     width: 42%;
-    background: linear-gradient(150deg, #1E0050 0%, #120035 50%, #0d000b 100%);
+    background: linear-gradient(150deg, #4B2C7F 0%, #3D2070 50%, #1E1240 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -603,7 +603,7 @@ p { margin-bottom: 1rem; }
     position: relative;
 }
 .about-card-main {
-    background: linear-gradient(135deg, var(--black) 0%, #1E0050 100%);
+    background: linear-gradient(135deg, var(--black) 0%, #4B2C7F 100%);
     border-radius: var(--radius);
     padding: 3rem;
     color: var(--white);
@@ -674,7 +674,7 @@ p { margin-bottom: 1rem; }
 
 /* ── CTA ── */
 .cta-section {
-    background: linear-gradient(135deg, var(--black) 0%, #1a0a17 50%, #1E0050 100%);
+    background: linear-gradient(135deg, var(--black) 0%, #1a0a17 50%, #4B2C7F 100%);
     padding: 7rem 0;
     text-align: center;
     position: relative;
@@ -695,7 +695,7 @@ p { margin-bottom: 1rem; }
 
 /* ── FOOTER ── */
 .footer {
-    background: linear-gradient(180deg, #0d000b 0%, #120035 100%);
+    background: linear-gradient(180deg, #1E1240 0%, #3D2070 100%);
     color: rgba(255,255,255,0.6);
     padding: 4rem 0 0;
     position: relative;
@@ -789,7 +789,7 @@ p { margin-bottom: 1rem; }
 
 /* ── PAGE HEADER ── */
 .page-header {
-    background: linear-gradient(160deg, #2A0060 0%, #1E0050 40%, #120035 100%);
+    background: linear-gradient(160deg, #5B2E91 0%, #4B2C7F 40%, #3D2070 100%);
     padding: 1rem 0 2rem;
     text-align: center;
     position: relative;
