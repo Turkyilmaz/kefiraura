@@ -19,223 +19,412 @@
 </section>
 
 <section class="section">
-    <div class="container" style="max-width:900px;">
+    <div class="container" style="max-width:960px;">
 
+        <!-- Section Title -->
         <div class="section-title">
             <span class="eyebrow">Nerede Bulunur?</span>
             <h2>Yetkili Satıcılarımız</h2>
             <p>Kefir Aura ürünlerini aşağıdaki satış noktalarından temin edebilirsiniz.</p>
         </div>
 
-        <!-- OG Store (Anadolu Yakası) -->
-        <div class="partner-card">
+        <!-- Stats Bar -->
+        <div class="sn-stats-bar">
+            <div class="sn-stat">
+                <span class="sn-stat-num">6</span>
+                <span class="sn-stat-label">Yetkili Bayi</span>
+            </div>
+            <div class="sn-stat-divider"></div>
+            <div class="sn-stat">
+                <span class="sn-stat-num">18+</span>
+                <span class="sn-stat-label">Şube</span>
+            </div>
+            <div class="sn-stat-divider"></div>
+            <div class="sn-stat">
+                <span class="sn-stat-num">İstanbul</span>
+                <span class="sn-stat-label">Geneli</span>
+            </div>
+            <div class="sn-stat-divider"></div>
+            <div class="sn-stat">
+                <span class="sn-stat-num">2</span>
+                <span class="sn-stat-label">Yakada</span>
+            </div>
+        </div>
+
+        <!-- BÖLGE: Anadolu Yakası -->
+        <div class="region-header">
+            <div class="region-line"></div>
+            <span class="region-label">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Anadolu Yakası
+            </span>
+            <div class="region-line"></div>
+        </div>
+
+        <!-- OG Store -->
+        <div class="partner-card" id="card-ogstore">
+            <div class="partner-accent"></div>
             <div class="partner-header" onclick="toggleBranches('ogstore')">
                 <div class="partner-left">
-                    <div class="partner-logo-placeholder">🌿</div>
-                    <div>
-                        <h3>OG Store</h3>
-                        <span class="branch-count">1 Şube — Kadıköy/İstanbul</span>
+                    <div class="partner-logo-wrap">
+                        <div class="partner-logo-placeholder">🌿</div>
+                    </div>
+                    <div class="partner-info">
+                        <div class="partner-title-row">
+                            <h3>OG Store</h3>
+                            <span class="badge badge-new">Yeni</span>
+                        </div>
+                        <span class="branch-count">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            1 Şube — Kadıköy / İstanbul
+                        </span>
                     </div>
                 </div>
                 <div class="partner-right">
-                    <a href="https://www.ogstore.com.tr" target="_blank" rel="noopener" class="btn btn-outline-purple" onclick="event.stopPropagation()">Web Sitesi →</a>
-                    <button class="toggle-btn" id="icon-ogstore">▼ Şubeleri Gör</button>
+                    <a href="https://www.ogstore.com.tr" target="_blank" rel="noopener" class="btn btn-outline-purple" onclick="event.stopPropagation()">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-right:5px;vertical-align:-1px"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        Web Sitesi
+                    </a>
+                    <button class="toggle-btn" id="icon-ogstore">
+                        <svg class="chevron-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                        Şubeleri Gör
+                    </button>
                 </div>
             </div>
-            <div class="branches-list" id="branches-ogstore" style="display:none;">
+            <div class="branches-list" id="branches-ogstore">
                 <div class="branch-row">
-                    <div class="branch-name">📍 Kadıköy</div>
+                    <div class="branch-name">Kadıköy</div>
                     <div class="branch-address">Erenköy Mh. Ethem Efendi Cd. No:110/A, Kadıköy</div>
-                    <div class="branch-phone"><a href="tel:+902164676765">(216) 467 67 65</a></div>
+                    <div class="branch-actions">
+                        <a href="tel:+902164676765" class="branch-phone-link">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.0 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                            (216) 467 67 65
+                        </a>
+                        <a href="https://maps.google.com/?q=Erenköy+Mh.+Ethem+Efendi+Cd.+No:110/A+Kadıköy+İstanbul" target="_blank" rel="noopener" class="branch-map-link">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            Haritada Gör
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
 
+        <!-- BÖLGE: Avrupa Yakası -->
+        <div class="region-header" style="margin-top:2.5rem;">
+            <div class="region-line"></div>
+            <span class="region-label">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Avrupa Yakası
+            </span>
+            <div class="region-line"></div>
+        </div>
+
         <!-- Köylü Peynircilik -->
-        <div class="partner-card">
+        <div class="partner-card" id="card-koylu">
+            <div class="partner-accent"></div>
             <div class="partner-header" onclick="toggleBranches('koylu')">
                 <div class="partner-left">
-                    <img src="{{ "images/partners/koylu-peynircilik.png" | relURL }}" alt="Köylü Peynircilik" class="partner-logo">
-                    <div>
-                        <h3>Köylü Peynircilik</h3>
-                        <span class="branch-count">10 Şube — İstanbul</span>
+                    <div class="partner-logo-wrap">
+                        <img src="{{ "images/partners/koylu-peynircilik.png" | relURL }}" alt="Köylü Peynircilik" class="partner-logo">
+                    </div>
+                    <div class="partner-info">
+                        <div class="partner-title-row">
+                            <h3>Köylü Peynircilik</h3>
+                        </div>
+                        <span class="branch-count">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            10 Şube — İstanbul
+                        </span>
                     </div>
                 </div>
                 <div class="partner-right">
-                    <a href="https://koylupeynircilik.com.tr/" target="_blank" rel="noopener" class="btn btn-outline-purple" onclick="event.stopPropagation()">Web Sitesi →</a>
-                    <button class="toggle-btn" id="icon-koylu">▼ Şubeleri Gör</button>
+                    <a href="https://koylupeynircilik.com.tr/" target="_blank" rel="noopener" class="btn btn-outline-purple" onclick="event.stopPropagation()">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-right:5px;vertical-align:-1px"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        Web Sitesi
+                    </a>
+                    <button class="toggle-btn" id="icon-koylu">
+                        <svg class="chevron-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                        Şubeleri Gör
+                    </button>
                 </div>
             </div>
-            <div class="branches-list" id="branches-koylu" style="display:none;">
+            <div class="branches-list" id="branches-koylu">
                 <div class="branch-row">
-                    <div class="branch-name">📍 Erenköy</div>
+                    <div class="branch-name">Erenköy</div>
                     <div class="branch-address">Sinan Ercan Sok. Figen Apt. 7/A, Kozyatağı</div>
-                    <div class="branch-phone"><a href="tel:+902163024268">(216) 302 42 68</a></div>
+                    <div class="branch-actions">
+                        <a href="tel:+902163024268" class="branch-phone-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.0 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>(216) 302 42 68</a>
+                        <a href="https://maps.google.com/?q=Sinan+Ercan+Sok.+Figen+Apt.+7/A+Kozyatağı+İstanbul" target="_blank" rel="noopener" class="branch-map-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Haritada Gör</a>
+                    </div>
                 </div>
                 <div class="branch-row">
-                    <div class="branch-name">📍 Bağcılar</div>
+                    <div class="branch-name">Bağcılar</div>
                     <div class="branch-address">İstanbul Cad. No:53, Bağcılar</div>
-                    <div class="branch-phone"><a href="tel:+902124618500">(212) 461 85 00</a></div>
+                    <div class="branch-actions">
+                        <a href="tel:+902124618500" class="branch-phone-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.0 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>(212) 461 85 00</a>
+                        <a href="https://maps.google.com/?q=İstanbul+Cad.+No:53+Bağcılar+İstanbul" target="_blank" rel="noopener" class="branch-map-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Haritada Gör</a>
+                    </div>
                 </div>
                 <div class="branch-row">
-                    <div class="branch-name">📍 Okmeydanı</div>
+                    <div class="branch-name">Okmeydanı</div>
                     <div class="branch-address">Fatih Sultan Cad. Fetip Tepe Mah. No:31/2</div>
-                    <div class="branch-phone"><a href="tel:+902123618075">(212) 361 80 75</a></div>
+                    <div class="branch-actions">
+                        <a href="tel:+902123618075" class="branch-phone-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.0 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>(212) 361 80 75</a>
+                        <a href="https://maps.google.com/?q=Fatih+Sultan+Cad.+Okmeydanı+İstanbul" target="_blank" rel="noopener" class="branch-map-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Haritada Gör</a>
+                    </div>
                 </div>
                 <div class="branch-row">
-                    <div class="branch-name">📍 Atışalanı</div>
+                    <div class="branch-name">Atışalanı</div>
                     <div class="branch-address">Havaalanı Mah. Taşocağı Cad. No:24, Esenler</div>
-                    <div class="branch-phone"><a href="tel:+902124291165">(212) 429 11 65</a></div>
+                    <div class="branch-actions">
+                        <a href="tel:+902124291165" class="branch-phone-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.0 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>(212) 429 11 65</a>
+                        <a href="https://maps.google.com/?q=Taşocağı+Cad.+No:24+Esenler+İstanbul" target="_blank" rel="noopener" class="branch-map-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Haritada Gör</a>
+                    </div>
                 </div>
                 <div class="branch-row">
-                    <div class="branch-name">📍 Esenler</div>
+                    <div class="branch-name">Esenler</div>
                     <div class="branch-address">Atışalan Caddesi No:46, Esenler</div>
-                    <div class="branch-phone"><a href="tel:+902125699431">(212) 569 94 31</a></div>
+                    <div class="branch-actions">
+                        <a href="tel:+902125699431" class="branch-phone-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.0 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>(212) 569 94 31</a>
+                        <a href="https://maps.google.com/?q=Atışalan+Caddesi+No:46+Esenler+İstanbul" target="_blank" rel="noopener" class="branch-map-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Haritada Gör</a>
+                    </div>
                 </div>
                 <div class="branch-row">
-                    <div class="branch-name">📍 Mahmutbey</div>
+                    <div class="branch-name">Mahmutbey</div>
                     <div class="branch-address">Kocasinan Merkez Mah. Site Sok. No:321, Yenibosna</div>
-                    <div class="branch-phone"><a href="tel:+902126576365">(212) 657 63 65</a></div>
+                    <div class="branch-actions">
+                        <a href="tel:+902126576365" class="branch-phone-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.0 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>(212) 657 63 65</a>
+                        <a href="https://maps.google.com/?q=Site+Sok.+No:321+Yenibosna+İstanbul" target="_blank" rel="noopener" class="branch-map-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Haritada Gör</a>
+                    </div>
                 </div>
                 <div class="branch-row">
-                    <div class="branch-name">📍 Yenibosna</div>
+                    <div class="branch-name">Yenibosna</div>
                     <div class="branch-address">Çobançeşme Mah. Fatih Cad. No:55/1, Bahçelievler</div>
-                    <div class="branch-phone"><a href="tel:+902124524025">(212) 452 40 25</a></div>
+                    <div class="branch-actions">
+                        <a href="tel:+902124524025" class="branch-phone-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.0 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>(212) 452 40 25</a>
+                        <a href="https://maps.google.com/?q=Fatih+Cad.+No:55/1+Bahçelievler+İstanbul" target="_blank" rel="noopener" class="branch-map-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Haritada Gör</a>
+                    </div>
                 </div>
                 <div class="branch-row">
-                    <div class="branch-name">📍 Beylikdüzü</div>
+                    <div class="branch-name">Beylikdüzü</div>
                     <div class="branch-address">Barış Mah. Palmiye Sok. Tuzcukent Sit. A Blok No:1</div>
-                    <div class="branch-phone"><a href="tel:+902128542781">(212) 854 27 81</a></div>
+                    <div class="branch-actions">
+                        <a href="tel:+902128542781" class="branch-phone-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.0 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>(212) 854 27 81</a>
+                        <a href="https://maps.google.com/?q=Palmiye+Sok.+Tuzcukent+Sit.+Beylikdüzü+İstanbul" target="_blank" rel="noopener" class="branch-map-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Haritada Gör</a>
+                    </div>
                 </div>
                 <div class="branch-row">
-                    <div class="branch-name">📍 Beykent</div>
+                    <div class="branch-name">Beykent</div>
                     <div class="branch-address">Adnan Kahveci Mah. Sayaca Cad. No:7</div>
-                    <div class="branch-phone"><a href="tel:+902128555152">(212) 855 51 52</a></div>
+                    <div class="branch-actions">
+                        <a href="tel:+902128555152" class="branch-phone-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.0 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>(212) 855 51 52</a>
+                        <a href="https://maps.google.com/?q=Sayaca+Cad.+No:7+Beykent+İstanbul" target="_blank" rel="noopener" class="branch-map-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Haritada Gör</a>
+                    </div>
                 </div>
                 <div class="branch-row">
-                    <div class="branch-name">📍 Büyükçekmece</div>
+                    <div class="branch-name">Büyükçekmece</div>
                     <div class="branch-address">19 Mayıs Mh. Atatürk Cd. No:73/A</div>
-                    <div class="branch-phone"><a href="tel:+902128821664">(212) 882 16 64</a></div>
+                    <div class="branch-actions">
+                        <a href="tel:+902128821664" class="branch-phone-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.0 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>(212) 882 16 64</a>
+                        <a href="https://maps.google.com/?q=Atatürk+Cd.+No:73/A+Büyükçekmece+İstanbul" target="_blank" rel="noopener" class="branch-map-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Haritada Gör</a>
+                    </div>
                 </div>
             </div>
         </div>
 
         <!-- Emek Yufka & Mantı -->
-        <div class="partner-card">
+        <div class="partner-card" id="card-emek">
+            <div class="partner-accent"></div>
             <div class="partner-header" onclick="toggleBranches('emek')">
                 <div class="partner-left">
-                    <div class="partner-logo-placeholder">🥟</div>
-                    <div>
-                        <h3>Emek Yufka & Mantı</h3>
-                        <span class="branch-count">1 Şube — Beylikdüzü/İstanbul</span>
+                    <div class="partner-logo-wrap">
+                        <div class="partner-logo-placeholder">🥟</div>
+                    </div>
+                    <div class="partner-info">
+                        <div class="partner-title-row">
+                            <h3>Emek Yufka &amp; Mantı</h3>
+                        </div>
+                        <span class="branch-count">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            1 Şube — Beylikdüzü / İstanbul
+                        </span>
                     </div>
                 </div>
                 <div class="partner-right">
-                    <button class="toggle-btn" id="icon-emek">▼ Şubeleri Gör</button>
+                    <button class="toggle-btn" id="icon-emek">
+                        <svg class="chevron-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                        Şubeleri Gör
+                    </button>
                 </div>
             </div>
-            <div class="branches-list" id="branches-emek" style="display:none;">
+            <div class="branches-list" id="branches-emek">
                 <div class="branch-row">
-                    <div class="branch-name">📍 Beylikdüzü</div>
+                    <div class="branch-name">Beylikdüzü</div>
                     <div class="branch-address">Cumhuriyet, Şht. Raif Esmertaş Sk. No:8, Beylikdüzü</div>
-                    <div class="branch-phone"><a href="tel:+905364865095">0536 486 50 95</a></div>
+                    <div class="branch-actions">
+                        <a href="tel:+905364865095" class="branch-phone-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.0 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>0536 486 50 95</a>
+                        <a href="https://maps.google.com/?q=Şht.+Raif+Esmertaş+Sk.+No:8+Beylikdüzü+İstanbul" target="_blank" rel="noopener" class="branch-map-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Haritada Gör</a>
+                    </div>
                 </div>
             </div>
         </div>
 
         <!-- Peynirci Ali -->
-        <div class="partner-card">
+        <div class="partner-card" id="card-peynirciAli">
+            <div class="partner-accent"></div>
             <div class="partner-header" onclick="toggleBranches('peynirciAli')">
                 <div class="partner-left">
-                    <img src="{{ "images/partners/peynirci-ali.png" | relURL }}" alt="Peynirci Ali" class="partner-logo">
-                    <div>
-                        <h3>Peynirci Ali</h3>
-                        <span class="branch-count">1 Şube — Silivri/İstanbul</span>
+                    <div class="partner-logo-wrap">
+                        <img src="{{ "images/partners/peynirci-ali.png" | relURL }}" alt="Peynirci Ali" class="partner-logo">
+                    </div>
+                    <div class="partner-info">
+                        <div class="partner-title-row">
+                            <h3>Peynirci Ali</h3>
+                            <span class="badge badge-new">Yeni</span>
+                        </div>
+                        <span class="branch-count">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            1 Şube — Silivri / İstanbul
+                        </span>
                     </div>
                 </div>
                 <div class="partner-right">
-                    <a href="https://www.shopier.com/PeynirciAli_Silivri" target="_blank" rel="noopener" class="btn btn-outline-purple" onclick="event.stopPropagation()">Web Sitesi →</a>
-                    <button class="toggle-btn" id="icon-peynirciAli">▼ Şubeleri Gör</button>
+                    <a href="https://www.shopier.com/PeynirciAli_Silivri" target="_blank" rel="noopener" class="btn btn-outline-purple" onclick="event.stopPropagation()">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-right:5px;vertical-align:-1px"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        Web Sitesi
+                    </a>
+                    <button class="toggle-btn" id="icon-peynirciAli">
+                        <svg class="chevron-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                        Şubeleri Gör
+                    </button>
                 </div>
             </div>
-            <div class="branches-list" id="branches-peynirciAli" style="display:none;">
+            <div class="branches-list" id="branches-peynirciAli">
                 <div class="branch-row">
-                    <div class="branch-name">📍 Silivri</div>
+                    <div class="branch-name">Silivri</div>
                     <div class="branch-address">Yeni Mahalle Varnalı Caddesi No:32/BH, Silivri/İstanbul</div>
-                    <div class="branch-phone"><a href="tel:+905395430541">0539 543 0541</a></div>
+                    <div class="branch-actions">
+                        <a href="tel:+905395430541" class="branch-phone-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.0 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>0539 543 0541</a>
+                        <a href="https://maps.google.com/?q=Varnalı+Caddesi+No:32/BH+Silivri+İstanbul" target="_blank" rel="noopener" class="branch-map-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Haritada Gör</a>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Peynirci Damak -->
-        <div class="partner-card">
+        <!-- Damak Gürme -->
+        <div class="partner-card" id="card-damak">
+            <div class="partner-accent"></div>
             <div class="partner-header" onclick="toggleBranches('damak')">
                 <div class="partner-left">
-                    <img src="{{ "images/partners/peynirci-damak.png" | relURL }}" alt="Peynirci Damak" class="partner-logo">
-                    <div>
-                        <h3>Damak Gürme (Peynirci Damak)</h3>
-                        <span class="branch-count">4 Şube — İstanbul</span>
+                    <div class="partner-logo-wrap">
+                        <img src="{{ "images/partners/peynirci-damak.png" | relURL }}" alt="Damak Gürme" class="partner-logo">
+                    </div>
+                    <div class="partner-info">
+                        <div class="partner-title-row">
+                            <h3>Damak Gürme (Peynirci Damak)</h3>
+                            <span class="badge badge-new">Yeni</span>
+                        </div>
+                        <span class="branch-count">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            4 Şube — Başakşehir / İstanbul
+                        </span>
                     </div>
                 </div>
                 <div class="partner-right">
-                    <a href="https://www.dmkdamak.com" target="_blank" rel="noopener" class="btn btn-outline-purple" onclick="event.stopPropagation()">Web Sitesi →</a>
-                    <button class="toggle-btn" id="icon-damak">▼ Şubeleri Gör</button>
+                    <a href="https://www.dmkdamak.com" target="_blank" rel="noopener" class="btn btn-outline-purple" onclick="event.stopPropagation()">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-right:5px;vertical-align:-1px"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        Web Sitesi
+                    </a>
+                    <button class="toggle-btn" id="icon-damak">
+                        <svg class="chevron-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                        Şubeleri Gör
+                    </button>
                 </div>
             </div>
-            <div class="branches-list" id="branches-damak" style="display:none;">
+            <div class="branches-list" id="branches-damak">
                 <div class="branch-row">
-                    <div class="branch-name">📍 Referans</div>
+                    <div class="branch-name">Referans</div>
                     <div class="branch-address">Başak Mah. Yeşilvadi Cad. Referans Başakşehir A Blok No:63, Başakşehir</div>
-                    <div class="branch-phone"><a href="tel:+902112435010">(212) 435 50 10</a></div>
+                    <div class="branch-actions">
+                        <a href="tel:+902112435010" class="branch-phone-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.0 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>(212) 435 50 10</a>
+                        <a href="https://maps.google.com/?q=Referans+Başakşehir+A+Blok+Başakşehir+İstanbul" target="_blank" rel="noopener" class="branch-map-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Haritada Gör</a>
+                    </div>
                 </div>
                 <div class="branch-row">
-                    <div class="branch-name">📍 Ebruli</div>
+                    <div class="branch-name">Ebruli</div>
                     <div class="branch-address">Kayabaşı Mah. Kayabaşı Bulvarı Ebruli Başakşehir Sitesi A Blok No:57 D, Başakşehir</div>
-                    <div class="branch-phone"><a href="tel:+902112435010">(212) 435 50 10</a></div>
+                    <div class="branch-actions">
+                        <a href="tel:+902112435010" class="branch-phone-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.0 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>(212) 435 50 10</a>
+                        <a href="https://maps.google.com/?q=Ebruli+Başakşehir+Sitesi+Başakşehir+İstanbul" target="_blank" rel="noopener" class="branch-map-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Haritada Gör</a>
+                    </div>
                 </div>
                 <div class="branch-row">
-                    <div class="branch-name">📍 Demir Life</div>
+                    <div class="branch-name">Demir Life</div>
                     <div class="branch-address">Çakmaklı Mah. M.Yeşilgül Blv. No:1 1/G B Blok Dükkan 7, Başakşehir</div>
-                    <div class="branch-phone"><a href="tel:+902112435010">(212) 435 50 10</a></div>
+                    <div class="branch-actions">
+                        <a href="tel:+902112435010" class="branch-phone-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.0 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>(212) 435 50 10</a>
+                        <a href="https://maps.google.com/?q=M.Yeşilgül+Blv.+No:1+Çakmaklı+Başakşehir+İstanbul" target="_blank" rel="noopener" class="branch-map-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Haritada Gör</a>
+                    </div>
                 </div>
                 <div class="branch-row">
-                    <div class="branch-name">📍 Boğazköy</div>
+                    <div class="branch-name">Boğazköy</div>
                     <div class="branch-address">Bahçeşehir 2.Kısım Mah. Medeniyet Cad. No:38/1 Bahçeşehir, Başakşehir</div>
-                    <div class="branch-phone"><a href="tel:+902112435010">(212) 435 50 10</a></div>
+                    <div class="branch-actions">
+                        <a href="tel:+902112435010" class="branch-phone-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.0 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>(212) 435 50 10</a>
+                        <a href="https://maps.google.com/?q=Medeniyet+Cad.+No:38/1+Bahçeşehir+Başakşehir+İstanbul" target="_blank" rel="noopener" class="branch-map-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Haritada Gör</a>
+                    </div>
                 </div>
             </div>
         </div>
 
         <!-- Turan ET -->
-        <div class="partner-card">
+        <div class="partner-card" id="card-turanEt">
+            <div class="partner-accent"></div>
             <div class="partner-header" onclick="toggleBranches('turanEt')">
                 <div class="partner-left">
-                    <img src="{{ "images/partners/turan-et.png" | relURL }}" alt="Turan ET" class="partner-logo">
-                    <div>
-                        <h3>Turan ET</h3>
-                        <span class="branch-count">1 Şube — Esenyurt/İstanbul</span>
+                    <div class="partner-logo-wrap">
+                        <img src="{{ "images/partners/turan-et.png" | relURL }}" alt="Turan ET" class="partner-logo">
+                    </div>
+                    <div class="partner-info">
+                        <div class="partner-title-row">
+                            <h3>Turan ET</h3>
+                            <span class="badge badge-new">Yeni</span>
+                        </div>
+                        <span class="branch-count">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            1 Şube — Esenyurt / İstanbul
+                        </span>
                     </div>
                 </div>
                 <div class="partner-right">
-                    <a href="https://turanet.com.tr" target="_blank" rel="noopener" class="btn btn-outline-purple" onclick="event.stopPropagation()">Web Sitesi →</a>
-                    <button class="toggle-btn" id="icon-turanEt">▼ Şubeleri Gör</button>
+                    <a href="https://turanet.com.tr" target="_blank" rel="noopener" class="btn btn-outline-purple" onclick="event.stopPropagation()">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-right:5px;vertical-align:-1px"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        Web Sitesi
+                    </a>
+                    <button class="toggle-btn" id="icon-turanEt">
+                        <svg class="chevron-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                        Şubeleri Gör
+                    </button>
                 </div>
             </div>
-            <div class="branches-list" id="branches-turanEt" style="display:none;">
+            <div class="branches-list" id="branches-turanEt">
                 <div class="branch-row">
-                    <div class="branch-name">📍 Cumhuriyet</div>
+                    <div class="branch-name">Cumhuriyet</div>
                     <div class="branch-address">Cumhuriyet Mahallesi Hürriyet Caddesi No:15/E, Esenyurt/İstanbul</div>
-                    <div class="branch-phone"><a href="tel:+902129790094">(212) 979 00 94</a></div>
+                    <div class="branch-actions">
+                        <a href="tel:+902129790094" class="branch-phone-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.0 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>(212) 979 00 94</a>
+                        <a href="https://maps.google.com/?q=Hürriyet+Caddesi+No:15/E+Esenyurt+İstanbul" target="_blank" rel="noopener" class="branch-map-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Haritada Gör</a>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Yakında Eklenecek -->
+        <!-- Yakında -->
         <div class="partner-card partner-coming">
             <div class="partner-header">
                 <div class="partner-left">
-                    <div class="partner-logo-placeholder">⏳</div>
-                    <div>
+                    <div class="partner-logo-wrap coming-logo-wrap">⏳</div>
+                    <div class="partner-info">
                         <h3>Yeni Satış Noktası</h3>
                         <span class="branch-count">Yakında eklenecek</span>
                     </div>
@@ -243,7 +432,7 @@
             </div>
         </div>
 
-        <!-- Banner -->
+        <!-- CTA Banner -->
         <div class="satis-partner" style="margin-top:3rem;">
             <div class="satis-partner-inner">
                 <div>
@@ -261,121 +450,293 @@
 function toggleBranches(id) {
     const el = document.getElementById('branches-' + id);
     const btn = document.getElementById('icon-' + id);
-    if (el.style.display === 'none' || el.style.display === '') {
-        el.style.display = 'block';
-        btn.textContent = '▲ Kapat';
+    const chevron = btn.querySelector('.chevron-icon');
+    const isOpen = el.classList.contains('open');
+    if (!isOpen) {
+        el.classList.add('open');
         btn.classList.add('active');
+        if (chevron) chevron.style.transform = 'rotate(180deg)';
     } else {
-        el.style.display = 'none';
-        btn.textContent = '▼ Şubeleri Gör';
+        el.classList.remove('open');
         btn.classList.remove('active');
+        if (chevron) chevron.style.transform = 'rotate(0deg)';
     }
 }
-// Başlangıçta kapalı
 </script>
 
 <style>
+/* ── Stats Bar ── */
+.sn-stats-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    background: linear-gradient(135deg, #2d0a26 0%, #4D008C 100%);
+    border-radius: 16px;
+    padding: 1.5rem 2.5rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 8px 32px rgba(77,0,140,0.18);
+}
+.sn-stat { text-align: center; padding: 0 2rem; }
+.sn-stat-num {
+    display: block;
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1;
+}
+.sn-stat-label {
+    display: block;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.6);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 0.3rem;
+}
+.sn-stat-divider {
+    width: 1px;
+    height: 40px;
+    background: rgba(255,255,255,0.15);
+    flex-shrink: 0;
+}
+
+/* ── Region Header ── */
+.region-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+}
+.region-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(147,24,122,0.25), transparent);
+}
+.region-label {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--purple);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+    background: rgba(147,24,122,0.07);
+    padding: 0.35rem 1rem;
+    border-radius: 50px;
+    border: 1px solid rgba(147,24,122,0.18);
+}
+
+/* ── Partner Card ── */
 .partner-card {
     background: var(--white);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-sm);
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
     border: 1px solid rgba(0,0,0,0.06);
-    margin-bottom: 1.25rem;
+    margin-bottom: 1rem;
     overflow: hidden;
-    transition: var(--transition);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
 }
-.partner-card:hover { box-shadow: var(--shadow-md); }
+.partner-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(147,24,122,0.14);
+}
+.partner-accent {
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, #93187a, #4D008C);
+    border-radius: 16px 0 0 16px;
+}
 .partner-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1.75rem 2rem;
+    padding: 1.5rem 1.75rem 1.5rem 2.25rem;
     cursor: pointer;
     gap: 1rem;
 }
-.partner-left { display: flex; align-items: center; gap: 1.5rem; flex: 1; }
-.partner-logo { height: 56px; width: auto; object-fit: contain; }
-.partner-logo-placeholder { font-size: 2rem; width: 56px; text-align: center; }
-.partner-left h3 { margin: 0 0 0.2rem; font-size: 1.1rem; }
+.partner-left { display: flex; align-items: center; gap: 1.25rem; flex: 1; min-width: 0; }
+
+/* Logo wrap */
+.partner-logo-wrap {
+    width: 64px;
+    height: 64px;
+    border-radius: 12px;
+    background: #f8f5ff;
+    border: 1px solid rgba(147,24,122,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+.partner-logo {
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+}
+.partner-logo-placeholder { font-size: 1.8rem; line-height: 1; }
+
+/* Partner info */
+.partner-info { min-width: 0; }
+.partner-title-row {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.3rem;
+}
+.partner-title-row h3 {
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--black);
+}
 .branch-count {
     font-family: 'Manrope', sans-serif;
-    font-size: 0.8rem;
-    color: var(--purple);
-    font-weight: 600;
+    font-size: 0.78rem;
+    color: #888;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 4px;
 }
-.partner-right { display: flex; align-items: center; gap: 1rem; flex-shrink: 0; }
+
+/* Badge */
+.badge {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 800;
+    padding: 0.2rem 0.55rem;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+.badge-new {
+    background: linear-gradient(135deg, #93187a, #4D008C);
+    color: #fff;
+}
+
+/* Right buttons */
+.partner-right { display: flex; align-items: center; gap: 0.75rem; flex-shrink: 0; }
 .toggle-btn {
     font-family: 'Manrope', sans-serif;
-    font-size: 0.82rem;
+    font-size: 0.8rem;
     font-weight: 700;
     color: var(--purple);
-    background: rgba(147,24,122,0.08);
-    border: 1.5px solid rgba(147,24,122,0.25);
+    background: rgba(147,24,122,0.07);
+    border: 1.5px solid rgba(147,24,122,0.2);
     border-radius: 50px;
-    padding: 0.5rem 1.1rem;
+    padding: 0.45rem 1rem;
     cursor: pointer;
-    transition: var(--transition);
+    transition: all 0.2s ease;
     white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
+.toggle-btn .chevron-icon { transition: transform 0.25s ease; }
 .toggle-btn:hover, .toggle-btn.active {
     background: var(--purple);
     color: var(--white);
     border-color: var(--purple);
 }
+.toggle-btn.active .chevron-icon { transform: rotate(180deg); }
+
 .btn-outline-purple {
     font-family: 'Manrope', sans-serif;
     font-weight: 600;
-    font-size: 0.95rem;
-    padding: 0.6rem 1.4rem;
+    font-size: 0.85rem;
+    padding: 0.45rem 1.1rem;
     border-radius: 50px;
     border: 1.5px solid var(--purple);
     color: var(--purple);
     background: transparent;
     cursor: pointer;
-    transition: var(--transition);
+    transition: all 0.2s ease;
     text-decoration: none;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
 }
-.btn-outline-purple:hover {
-    background: var(--purple);
-    color: var(--white);
-}
+.btn-outline-purple:hover { background: var(--purple); color: var(--white); }
 
-/* Şubeler */
+/* ── Branches List ── */
 .branches-list {
-    display: none;
-    border-top: 1px solid rgba(0,0,0,0.06);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+    border-top: 0px solid rgba(147,24,122,0.08);
+}
+.branches-list.open {
+    max-height: 1200px;
+    border-top: 1px solid rgba(147,24,122,0.08);
 }
 .branch-row {
     display: grid;
-    grid-template-columns: 160px 1fr 140px;
+    grid-template-columns: 130px 1fr auto;
     gap: 1rem;
-    padding: 0.875rem 2rem;
+    padding: 0.85rem 1.75rem 0.85rem 2.25rem;
     align-items: center;
     border-bottom: 1px solid rgba(0,0,0,0.04);
-    transition: var(--transition);
+    transition: background 0.15s;
 }
 .branch-row:last-child { border-bottom: none; }
 .branch-row:hover { background: rgba(147,24,122,0.03); }
 .branch-name {
     font-family: 'Manrope', sans-serif;
     font-weight: 700;
-    font-size: 0.88rem;
+    font-size: 0.85rem;
     color: var(--black);
 }
-.branch-address { font-size: 0.85rem; color: var(--gray); }
-.branch-phone { font-family: 'Manrope', sans-serif; font-size: 0.85rem; text-align: right; }
-.branch-phone a { color: var(--purple); font-weight: 600; }
-.branch-phone a:hover { color: var(--purple-dark); }
+.branch-address { font-size: 0.82rem; color: #888; line-height: 1.4; }
+.branch-actions { display: flex; align-items: center; gap: 0.6rem; flex-shrink: 0; }
+.branch-phone-link, .branch-map-link {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 0.3rem 0.75rem;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: all 0.18s ease;
+}
+.branch-phone-link {
+    color: var(--purple);
+    background: rgba(147,24,122,0.07);
+    border: 1px solid rgba(147,24,122,0.15);
+}
+.branch-phone-link:hover { background: var(--purple); color: #fff; }
+.branch-map-link {
+    color: #555;
+    background: #f4f4f4;
+    border: 1px solid #e0e0e0;
+}
+.branch-map-link:hover { background: #4285f4; color: #fff; border-color: #4285f4; }
 
-.partner-coming { opacity: 0.5; cursor: default; }
+/* ── Coming Soon ── */
+.partner-coming { opacity: 0.45; cursor: default; }
+.partner-coming:hover { transform: none; box-shadow: 0 2px 12px rgba(0,0,0,0.07); }
 .partner-coming .partner-header { cursor: default; }
+.coming-logo-wrap {
+    font-size: 1.6rem;
+    display: flex; align-items: center; justify-content: center;
+}
 
+/* ── CTA Banner ── */
 .satis-partner {
     background: linear-gradient(135deg, #2d0a26 0%, #1a0015 100%);
-    border-radius: var(--radius);
+    border-radius: 16px;
     padding: 2.5rem 3rem;
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
 }
 .satis-partner-inner {
     display: flex; align-items: center;
@@ -383,12 +744,16 @@ function toggleBranches(id) {
     gap: 2rem; flex-wrap: wrap;
 }
 .satis-partner h3 { color: var(--white); margin-bottom: 0.5rem; }
-.satis-partner p { color: rgba(255,255,255,0.65); margin: 0; }
+.satis-partner p { color: rgba(255,255,255,0.6); margin: 0; }
 
+/* ── Responsive ── */
 @media (max-width: 640px) {
-    .branch-row { grid-template-columns: 1fr; gap: 0.25rem; }
-    .branch-phone { text-align: left; }
+    .sn-stats-bar { flex-wrap: wrap; gap: 1rem; padding: 1.25rem; }
+    .sn-stat-divider { display: none; }
+    .branch-row { grid-template-columns: 1fr; gap: 0.4rem; }
+    .branch-actions { flex-wrap: wrap; }
     .partner-header { flex-wrap: wrap; }
+    .partner-right { width: 100%; justify-content: flex-end; }
 }
 </style>
 
