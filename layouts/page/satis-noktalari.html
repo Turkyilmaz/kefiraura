@@ -31,12 +31,12 @@
         <!-- Stats Bar -->
         <div class="sn-stats-bar">
             <div class="sn-stat">
-                <span class="sn-stat-num">8</span>
+                <span class="sn-stat-num">9</span>
                 <span class="sn-stat-label">Deneyim Noktası</span>
             </div>
             <div class="sn-stat-divider"></div>
             <div class="sn-stat">
-                <span class="sn-stat-num">19+</span>
+                <span class="sn-stat-num">27+</span>
                 <span class="sn-stat-label">Şube</span>
             </div>
             <div class="sn-stat-divider"></div>
@@ -103,6 +103,148 @@
                         <a href="https://maps.google.com/?q=Erenköy+Mh.+Ethem+Efendi+Cd.+No:110/A+Kadıköy+İstanbul" target="_blank" rel="noopener" class="branch-map-link">
                             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
                             Haritada Gör
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Peynircim -->
+        <div class="partner-card" id="card-peynircim">
+            <div class="partner-accent"></div>
+            <div class="partner-header" onclick="toggleBranches('peynircim')">
+                <div class="partner-left">
+                    <div class="partner-logo-wrap">
+                        <div class="partner-logo-placeholder">🧀</div>
+                    </div>
+                    <div class="partner-info">
+                        <div class="partner-title-row">
+                            <h3>Peynircim</h3>
+                            <span class="badge badge-new">Yeni</span>
+                        </div>
+                        <span class="branch-count">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            8 Şube — Anadolu Yakası / İstanbul
+                        </span>
+                    </div>
+                </div>
+                <div class="partner-right">
+                    <a href="https://peynircim.com.tr" target="_blank" rel="noopener" class="btn btn-outline-purple" onclick="event.stopPropagation()">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-right:5px;vertical-align:-1px"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        Web Sitesi
+                    </a>
+                    <button class="toggle-btn" id="icon-peynircim">
+                        <svg class="chevron-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                        Şubeleri Gör
+                    </button>
+                </div>
+            </div>
+            <div class="branches-list" id="branches-peynircim">
+                <div class="branch-row">
+                    <div class="branch-name">Şerifali</div>
+                    <div class="branch-address">Mehmet Akif Mah. Elalmış Cad. No:31/A, Şerifali / Ümraniye</div>
+                    <div class="branch-actions">
+                        <a href="tel:+902164666171" class="branch-phone-link">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.0 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                            (216) 466 61 71
+                        </a>
+                        <a href="https://maps.app.goo.gl/kfnpGt8b5dj8Q9ku5" target="_blank" rel="noopener" class="branch-map-link">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            Haritada Gör
+                        </a>
+                    </div>
+                </div>
+                <div class="branch-row">
+                    <div class="branch-name">Çınar</div>
+                    <div class="branch-address">Çınar Mah. Kadir Has Cad. No:15/1, Küçükyalı / Maltepe</div>
+                    <div class="branch-actions">
+                        <a href="tel:+902163662421" class="branch-phone-link">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.0 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                            (216) 366 24 21
+                        </a>
+                        <a href="https://maps.app.goo.gl/LYmPDdxNMAhQ9kwP7" target="_blank" rel="noopener" class="branch-map-link">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            Haritada Gör
+                        </a>
+                    </div>
+                </div>
+                <div class="branch-row">
+                    <div class="branch-name">Küçükyalı</div>
+                    <div class="branch-address">Küçükyalı Mah. Mektep Cad. No:47, Küçükyalı / Maltepe</div>
+                    <div class="branch-actions">
+                        <a href="tel:+902165189181" class="branch-phone-link">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.0 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                            (216) 518 91 81
+                        </a>
+                        <a href="https://maps.app.goo.gl/PN1NfEzLyxJpWRVbA" target="_blank" rel="noopener" class="branch-map-link">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            Haritada Gör
+                        </a>
+                    </div>
+                </div>
+                <div class="branch-row">
+                    <div class="branch-name">Bağdat</div>
+                    <div class="branch-address">Altıntepe Mah. Bağdat Cad. Ekşioğlu Apt. No:86-B, Maltepe</div>
+                    <div class="branch-actions">
+                        <a href="tel:+902163679161" class="branch-phone-link">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.0 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                            (216) 367 91 61
+                        </a>
+                        <a href="https://maps.app.goo.gl/YGYDbzx2GrmhoDEJ6" target="_blank" rel="noopener" class="branch-map-link">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            Haritada Gör
+                        </a>
+                    </div>
+                </div>
+                <div class="branch-row">
+                    <div class="branch-name">Cengiz Topel</div>
+                    <div class="branch-address">Cengiz Topel Cad. Küçükbakkalköy Mah. No:36/1, Ataşehir</div>
+                    <div class="branch-actions">
+                        <a href="tel:+902165775809" class="branch-phone-link">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.0 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                            (216) 577 58 09
+                        </a>
+                        <a href="https://maps.app.goo.gl/fTwZbpkzY3qnpwn58" target="_blank" rel="noopener" class="branch-map-link">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            Haritada Gör
+                        </a>
+                    </div>
+                </div>
+                <div class="branch-row">
+                    <div class="branch-name">İçerenköy</div>
+                    <div class="branch-address">Küçükbakkalköy Mah. Kayışdağı Cad. No:79/A, K.bakkalköy / Ataşehir</div>
+                    <div class="branch-actions">
+                        <a href="tel:+902165729520" class="branch-phone-link">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.0 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                            (216) 572 95 20
+                        </a>
+                        <a href="https://maps.app.goo.gl/7s7qyJ5P5JrFQ1eH8" target="_blank" rel="noopener" class="branch-map-link">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            Haritada Gör
+                        </a>
+                    </div>
+                </div>
+                <div class="branch-row">
+                    <div class="branch-name">Kozyatağı</div>
+                    <div class="branch-address">Kozyatağı Mah. Kocayol Cad. No:23/A, Kadıköy</div>
+                    <div class="branch-actions">
+                        <a href="tel:+902163703461" class="branch-phone-link">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.0 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                            (216) 370 34 61
+                        </a>
+                        <a href="https://maps.app.goo.gl/JmT9BwjUn1aVrngf9" target="_blank" rel="noopener" class="branch-map-link">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            Haritada Gör
+                        </a>
+                    </div>
+                </div>
+                <div class="branch-row">
+                    <div class="branch-name">Mezeliva</div>
+                    <div class="branch-address">Küçükyalı İş Merkezi, Girne Mah. Irmaklar Sk. No:72-G44, Maltepe</div>
+                    <div class="branch-actions">
+                        <a href="tel:+902163664023" class="branch-phone-link">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.0 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                            (216) 366 40 23
                         </a>
                     </div>
                 </div>
