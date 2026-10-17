@@ -1,7 +1,7 @@
 baseURL = "https://kefiraura.pages.dev/"
 languageCode = "tr-TR"
 defaultContentLanguage = "tr"
-title = "Kefir Aura | Doğal & Geleneksel Kefir"
+title = "Kefir Aura | Doğal Kefir, Silivri"
 
 [languages]
   [languages.tr]
@@ -27,10 +27,6 @@ title = "Kefir Aura | Doğal & Geleneksel Kefir"
     name = "Sertifikalar"
     url = "/sertifikalar/"
     weight = 4
-  [[menu.main]]
-    name = "Blog"
-    url = "/blog/"
-    weight = 5
   [[menu.main]]
     name = "Satış Noktalarımız"
     url = "/satis-noktalari/"

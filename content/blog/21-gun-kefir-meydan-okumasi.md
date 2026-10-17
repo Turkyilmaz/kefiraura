@@ -1,6 +1,7 @@
 ---
 title: "21 Günde Kefir ile Değişim"
 date: 2026-03-24
+draft: true
 summary: "Vücudunuzun yenilenmesini desteklemek için ona zaman tanıyın. 21 gün boyunca her sabah bir bardak Kefir Aura ile neler yaşanabilir? Hafta hafta inceleyelim."
 tags: ["21 gün", "kefir", "sağlık", "bağırsak sağlığı"]
 ---

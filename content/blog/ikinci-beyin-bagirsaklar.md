@@ -1,6 +1,7 @@
 ---
 title: "İkinci Beyin ve Bağırsak Sağlığı"
 date: 2026-03-24
+draft: true
 summary: "Mutluluk hormonu serotoninin %90'ı bağırsaklarımızda üretiliyor. Yani bağırsaklarınız mutluysa, siz de mutlusunuz. Kefirin bu mucizevi döngüdeki rolünü keşfedin."
 tags: ["bağırsak sağlığı", "probiyotik", "serotonin", "sağlık"]
 ---
